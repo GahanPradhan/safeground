@@ -1,0 +1,25 @@
+# Reported flooding that can be loaded as "reported waterlogging points" in RESPOND > Flood.
+# Coordinates are the OpenStreetMap place node of each locality (data/snapshot/places.json), so a point marks the
+# locality centre, not a surveyed flooded street. SafeGround marks ~300 m around each point as red.
+michaung_2023:
+  label: "Cyclone Michaung: areas still underwater on 9 Dec 2023"
+  source: "Sphere India inter-agency Situation Report 3, Cyclone Michaung (9 Dec 2023)"
+  url: "https://www.sphereindia.org.in/sites/default/files/2023-12/SitRep3_CycloneMichaung_09-12-23.pdf"
+  quote: "Velachery, Perungudi, Kodungaiyur, Choolaimedu, Semmechery, Thiru-Vi Ka Nagar and Pulianthope areas were still underwater"
+  not_mapped: "Points are locality centres. Choolaimedu (no OSM place node in the snapshot) and Semmencherry (outside the map area) are not placed."
+  points:
+    - {name: Velachery, lat: 12.9792, lon: 80.2210}
+    - {name: Perungudi, lat: 12.9710, lon: 80.2418}
+    - {name: Kodungaiyur, lat: 13.1308, lon: 80.2562}
+    - {name: Thiru Vi Ka Nagar, lat: 13.1209, lon: 80.2295}
+    - {name: Pulianthope, lat: 13.1008, lon: 80.2626}
+tnagar_subways_2023:
+  label: "Cyclone Michaung: T. Nagar subways closed by waterlogging, 4 Dec 2023"
+  source: "The News Minute, list of subways closed (4 Dec 2023)"
+  url: "https://www.thenewsminute.com/tamil-nadu/chennai-rains-list-of-subways-closed-and-traffic-updates"
+  quote: "Madley, Duraisamy (Doraiswamy) and Rangarajapuram subways were among the subways closed due to waterlogging"
+  not_mapped: "Points are the middle of the OSM underpass (tunnel) road segments with these names."
+  points:
+    - {name: Madley subway, lat: 13.03537, lon: 80.22704}
+    - {name: Doraiswamy subway, lat: 13.04129, lon: 80.22865}
+    - {name: Rangarajapuram subway, lat: 13.04581, lon: 80.22983}

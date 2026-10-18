@@ -1,0 +1,48 @@
+hazard: heat
+title: Extreme heat
+group: natural
+sources:
+  ready_heat: {title: "Ready.gov (US FEMA) — Extreme Heat", url: "https://www.ready.gov/heat"}
+  nws_hi: {title: "US National Weather Service — Heat Index classifications", url: "https://www.weather.gov/ama/heatindex"}
+  nws_hi_eq: {title: "US NWS Weather Prediction Center — The Heat Index Equation (Rothfusz regression)", url: "https://www.wpc.ncep.noaa.gov/html/heatindex_equation.shtml"}
+caveats:
+  - "Heat index is computed from the temperature and humidity you set; it is for shade — full sun can raise it by up to 15 °F (NWS)."
+  - "Public buildings shown are mapped community centres and places of worship; whether they are open or cooled is not known. Ask the local health department for cooling centres."
+
+zone_model:
+  type: heat_index
+  classes_f: {caution: 80, extreme_caution: 90, danger: 103, extreme_danger: 125}
+  cool_place_max_walk_m: 1500
+
+params:
+  - {key: temp_c, label: "Air temperature", type: choice, default: 40, options: [[32, "32 °C"], [36, "36 °C"], [40, "40 °C"], [45, "45 °C"]]}
+  - {key: humidity, label: "Humidity", type: choice, default: 40, options: [[20, "20%"], [40, "40%"], [60, "60%"], [80, "80%"]]}
+
+tiers:
+  red: "Heat index 103 °F (39 °C) or more — NWS Danger / Extreme Danger"
+  orange: "Heat index 90–103 °F (32–39 °C) — NWS Extreme Caution"
+  yellow: "Heat index 80–90 °F (27–32 °C) — NWS Caution"
+  green: "Heat index below 80 °F (27 °C)"
+
+moves:
+  red: [STAY_COOL]
+  orange: [STAY_COOL]
+  yellow: [STAY_COOL, STAY_ALERT]
+  green: [STAY_ALERT]
+  forbidden: [LEAVE_PEOPLE_IN_CAR, STRENUOUS_MIDDAY_ACTIVITY, RELY_ON_FAN_ONLY]
+
+advice:
+  - {id: ht.car, source: ready_heat, text: "Never leave people or pets in a closed car on a warm day.", tiers: [red, orange, yellow], situations: [all]}
+  - {id: ht.cooling_center, source: ready_heat, text: "If air conditioning is not available in your home find a cooling center.", tiers: [red, orange], situations: [home_ground, home_upper, needs_assistance]}
+  - {id: ht.shower, source: ready_heat, text: "Take cool showers or baths.", tiers: [red, orange, yellow], situations: [home_ground, home_upper, needs_assistance]}
+  - {id: ht.clothing, source: ready_heat, text: "Wear loose, lightweight, light-colored clothing.", tiers: [red, orange, yellow], situations: [all]}
+  - {id: ht.shade, source: ready_heat, text: "If you're outside, find shade. Wear a hat wide enough to protect your face.", tiers: [red, orange, yellow], situations: [outdoors, needs_assistance]}
+  - {id: ht.fluids, source: ready_heat, text: "Drink plenty of fluids to stay hydrated.", tiers: [red, orange, yellow, green], situations: [all]}
+  - {id: ht.midday, source: ready_heat, text: "Avoid high-energy activities or outdoor work during midday heat if possible.", tiers: [red, orange, yellow], situations: [all]}
+  - {id: ht.check_others, source: ready_heat, text: "Check on family members, older adults and neighbors.", tiers: [red, orange, yellow], situations: [all]}
+  - {id: ht.watch_signs, source: ready_heat, text: "Watch for heat cramps, heat exhaustion and heat stroke.", tiers: [red, orange, yellow], situations: [all]}
+  - {id: ht.fan, source: ready_heat, text: "Do not rely on a fan as your primary cooling device. Fans create air flow and a false sense of comfort, but do not reduce body temperature or prevent heat-related illnesses.", tiers: [red, orange], situations: [home_ground, home_upper, institution, needs_assistance]}
+  - {id: ht.stroke, source: ready_heat, text: "If possible, move the person suffering from heat stroke into a cool, shaded area. Remove any outer clothing. Place a cold, wet cloth or ice pack on the head, neck, armpits, and groin. Alternatively, soak the person's clothing with cool water. Elevate their feet.", tiers: [red], situations: [all]}
+  - {id: ht.exhaustion, source: ready_heat, text: "If you have signs of heat cramps or heat exhaustion, go to a cooler location and cool down by removing excess clothing and taking sips of sports drinks or water.", tiers: [red, orange], situations: [all]}
+  - {id: ht.pets, source: ready_heat, text: "Consider pet safety. If your pets are outside make sure they have plenty of cool water and access to comfortable shade. Asphalt and dark pavement can be very hot to your pet's feet.", tiers: [red, orange, yellow], situations: [home_ground, home_upper]}
+  - {id: ht.oven, source: ready_heat, text: "Use your oven less to help reduce the temperature in your home.", tiers: [orange, yellow], situations: [home_ground, home_upper]}

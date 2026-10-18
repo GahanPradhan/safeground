@@ -1,0 +1,31 @@
+{
+ "id": "rp36204p36164_3000",
+ "name": "Antakya",
+ "admin": "Hatay",
+ "country": "Turkey",
+ "country_code": "TR",
+ "lat": 36.2036546,
+ "lon": 36.1637648,
+ "radius_m": 3000,
+ "built_at": "2026-10-18T18:28:06+0530",
+ "build_seconds": 99.8,
+ "roads": 3054,
+ "graph_nodes": 5003,
+ "features": 170,
+ "blocks": 267,
+ "blocks_with_satellite_data": 267,
+ "history_records": 13,
+ "notes": [],
+ "emergency": {
+  "call": [
+   {
+    "number": "112",
+    "for": "Emergency"
+   }
+  ],
+  "source": "https://en.wikipedia.org/wiki/List_of_emergency_telephone_numbers",
+  "known": true
+ },
+ "map_data_source": "OpenStreetMap via the Overpass API",
+ "osm_timestamp": "2026-10-18T12:55:21Z"
+}

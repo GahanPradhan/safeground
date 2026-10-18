@@ -1,0 +1,31 @@
+{
+ "id": "rp50490p30429_3000",
+ "name": "Podilskyi district",
+ "admin": null,
+ "country": "Ukraine",
+ "country_code": "UA",
+ "lat": 50.4895076,
+ "lon": 30.4287653,
+ "radius_m": 3000,
+ "built_at": "2026-10-18T18:29:44+0530",
+ "build_seconds": 97.3,
+ "roads": 8499,
+ "graph_nodes": 11701,
+ "features": 2211,
+ "blocks": 312,
+ "blocks_with_satellite_data": 312,
+ "history_records": 8,
+ "notes": [],
+ "emergency": {
+  "call": [
+   {
+    "number": "112",
+    "for": "Emergency"
+   }
+  ],
+  "source": "https://en.wikipedia.org/wiki/List_of_emergency_telephone_numbers",
+  "known": true
+ },
+ "map_data_source": "OpenStreetMap via the Overpass API",
+ "osm_timestamp": "2026-10-18T12:57:21Z"
+}

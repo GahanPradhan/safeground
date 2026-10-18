@@ -1,0 +1,162 @@
+[
+ {
+  "type": "extreme rainfall",
+  "date": "2004-10-08",
+  "what_happened": "168 mm of rain in one day at this location (CHIRPS satellite-gauge estimate).",
+  "source_url": "https://developers.google.com/earth-engine/datasets/catalog/UCSB-CHG_CHIRPS_DAILY",
+  "url": "https://developers.google.com/earth-engine/datasets/catalog/UCSB-CHG_CHIRPS_DAILY",
+  "evidence_kind": "dataset"
+ },
+ {
+  "type": "extreme rainfall",
+  "date": "2004-09-04",
+  "what_happened": "150 mm of rain in one day at this location (CHIRPS satellite-gauge estimate).",
+  "source_url": "https://developers.google.com/earth-engine/datasets/catalog/UCSB-CHG_CHIRPS_DAILY",
+  "url": "https://developers.google.com/earth-engine/datasets/catalog/UCSB-CHG_CHIRPS_DAILY",
+  "evidence_kind": "dataset"
+ },
+ {
+  "type": "extreme rainfall",
+  "date": "2005-08-25",
+  "what_happened": "139 mm of rain in one day at this location (CHIRPS satellite-gauge estimate).",
+  "source_url": "https://developers.google.com/earth-engine/datasets/catalog/UCSB-CHG_CHIRPS_DAILY",
+  "url": "https://developers.google.com/earth-engine/datasets/catalog/UCSB-CHG_CHIRPS_DAILY",
+  "evidence_kind": "dataset"
+ },
+ {
+  "type": "extreme rainfall",
+  "date": "2003-08-14",
+  "what_happened": "135 mm of rain in one day at this location (CHIRPS satellite-gauge estimate).",
+  "source_url": "https://developers.google.com/earth-engine/datasets/catalog/UCSB-CHG_CHIRPS_DAILY",
+  "url": "https://developers.google.com/earth-engine/datasets/catalog/UCSB-CHG_CHIRPS_DAILY",
+  "evidence_kind": "dataset"
+ },
+ {
+  "type": "extreme rainfall",
+  "date": "2009-10-07",
+  "what_happened": "134 mm of rain in one day at this location (CHIRPS satellite-gauge estimate).",
+  "source_url": "https://developers.google.com/earth-engine/datasets/catalog/UCSB-CHG_CHIRPS_DAILY",
+  "url": "https://developers.google.com/earth-engine/datasets/catalog/UCSB-CHG_CHIRPS_DAILY",
+  "evidence_kind": "dataset"
+ },
+ {
+  "type": "extreme rainfall (summary)",
+  "date": "2001-2025",
+  "what_happened": "7 days with at least 115.6 mm of rain between 2001 and 2025 (CHIRPS satellite-gauge estimate; 115.6 mm is the India Meteorological Department 'very heavy' threshold, used here as a common marker).",
+  "source_url": "https://developers.google.com/earth-engine/datasets/catalog/UCSB-CHG_CHIRPS_DAILY",
+  "url": "https://developers.google.com/earth-engine/datasets/catalog/UCSB-CHG_CHIRPS_DAILY",
+  "evidence_kind": "dataset"
+ },
+ {
+  "type": "earthquake",
+  "date": "2011-03-11",
+  "what_happened": "Magnitude 7.9 earthquake, 145 km from this place (47 km E of ?arai, Japan); depth 43 km.",
+  "source_url": "https://earthquake.usgs.gov/earthquakes/eventpage/usp000hvpa",
+  "url": "https://earthquake.usgs.gov/earthquakes/eventpage/usp000hvpa",
+  "evidence_kind": "dataset"
+ },
+ {
+  "type": "earthquake",
+  "date": "1982-07-23",
+  "what_happened": "Magnitude 7.1 earthquake, 190 km from this place (93 km ENE of Hasaki, Japan); depth 37 km.",
+  "source_url": "https://earthquake.usgs.gov/earthquakes/eventpage/usp0001nkk",
+  "url": "https://earthquake.usgs.gov/earthquakes/eventpage/usp0001nkk",
+  "evidence_kind": "dataset"
+ },
+ {
+  "type": "earthquake",
+  "date": "2008-05-07",
+  "what_happened": "Magnitude 6.9 earthquake, 174 km from this place (78 km NE of Hasaki, Japan); depth 27 km.",
+  "source_url": "https://earthquake.usgs.gov/earthquakes/eventpage/usp000g5rx",
+  "url": "https://earthquake.usgs.gov/earthquakes/eventpage/usp000g5rx",
+  "evidence_kind": "dataset"
+ },
+ {
+  "type": "earthquake",
+  "date": "1987-12-17",
+  "what_happened": "Magnitude 6.7 earthquake, 58 km from this place (10 km SW of Mobara, Japan); depth 63 km.",
+  "source_url": "https://earthquake.usgs.gov/earthquakes/eventpage/usp0003bbq",
+  "url": "https://earthquake.usgs.gov/earthquakes/eventpage/usp0003bbq",
+  "evidence_kind": "dataset"
+ },
+ {
+  "type": "earthquake",
+  "date": "2004-10-23",
+  "what_happened": "Magnitude 6.6 earthquake, 192 km from this place (8 km SSW of Ojiya, Japan); depth 16 km.",
+  "source_url": "https://earthquake.usgs.gov/earthquakes/eventpage/usp000d6vk",
+  "url": "https://earthquake.usgs.gov/earthquakes/eventpage/usp000d6vk",
+  "evidence_kind": "dataset"
+ },
+ {
+  "type": "earthquake (summary)",
+  "date": "1970-2026",
+  "what_happened": "200+ earthquakes of magnitude 5.5 or more within 200 km since 1970 (USGS catalogue).",
+  "source_url": "https://earthquake.usgs.gov/earthquakes/search/",
+  "url": "https://earthquake.usgs.gov/earthquakes/search/",
+  "evidence_kind": "dataset"
+ },
+ {
+  "type": "tropical cyclone",
+  "date": "2017-10-15",
+  "what_happened": "Tropical Cyclone LAN-17 \u2014 GDACS red alert; Hurricane/Typhoon > 74 mph (maximum wind speed of 250 km/h) (event reference point 249 km away).",
+  "source_url": "https://www.gdacs.org/report.aspx?eventid=1000412&episodeid=31&eventtype=TC",
+  "url": "https://www.gdacs.org/report.aspx?eventid=1000412&episodeid=31&eventtype=TC",
+  "evidence_kind": "dataset"
+ },
+ {
+  "type": "flood",
+  "date": "2019-10-11",
+  "what_happened": "Flood in Japan \u2014 GDACS orange alert (event reference point 4 km away).",
+  "source_url": "https://www.gdacs.org/report.aspx?eventid=1100281&episodeid=1&eventtype=FL",
+  "url": "https://www.gdacs.org/report.aspx?eventid=1100281&episodeid=1&eventtype=FL",
+  "evidence_kind": "dataset"
+ },
+ {
+  "type": "tropical cyclone",
+  "date": "2016-09-11",
+  "what_happened": "Tropical Cyclone MALAKAS-16 \u2014 GDACS orange alert; Tropical Depression (maximum wind speed of 213 km/h) (event reference point 273 km away).",
+  "source_url": "https://www.gdacs.org/report.aspx?eventid=1000305&episodeid=37&eventtype=TC",
+  "url": "https://www.gdacs.org/report.aspx?eventid=1000305&episodeid=37&eventtype=TC",
+  "evidence_kind": "dataset"
+ },
+ {
+  "type": "earthquake",
+  "date": "2011-03-11",
+  "what_happened": "Earthquake in Japan \u2014 GDACS orange alert; Magnitude 6.1M, Depth:20km (event reference point 138 km away).",
+  "source_url": "https://www.gdacs.org/report.aspx?eventid=104724&episodeid=104760&eventtype=EQ",
+  "url": "https://www.gdacs.org/report.aspx?eventid=104724&episodeid=104760&eventtype=EQ",
+  "evidence_kind": "dataset"
+ },
+ {
+  "type": "earthquake",
+  "date": "2011-03-11",
+  "what_happened": "Earthquake in Japan \u2014 GDACS orange alert; Magnitude 7.9M, Depth:39km (event reference point 145 km away).",
+  "source_url": "https://www.gdacs.org/report.aspx?eventid=104722&episodeid=105627&eventtype=EQ",
+  "url": "https://www.gdacs.org/report.aspx?eventid=104722&episodeid=105627&eventtype=EQ",
+  "evidence_kind": "dataset"
+ },
+ {
+  "type": "earthquake",
+  "date": "2011-04-11",
+  "what_happened": "Earthquake in Japan \u2014 GDACS orange alert; Magnitude 6.2M, Depth:13.1km (event reference point 82 km away).",
+  "source_url": "https://www.gdacs.org/report.aspx?eventid=107056&episodeid=107057&eventtype=EQ",
+  "url": "https://www.gdacs.org/report.aspx?eventid=107056&episodeid=107057&eventtype=EQ",
+  "evidence_kind": "dataset"
+ },
+ {
+  "type": "earthquake",
+  "date": "2011-04-11",
+  "what_happened": "Earthquake in Japan \u2014 GDACS orange alert; Magnitude 6.6M, Depth:10km (event reference point 165 km away).",
+  "source_url": "https://www.gdacs.org/report.aspx?eventid=107011&episodeid=107017&eventtype=EQ",
+  "url": "https://www.gdacs.org/report.aspx?eventid=107011&episodeid=107017&eventtype=EQ",
+  "evidence_kind": "dataset"
+ },
+ {
+  "type": "earthquake",
+  "date": "2011-04-21",
+  "what_happened": "Earthquake in Japan \u2014 GDACS orange alert; Magnitude 6.1M, Depth:42.9km (event reference point 68 km away).",
+  "source_url": "https://www.gdacs.org/report.aspx?eventid=107540&episodeid=107540&eventtype=EQ",
+  "url": "https://www.gdacs.org/report.aspx?eventid=107540&episodeid=107540&eventtype=EQ",
+  "evidence_kind": "dataset"
+ }
+]

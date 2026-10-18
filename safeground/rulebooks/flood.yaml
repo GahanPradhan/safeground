@@ -1,0 +1,54 @@
+hazard: flood
+title: Flood / heavy rain
+group: natural
+sources:
+  jk_dmrrr: {title: "Do's and Don'ts during Floods — Department of Disaster Management, Relief, Rehabilitation & Reconstruction, Govt of Jammu & Kashmir", url: "https://dmrrr.jk.gov.in/DosAndDontFlood.html"}
+  imd_rain_classes: {title: "IMD 24-hour rainfall intensity categories (heavy 64.5–115.5 mm, very heavy 115.6–204.4 mm, extremely heavy ≥204.5 mm)", url: "https://mausam.imd.gov.in/"}
+caveats:
+  - "Flood tiers are a susceptibility estimate from land height, nearby water and rainfall; they are not a flood forecast. Use official IMD / Flood Hub warnings."
+  - "Elevation is a 30 m surface model with several metres of vertical error; small height differences are not reliable."
+  - "Much urban street flooding comes from overwhelmed drains and built-over lakes and wetlands, which land-height data does not capture. Reported waterlogging points override the estimate."
+
+zone_model:
+  type: susceptibility
+  rain_levels_mm_24h: {moderate: 15.6, heavy: 64.5, very_heavy: 115.6, extremely_heavy: 204.5}
+  reported_point_buffer_m: 300
+
+params:
+  - {key: rain_mm_24h, label: "Rain in 24 h", type: choice, default: 150, options: [[30, "30 mm"], [80, "80 mm"], [150, "150 mm"], [250, "250 mm"]]}
+  - {key: reported_points, label: "Reported flooding", type: points, help: "Mark streets already flooded; they override the terrain estimate"}
+
+tiers:
+  red: "Reported flooding nearby, or very low-lying land next to water during very heavy rain"
+  orange: "Low-lying land during heavy rain"
+  yellow: "Somewhat low-lying land"
+  green: "Relatively higher ground"
+
+moves:
+  red: [GO_UP, AVOID]
+  orange: [GO_UP, AVOID, STAY_ALERT]
+  yellow: [STAY_ALERT, AVOID]
+  green: [STAY_ALERT]
+  forbidden: [GO_DOWN, DRIVE_THROUGH_WATER, WALK_IN_MOVING_WATER, APPROACH_POWER_LINES, ENTER_UNDERPASS]
+
+advice:
+  - {id: fl.enter_water, source: jk_dmrrr, text: "Don't enter flood waters. If you need to enter, then wear suitable footwear", tiers: [red, orange, yellow], situations: [all]}
+  - {id: fl.moving_water, source: jk_dmrrr, text: "Don't walk through moving water. If you have to walk in water, walk where the water is not moving. Use a stick to check the firmness of the ground in front of you", tiers: [red, orange], situations: [outdoors, needs_assistance]}
+  - {id: fl.power_lines, source: jk_dmrrr, text: "Don't get near the electric poles and fallen power-lines to avoid electrocution", tiers: [red, orange, yellow], situations: [all]}
+  - {id: fl.drains, source: jk_dmrrr, text: "Don't get near the sewage line, gutters, drains, culverts etc.", tiers: [red, orange, yellow], situations: [outdoors, vehicle, needs_assistance]}
+  - {id: fl.drive, source: jk_dmrrr, text: "Don't drive into flooded areas. If floodwaters rise around your car, abandon the car and move to higher ground if you can do so safely. You and the vehicle can be quickly swept away", tiers: [red, orange, yellow], situations: [vehicle]}
+  - {id: fl.raise_items, source: jk_dmrrr, text: "Raise furniture, electrical appliances on beds and tables", tiers: [orange, yellow], situations: [home_ground]}
+  - {id: fl.sandbags, source: jk_dmrrr, text: "Put sandbags in the toilet bowl and cover all drain holes to prevent sewage back flow.", tiers: [orange, yellow], situations: [home_ground]}
+  - {id: fl.evacuation_pack, source: jk_dmrrr, text: "If you are being evacuated: pack some clothing, essential medication, valuables, important documents in water proof bags to be taken to the safe shelter; and turn off power and gas connection before leaving the house", tiers: [red, orange], situations: [home_ground, home_upper, needs_assistance]}
+  - {id: fl.follow_officials, source: jk_dmrrr, text: "Stay in touch with local officials. Follow instructions when asked to evacuate", tiers: [red, orange, yellow, green], situations: [all]}
+  - {id: fl.updates, source: jk_dmrrr, text: "Listen to radio or watch television for the latest weather bulletin and flood warnings", tiers: [red, orange, yellow, green], situations: [all]}
+  - {id: fl.phone, source: jk_dmrrr, text: "Keep your mobile phones charged", tiers: [red, orange, yellow, green], situations: [all]}
+  - {id: fl.kit, source: jk_dmrrr, text: "Keep strong ropes, a lantern, battery operated torches, extra batteries ready", tiers: [orange, yellow], situations: [home_ground, home_upper, institution]}
+  - {id: fl.first_aid, source: jk_dmrrr, text: "Keep the First Aid Kit Ready with extra medication for snake bite and diarrhea", tiers: [orange, yellow], situations: [home_ground, home_upper, institution, needs_assistance]}
+  - {id: fl.children, source: jk_dmrrr, text: "Don't allow children to play in or near flood waters", tiers: [red, orange, yellow], situations: [home_ground, home_upper, institution, needs_assistance]}
+  - {id: fl.cattle, source: jk_dmrrr, text: "Keep cattle untied to ensure their safety", tiers: [red, orange], situations: [home_ground]}
+  - {id: fl.stay_shelter, source: jk_dmrrr, text: "Don't leave the safe shelter until the local officials declare normalcy", tiers: [red, orange], situations: [all]}
+  - {id: fl.rumours, source: jk_dmrrr, text: "Avoid spreading rumours, you not sure about; stay updated with authentic official update being disseminated through Radio or TV channels", tiers: [red, orange, yellow, green], situations: [all]}
+  - {id: fl.water, source: jk_dmrrr, text: "Drink boiled water or use chlorine tablets to purify water before drinking as advised by Health Department", tiers: [red, orange], situations: [all]}
+  - {id: fl.food, source: jk_dmrrr, text: "Don't eat food which has been in flood waters", tiers: [red, orange], situations: [all]}
+  - {id: fl.after_hazards, source: jk_dmrrr, text: "After the flood recedes, watch out for broken electric poles, damaged bridges, broken glass, sharp objects and debris", tiers: [red, orange, yellow], situations: [all]}

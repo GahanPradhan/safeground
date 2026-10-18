@@ -1,0 +1,27 @@
+# Operational underground Chennai Metro stations (OSM tags do not reliably mark underground stations).
+source:
+  title: "List of Chennai Metro stations — layout 'Underground' (Wikipedia, checked 18 Oct 2026)"
+  url: "https://en.wikipedia.org/wiki/List_of_Chennai_Metro_stations"
+# official name: OSM name variants used in the Chennai extract
+stations:
+  "AG-DMS": ["AG-DMS", "AG – DMS", "AG DMS"]
+  "Anna Nagar East": ["Anna Nagar East"]
+  "Anna Nagar Tower": ["Anna Nagar Tower"]
+  "Egmore": ["Egmore", "Egmore Metro"]
+  "Government Estate": ["Government Estate"]
+  "High Court": ["High Court"]
+  "Kilpauk Medical College": ["Kilpauk", "Kilpauk Medical College"]
+  "LIC": ["LIC"]
+  "Mannadi": ["Mannadi"]
+  "Nandanam": ["Nandanam"]
+  "Nehru Park": ["Nehru Park"]
+  "Pachaiyappa's College": ["Pachaiyappa's College"]
+  "Puratchi Thalaivar Dr. M.G. Ramachandran Central": ["Central Metro", "Puratchi Thalaivar Dr. M.G. Ramachandran Central", "Chennai Central Metro"]
+  "Saidapet": ["Saidapet", "Saidapet Metro"]
+  "Shenoy Nagar": ["Shenoy Nagar"]
+  "Sir Theagaraya College": ["Sir Theagaraya College"]
+  "Teynampet": ["Teynampet"]
+  "Thirumangalam": ["Thirumangalam"]
+  "Thousand Lights": ["Thousand Lights"]
+  "Tondiarpet": ["Tondiarpet"]
+  "Washermanpet": ["Washermanpet"]

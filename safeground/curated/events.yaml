@@ -1,0 +1,51 @@
+# Hand-curated past calamities for the showcase areas, each with a public source.
+# Used alongside dataset records (and live Google Search results when that is switched on).
+# what_happened paraphrases the source; numbers are as reported by the source.
+"Velachery":
+  - type: flood
+    date: "2023-12-05"
+    what_happened: "During Cyclone Michaung, most residential neighbourhoods in Velachery had about four feet of water and residents were forced to evacuate; they said little had changed since 2015."
+    url: "https://www.thenewsminute.com/amp/story/tamil-nadu/chennai-floods-velachery-residents-forced-to-evacuate-say-little-has-changed-since-2015"
+  - type: flood
+    date: "2023-12-09"
+    what_happened: "Inter-agency situation report: Velachery and Perungudi were among areas still underwater five days after Cyclone Michaung."
+    url: "https://www.sphereindia.org.in/sites/default/files/2023-12/SitRep3_CycloneMichaung_09-12-23.pdf"
+  - type: flood
+    date: "2015-12"
+    what_happened: "Velachery, Pallikaranai and Thoraipakkam were among the worst-hit areas in the December 2015 Chennai floods; reporters cite experts linking this to wetlands converted to real estate."
+    url: "https://www.thequint.com/india/2016/07/11/more-wetlands-vanish-as-chennai-refuses-to-learn-from-2015-floods"
+  - type: wetland loss
+    date: "2016"
+    what_happened: "Report on continued filling of the Pallikaranai marsh for construction after the 2015 floods."
+    url: "https://www.thenewsminute.com/tamil-nadu/swallowing-pallikaranai-marsh-chennaiites-are-refusing-learn-2015-floods-46251"
+"T. Nagar":
+  - type: flood (subway closures)
+    date: "2023-12-04"
+    what_happened: "During Cyclone Michaung, Madley, Duraisamy (Doraiswamy) and Rangarajapuram subways in and around T. Nagar were among the subways closed due to waterlogging."
+    url: "https://www.thenewsminute.com/tamil-nadu/chennai-rains-list-of-subways-closed-and-traffic-updates"
+  - type: flood (subway closures)
+    date: "2023-12-04"
+    what_happened: "Police said around 17 subways across Chennai, including Duraisamy subway, were closed due to waterlogging during Cyclone Michaung."
+    url: "https://www.dtnext.in/news/chennai/cyclone-michaung-8-people-died-subways-roads-closed-cm-stalin-inspects-relief-camps-in-chennai-752471"
+"Ennore":
+  - type: gas leak (ammonia)
+    date: "2023-12-26"
+    what_happened: "Ammonia leaked from Coromandel International's subsea pipeline near Periyakuppam and Chinnakuppam around 11:45 pm; the pollution board told the NGT that 67.638 tonnes leaked."
+    url: "https://thenewsminute.com/amp/story/tamil-nadu/ennore-gas-leak-tnpcb-says-67-tonnes-of-ammonia-leaked-from-coromandel"
+  - type: gas leak (ammonia)
+    date: "2023-12-27"
+    what_happened: "Residents fled their homes in the early hours after the ammonia leak; dozens were hospitalised."
+    url: "https://www.dtnext.in/news/chennai/panic-in-ennore-as-ammonia-gas-leak-756957"
+  - type: cascade (cyclone -> pipeline damage)
+    date: "2024"
+    what_happened: "A Tamil Nadu government technical committee said Cyclone Michaung could have damaged the ammonia pipeline that leaked."
+    url: "https://www.thenewsminute.com/amp/story/tamil-nadu/ennore-gas-leak-tn-govt-report-says-cyclone-could-have-damaged-cil-ammonia-pipeline"
+  - type: oil spill
+    date: "2023-12-04"
+    what_happened: "Oil from the CPCL refinery premises flowed into the Buckingham Canal and Ennore Creek during the Michaung floods, stopping fishing for fishers in eight villages."
+    url: "https://thenewsminute.com/tamil-nadu/oil-spill-in-chennais-ennore-creek-destroys-livelihoods-of-fishers-in-eight-villages"
+"Manali":
+  - type: oil spill
+    date: "2023-12-04"
+    what_happened: "Oil from the CPCL refinery premises in Manali flowed into the Buckingham Canal and Ennore Creek during the Michaung floods."
+    url: "https://thenewsminute.com/tamil-nadu/oil-spill-in-chennais-ennore-creek-destroys-livelihoods-of-fishers-in-eight-villages"

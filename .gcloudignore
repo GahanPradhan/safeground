@@ -1,0 +1,17 @@
+# Never upload secrets or local-only files to Cloud Build
+.env
+.env.*
+!.env.example
+.venv/
+data/raw/
+__pycache__/
+*.pyc
+.git/
+.gitignore
+.pytest_cache/
+*.log
+tests/
+eval/
+pipeline/
+docs/
+/cache/

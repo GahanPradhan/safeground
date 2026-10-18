@@ -1,0 +1,27 @@
+{
+ "id": "rp32759p22638_3000",
+ "name": "Darnah",
+ "admin": "Darnah",
+ "country": "Libya",
+ "country_code": "LY",
+ "lat": 32.7593795,
+ "lon": 22.6383195,
+ "radius_m": 3000,
+ "built_at": "2026-10-18T18:44:47+0530",
+ "build_seconds": 81.8,
+ "roads": 4511,
+ "graph_nodes": 4312,
+ "features": 73,
+ "blocks": 247,
+ "blocks_with_satellite_data": 247,
+ "history_records": 4,
+ "notes": [],
+ "emergency": {
+  "call": [],
+  "source": "https://en.wikipedia.org/wiki/List_of_emergency_telephone_numbers",
+  "known": false,
+  "note": "SafeGround does not have a checked emergency number for this country; find the local number now."
+ },
+ "map_data_source": "OpenFreeMap \u00a9 OpenMapTiles, data \u00a9 OpenStreetMap contributors",
+ "osm_timestamp": null
+}

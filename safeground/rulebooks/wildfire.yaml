@@ -1,0 +1,47 @@
+hazard: wildfire
+title: Wildfire
+group: natural
+sources:
+  ready_wf: {title: "Ready.gov (US FEMA) — Wildfires", url: "https://www.ready.gov/wildfires"}
+  cruz_2019: {title: "Cruz & Alexander (2019), The 10% wind speed rule of thumb for estimating a wildfire's forward rate of spread in forests and shrublands, Annals of Forest Science 76:44", url: "https://annforsci.biomedcentral.com/articles/10.1007/s13595-019-0829-8"}
+caveats:
+  - "Fire-spread zones use a published rule of thumb (forward spread about 10% of the open wind speed, for forests and shrublands). Grass fires can move faster; built-up areas burn differently. It is not a fire-behaviour model."
+  - "Embers can start spot fires well ahead of the main fire; leave early."
+  - "The yellow band (±22.5° around the wind direction) is a SafeGround buffer for wind uncertainty."
+
+zone_model:
+  type: fire_spread
+  spread_fraction_of_wind: 0.10
+  red_hours: 1
+  orange_hours: 3
+  min_radius_m: 300
+  half_angle_deg: 30
+  uncertainty_deg: 22.5
+
+params:
+  - {key: wind, label: "Wind", type: wind, default_from: 45, default_speed: 6}
+
+tiers:
+  red: "Fire could reach this spot within about 1 hour"
+  orange: "Fire could reach this spot within about 3 hours"
+  yellow: "Wind-uncertainty band — smoke likely, be ready to leave"
+  green: "Outside the estimated spread zone"
+
+moves:
+  red: [EVACUATE_AWAY_FROM_FIRE]
+  orange: [EVACUATE_AWAY_FROM_FIRE]
+  yellow: [STAY_ALERT]
+  green: [STAY_ALERT]
+  forbidden: [MOVE_DOWNWIND, APPROACH_FIRE, WAIT_UNTIL_FLAMES_VISIBLE]
+
+advice:
+  - {id: wf.evacuate, source: ready_wf, text: "Evacuate immediately if authorities tell you to do so. Check with local authorities for the latest information about public shelters or check open locations on the FEMA app.", tiers: [red, orange, yellow], situations: [all]}
+  - {id: wf.alerts, source: ready_wf, text: "Pay attention to emergency alerts and notifications for information and instructions.", tiers: [red, orange, yellow, green], situations: [all]}
+  - {id: wf.smoke_room, source: ready_wf, text: "Use an N95 mask to protect yourself from smoke inhalation or limit your exposure to smoke by doing the following: Choose a room to close off from outside air and set up a portable air cleaner or filter to keep the air in this room clean even when it's smoky in the rest of the building and outdoors.", tiers: [yellow, green], situations: [home_ground, home_upper, institution, needs_assistance]}
+  - {id: wf.smoky_inside, source: ready_wf, text: "If you are not ordered to evacuate but smoky conditions exist, stay inside in a safe location or go to a community building where smoke levels are lower.", tiers: [yellow, green], situations: [all]}
+  - {id: wf.trapped_lights, source: ready_wf, text: "Turn on lights to help rescuers find you.", tiers: [red, orange], situations: [home_ground, home_upper, institution, needs_assistance]}
+  - {id: wf.recirculate, source: ready_wf, text: "If your system has fresh air intake, set the system to “recirculate” mode and close the outdoor intake damper.", tiers: [yellow, green], situations: [home_ground, home_upper, institution]}
+  - {id: wf.flammables, source: ready_wf, text: "Be cautious when carrying flammable or combustible household products that can cause fires or explosions if handled wrong, such as aerosols, cooking oils, rubbing alcohol and hand sanitizer", tiers: [red, orange], situations: [vehicle, home_ground, home_upper]}
+  - {id: wf.pets, source: ready_wf, text: "You may have to evacuate quickly due to a wildfire. Learn your evacuation routes, practice with pets and identify where you will go.", tiers: [orange, yellow], situations: [home_ground, home_upper]}
+  - {id: wf.return, source: ready_wf, text: "Do not return home until authorities say it is safe to do so.", tiers: [red, orange], situations: [all]}
+  - {id: wf.embers, source: ready_wf, text: "Avoid hot ash, charred trees, smoldering debris and live embers. The ground may contain heat pockets that can burn you or spark another fire.", tiers: [red, orange], situations: [outdoors, vehicle, needs_assistance]}

@@ -1,0 +1,30 @@
+{
+ "id": "rp39428m0418_3000",
+ "name": "Paiporta",
+ "country": "Spain",
+ "country_code": "ES",
+ "lat": 39.4279722,
+ "lon": -0.4184254,
+ "radius_m": 3000,
+ "built_at": "2026-10-18T18:05:49+0530",
+ "build_seconds": 111.6,
+ "roads": 11406,
+ "graph_nodes": 19604,
+ "features": 1550,
+ "blocks": 304,
+ "blocks_with_satellite_data": 304,
+ "history_records": 17,
+ "notes": [],
+ "emergency": {
+  "call": [
+   {
+    "number": "112",
+    "for": "Emergency (police, fire, ambulance)"
+   }
+  ],
+  "source": "https://en.wikipedia.org/wiki/List_of_emergency_telephone_numbers",
+  "known": true
+ },
+ "osm_timestamp": "2026-10-18T12:33:02Z",
+ "admin": "Valencian Community"
+}

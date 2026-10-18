@@ -1,0 +1,39 @@
+{
+ "id": "rp33905p35505_3000",
+ "name": "Port of Beirut",
+ "admin": "Beirut",
+ "country": "Lebanon",
+ "country_code": "LB",
+ "lat": 33.9054899,
+ "lon": 35.5052221,
+ "radius_m": 3000,
+ "built_at": "2026-10-18T18:26:26+0530",
+ "build_seconds": 82.6,
+ "roads": 3761,
+ "graph_nodes": 5141,
+ "features": 397,
+ "blocks": 264,
+ "blocks_with_satellite_data": 264,
+ "history_records": 16,
+ "notes": [],
+ "emergency": {
+  "call": [
+   {
+    "number": "112",
+    "for": "Police"
+   },
+   {
+    "number": "140",
+    "for": "Ambulance (Lebanese Red Cross)"
+   },
+   {
+    "number": "175",
+    "for": "Civil defence and fire"
+   }
+  ],
+  "source": "https://en.wikipedia.org/wiki/List_of_emergency_telephone_numbers",
+  "known": true
+ },
+ "map_data_source": "OpenStreetMap via the Overpass API",
+ "osm_timestamp": "2026-10-18T12:54:20Z"
+}

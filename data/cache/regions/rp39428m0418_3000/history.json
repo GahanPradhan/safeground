@@ -1,0 +1,138 @@
+[
+ {
+  "type": "extreme rainfall",
+  "date": "2019-09-13",
+  "what_happened": "69 mm of rain in one day at this location (CHIRPS satellite-gauge estimate).",
+  "source_url": "https://developers.google.com/earth-engine/datasets/catalog/UCSB-CHG_CHIRPS_DAILY",
+  "url": "https://developers.google.com/earth-engine/datasets/catalog/UCSB-CHG_CHIRPS_DAILY",
+  "evidence_kind": "dataset"
+ },
+ {
+  "type": "extreme rainfall",
+  "date": "2005-09-07",
+  "what_happened": "60 mm of rain in one day at this location (CHIRPS satellite-gauge estimate).",
+  "source_url": "https://developers.google.com/earth-engine/datasets/catalog/UCSB-CHG_CHIRPS_DAILY",
+  "url": "https://developers.google.com/earth-engine/datasets/catalog/UCSB-CHG_CHIRPS_DAILY",
+  "evidence_kind": "dataset"
+ },
+ {
+  "type": "extreme rainfall",
+  "date": "2007-10-12",
+  "what_happened": "48 mm of rain in one day at this location (CHIRPS satellite-gauge estimate).",
+  "source_url": "https://developers.google.com/earth-engine/datasets/catalog/UCSB-CHG_CHIRPS_DAILY",
+  "url": "https://developers.google.com/earth-engine/datasets/catalog/UCSB-CHG_CHIRPS_DAILY",
+  "evidence_kind": "dataset"
+ },
+ {
+  "type": "extreme rainfall",
+  "date": "2024-10-29",
+  "what_happened": "48 mm of rain in one day at this location (CHIRPS satellite-gauge estimate).",
+  "source_url": "https://developers.google.com/earth-engine/datasets/catalog/UCSB-CHG_CHIRPS_DAILY",
+  "url": "https://developers.google.com/earth-engine/datasets/catalog/UCSB-CHG_CHIRPS_DAILY",
+  "evidence_kind": "dataset"
+ },
+ {
+  "type": "extreme rainfall",
+  "date": "2025-09-29",
+  "what_happened": "42 mm of rain in one day at this location (CHIRPS satellite-gauge estimate).",
+  "source_url": "https://developers.google.com/earth-engine/datasets/catalog/UCSB-CHG_CHIRPS_DAILY",
+  "url": "https://developers.google.com/earth-engine/datasets/catalog/UCSB-CHG_CHIRPS_DAILY",
+  "evidence_kind": "dataset"
+ },
+ {
+  "type": "extreme rainfall (summary)",
+  "date": "2001-2025",
+  "what_happened": "0 days with at least 115.6 mm of rain between 2001 and 2025 (CHIRPS satellite-gauge estimate; 115.6 mm is the India Meteorological Department 'very heavy' threshold, used here as a common marker).",
+  "source_url": "https://developers.google.com/earth-engine/datasets/catalog/UCSB-CHG_CHIRPS_DAILY",
+  "url": "https://developers.google.com/earth-engine/datasets/catalog/UCSB-CHG_CHIRPS_DAILY",
+  "evidence_kind": "dataset"
+ },
+ {
+  "type": "fire (satellite detection)",
+  "date": "2001-2024",
+  "what_happened": "Satellite fire detections on 7 days (by year: {'2001': 1, '2004': 1, '2008': 1, '2011': 1, '2014': 1, '2021': 1, '2024': 1}); in a city these are often industrial flares or waste burning, not wildfires (FIRMS, 1 km).",
+  "source_url": "https://developers.google.com/earth-engine/datasets/catalog/FIRMS",
+  "url": "https://developers.google.com/earth-engine/datasets/catalog/FIRMS",
+  "evidence_kind": "dataset"
+ },
+ {
+  "type": "earthquake",
+  "date": "1976-09-26",
+  "what_happened": "Magnitude 5.6 earthquake, 74 km from this place (2 km ENE of Bocairent, Spain); depth 10 km.",
+  "source_url": "https://earthquake.usgs.gov/earthquakes/eventpage/usp0000jmb",
+  "url": "https://earthquake.usgs.gov/earthquakes/eventpage/usp0000jmb",
+  "evidence_kind": "dataset"
+ },
+ {
+  "type": "earthquake (summary)",
+  "date": "1970-2026",
+  "what_happened": "1 earthquakes of magnitude 5.5 or more within 200 km since 1970 (USGS catalogue).",
+  "source_url": "https://earthquake.usgs.gov/earthquakes/search/",
+  "url": "https://earthquake.usgs.gov/earthquakes/search/",
+  "evidence_kind": "dataset"
+ },
+ {
+  "type": "wildfire",
+  "date": "2026-07-25",
+  "what_happened": "Forest fires in Spain \u2014 GDACS orange alert; Orange impact for forestfire in 13370 ha (event reference point 53 km away).",
+  "source_url": "https://www.gdacs.org/report.aspx?eventid=1029794&episodeid=15&eventtype=WF",
+  "url": "https://www.gdacs.org/report.aspx?eventid=1029794&episodeid=15&eventtype=WF",
+  "evidence_kind": "dataset"
+ },
+ {
+  "type": "flood",
+  "date": "2026-03-06",
+  "what_happened": "Flood in Spain \u2014 GDACS green alert; Magnitude 0 (event reference point 119 km away).",
+  "source_url": "https://www.gdacs.org/report.aspx?eventid=1103795&episodeid=3&eventtype=FL",
+  "url": "https://www.gdacs.org/report.aspx?eventid=1103795&episodeid=3&eventtype=FL",
+  "evidence_kind": "dataset"
+ },
+ {
+  "type": "flood",
+  "date": "2025-04-22",
+  "what_happened": "Flood in Spain \u2014 GDACS green alert; Magnitude 0 (event reference point 4 km away).",
+  "source_url": "https://www.gdacs.org/report.aspx?eventid=1103229&episodeid=1&eventtype=FL",
+  "url": "https://www.gdacs.org/report.aspx?eventid=1103229&episodeid=1&eventtype=FL",
+  "evidence_kind": "dataset"
+ },
+ {
+  "type": "flood",
+  "date": "2025-05-10",
+  "what_happened": "Flood in Spain \u2014 GDACS green alert; Magnitude 0 (event reference point 108 km away).",
+  "source_url": "https://www.gdacs.org/report.aspx?eventid=1103267&episodeid=4&eventtype=FL",
+  "url": "https://www.gdacs.org/report.aspx?eventid=1103267&episodeid=4&eventtype=FL",
+  "evidence_kind": "dataset"
+ },
+ {
+  "type": "wildfire",
+  "date": "2024-04-13",
+  "what_happened": "Forest fires in Spain \u2014 GDACS green alert; Green impact for forestfire in 347 ha (event reference point 85 km away).",
+  "source_url": "https://www.gdacs.org/report.aspx?eventid=1019581&episodeid=1&eventtype=WF",
+  "url": "https://www.gdacs.org/report.aspx?eventid=1019581&episodeid=1&eventtype=WF",
+  "evidence_kind": "dataset"
+ },
+ {
+  "type": "wildfire",
+  "date": "2024-04-14",
+  "what_happened": "Forest fires in Spain \u2014 GDACS green alert; Green impact for forestfire in 447 ha (event reference point 86 km away).",
+  "source_url": "https://www.gdacs.org/report.aspx?eventid=1019580&episodeid=1&eventtype=WF",
+  "url": "https://www.gdacs.org/report.aspx?eventid=1019580&episodeid=1&eventtype=WF",
+  "evidence_kind": "dataset"
+ },
+ {
+  "type": "flood",
+  "date": "2024-09-18",
+  "what_happened": "Flood in Spain \u2014 GDACS green alert; Magnitude 0 (event reference point 131 km away).",
+  "source_url": "https://www.gdacs.org/report.aspx?eventid=1102903&episodeid=1&eventtype=FL",
+  "url": "https://www.gdacs.org/report.aspx?eventid=1102903&episodeid=1&eventtype=FL",
+  "evidence_kind": "dataset"
+ },
+ {
+  "type": "flood",
+  "date": "2024-10-11",
+  "what_happened": "Flood in Spain \u2014 GDACS green alert; Magnitude 0 (event reference point 149 km away).",
+  "source_url": "https://www.gdacs.org/report.aspx?eventid=1102955&episodeid=9&eventtype=FL",
+  "url": "https://www.gdacs.org/report.aspx?eventid=1102955&episodeid=9&eventtype=FL",
+  "evidence_kind": "dataset"
+ }
+]

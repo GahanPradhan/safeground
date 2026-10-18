@@ -1,0 +1,43 @@
+hazard: earthquake
+title: Earthquake
+group: natural
+sources:
+  ready_eq: {title: "Ready.gov (US FEMA) — Earthquakes", url: "https://www.ready.gov/earthquakes"}
+caveats:
+  - "SafeGround cannot predict shaking strength at a spot; the plan covers protective actions only."
+  - "Open areas are mapped parks, pitches and grounds (OpenStreetMap); their condition after an earthquake is unknown."
+  - "Building damage cannot be seen from map data; after shaking, judge your own building and follow officials."
+
+zone_model:
+  type: citywide
+  open_area_max_walk_m: 1000
+
+params:
+  - {key: phase, label: "Moment", type: choice, default: during, options: [[during, "Shaking now"], [after, "Shaking has stopped"]]}
+
+tiers:
+  red: "Shaking now — protect yourself where you are"
+  orange: "Shaking has stopped — aftershocks are expected; check for damage"
+
+moves:
+  red: [DROP_COVER_HOLD]
+  orange: [MOVE_TO_OPEN_AREA, STAY_ALERT]
+  forbidden: [RUN_OUTSIDE_DURING_SHAKING, STAND_IN_DOORWAY, USE_LIFT, ENTER_DAMAGED_BUILDING]
+
+advice:
+  - {id: eq.protect_now, source: ready_eq, text: "If an earthquake happens, protect yourself right away.", tiers: [red], situations: [all]}
+  - {id: eq.inside_stay, source: ready_eq, text: "If you are inside, stay and do not run outside; avoid doorways.", tiers: [red], situations: [home_ground, home_upper, institution, needs_assistance]}
+  - {id: eq.drop, source: ready_eq, text: "Drop where you are onto hands and knees.", tiers: [red], situations: [all]}
+  - {id: eq.cover, source: ready_eq, text: "Cover your head and neck with one arm and hand. If a sturdy table or desk is nearby, crawl underneath it for shelter. If no shelter is nearby, crawl next to an interior wall (away from windows). Stay on your knees; bend over to protect vital organs.", tiers: [red], situations: [home_ground, home_upper, institution, needs_assistance]}
+  - {id: eq.hold, source: ready_eq, text: "Hold until the shaking stops. If under shelter, hold on with one hand and be ready to move with it when the shelter moves. If not under shelter, hold on to your head and neck with both arms and hands.", tiers: [red], situations: [all]}
+  - {id: eq.bed, source: ready_eq, text: "If you are in bed, turn face down and cover your head and neck with a pillow.", tiers: [red], situations: [home_ground, home_upper]}
+  - {id: eq.car, source: ready_eq, text: "If you are in a car, pull over and stop. Set your parking brake.", tiers: [red], situations: [vehicle]}
+  - {id: eq.outside, source: ready_eq, text: "If you're outside, stay there. Move to an open area away from buildings, trees, streetlights and power lines. Drop and cover until shaking stops to protect yourself from flying debris.", tiers: [red], situations: [outdoors]}
+  - {id: eq.wheelchair, source: ready_eq, text: "If you use a walker or wheelchair: LOCK your wheels (if applicable). If using a walker carefully get as low as possible. Bend over and COVER your head/neck with your arms, a book, or a pillow. Then HOLD ON until the shaking stops.", tiers: [red], situations: [needs_assistance]}
+  - {id: eq.aftershocks, source: ready_eq, text: "Expect aftershocks to follow the main shock of an earthquake. Be ready to Drop, Cover and Hold On if you feel an aftershock.", tiers: [orange], situations: [all]}
+  - {id: eq.damaged_building, source: ready_eq, text: "If you are in a damaged building, go outside and quickly move away from the building. Do not enter damaged buildings.", tiers: [orange], situations: [all]}
+  - {id: eq.hazards_after, source: ready_eq, text: "There can be serious hazards after an earthquake, such as damage to the building, leaking gas and water lines or downed power lines.", tiers: [orange], situations: [all]}
+  - {id: eq.trapped, source: ready_eq, text: "If you are trapped, send a text or bang on a pipe or wall. Cover your mouth with your shirt for protection and instead of shouting, use a whistle.", tiers: [orange], situations: [home_ground, home_upper, institution, needs_assistance]}
+  - {id: eq.tsunami, source: ready_eq, text: "If you are in an area that may experience tsunamis, go inland or to higher ground immediately after the shaking stops. Avoid contact with floodwaters as they can contain chemicals, sewage and debris.", tiers: [orange], situations: [all]}
+  - {id: eq.help_others, source: ready_eq, text: "Check yourself to see if you are hurt and help others if you have training. Be the help until help arrives.", tiers: [orange], situations: [all]}
+  - {id: eq.news, source: ready_eq, text: "Once you are safe, pay attention to local news reports for emergency information and instructions via battery-operated radio, TV, social media or from cell phone text alerts.", tiers: [orange], situations: [all]}

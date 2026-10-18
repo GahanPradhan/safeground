@@ -1,0 +1,34 @@
+[
+ {
+  "type": "extreme rainfall (summary)",
+  "date": "2001-2025",
+  "what_happened": "0 days with at least 115.6 mm of rain between 2001 and 2025 (CHIRPS satellite-gauge estimate; 115.6 mm is the India Meteorological Department 'very heavy' threshold, used here as a common marker).",
+  "source_url": "https://developers.google.com/earth-engine/datasets/catalog/UCSB-CHG_CHIRPS_DAILY",
+  "url": "https://developers.google.com/earth-engine/datasets/catalog/UCSB-CHG_CHIRPS_DAILY",
+  "evidence_kind": "dataset"
+ },
+ {
+  "type": "earthquake",
+  "date": "1982-08-17",
+  "what_happened": "Magnitude 6.4 earthquake, 117 km from this place (115 km NNE of Darnah, Libya); depth 31 km.",
+  "source_url": "https://earthquake.usgs.gov/earthquakes/eventpage/usp0001p3w",
+  "url": "https://earthquake.usgs.gov/earthquakes/eventpage/usp0001p3w",
+  "evidence_kind": "dataset"
+ },
+ {
+  "type": "earthquake (summary)",
+  "date": "1970-2026",
+  "what_happened": "1 earthquakes of magnitude 5.5 or more within 200 km since 1970 (USGS catalogue).",
+  "source_url": "https://earthquake.usgs.gov/earthquakes/search/",
+  "url": "https://earthquake.usgs.gov/earthquakes/search/",
+  "evidence_kind": "dataset"
+ },
+ {
+  "type": "flood",
+  "date": "2023-09-08",
+  "what_happened": "Flood in Libya \u2014 GDACS red alert (event reference point 0 km away).",
+  "source_url": "https://www.gdacs.org/report.aspx?eventid=1102204&episodeid=2&eventtype=FL",
+  "url": "https://www.gdacs.org/report.aspx?eventid=1102204&episodeid=2&eventtype=FL",
+  "evidence_kind": "dataset"
+ }
+]

@@ -1,0 +1,41 @@
+hazard: tsunami
+title: Tsunami warning
+group: natural
+sources:
+  ready_ts: {title: "Ready.gov (US FEMA) — Tsunamis", url: "https://www.ready.gov/tsunamis"}
+  cop_dem: {title: "Copernicus DEM GLO-30 (via Google Earth Engine)", url: "https://developers.google.com/earth-engine/datasets/catalog/COPERNICUS_DEM_GLO30"}
+caveats:
+  - "Ready.gov advises shelters 100 feet (about 30 m) or more above sea level, or at least one mile inland. SafeGround checks height only; distance from the coast is not measured."
+  - "Height is the block average of a 30 m surface model (it includes buildings and trees) with several metres of error."
+  - "Official tsunami evacuation maps, where they exist, override this estimate."
+
+zone_model:
+  type: elevation
+  safe_height_m: 30.5   # 100 ft (Ready.gov)
+  max_walk_m: 3000
+
+params:
+  - {key: source, label: "Warning", type: choice, default: official, options: [[official, "Official warning"], [natural_signs, "Natural signs (quake, sea draining)"]]}
+
+tiers:
+  red: "Below 30 m (100 ft) above sea level — inside the height Ready.gov treats as unsafe"
+  green: "At least 30 m (100 ft) above sea level"
+
+moves:
+  red: [GO_TO_HIGH_GROUND]
+  green: [STAY_ALERT]
+  forbidden: [GO_TO_SHORE, WAIT_FOR_WARNING, RETURN_BEFORE_ALL_CLEAR]
+
+advice:
+  - {id: ts.quake_first, source: ready_ts, text: "If caused by an earthquake, Drop, Cover, then Hold On to protect yourself from the earthquake first.", tiers: [red, green], situations: [all]}
+  - {id: ts.high_ground, source: ready_ts, text: "Get to high ground as far inland as possible", tiers: [red], situations: [all]}
+  - {id: ts.no_wait, source: ready_ts, text: "Evacuate: DO NOT wait! Leave as soon as you see any natural signs of a tsunami or receive an official tsunami warning.", tiers: [red], situations: [all]}
+  - {id: ts.signs, source: ready_ts, text: "Be alert to signs of a tsunami, such as a sudden rise or draining of ocean waters.", tiers: [red, green], situations: [all]}
+  - {id: ts.move_now, source: ready_ts, text: "When the shaking stops, if there are natural signs or official warnings of a tsunami, move immediately to a safe place as high and as far inland as possible. Listen to the authorities, but do not wait for tsunami warnings and evacuation orders.", tiers: [red], situations: [all]}
+  - {id: ts.marked_routes, source: ready_ts, text: "Leave immediately if you are told to do so. Evacuation routes often are marked by a wave with an arrow in the direction of higher ground.", tiers: [red], situations: [all]}
+  - {id: ts.outside_zone, source: ready_ts, text: "If you are outside of the tsunami hazard zone and receive a warning, stay where you are unless officials tell you otherwise.", tiers: [green], situations: [all]}
+  - {id: ts.listen, source: ready_ts, text: "Listen to emergency information and alerts. Always follow the instructions from local emergency managers.", tiers: [red, green], situations: [all]}
+  - {id: ts.in_water, source: ready_ts, text: "If you are in the water, then grab onto something that floats, such as a raft or tree trunk.", tiers: [red], situations: [outdoors]}
+  - {id: ts.after_floodwater, source: ready_ts, text: "Avoid wading in floodwater, which can contain dangerous debris. Water may be deeper than it appears.", tiers: [red], situations: [all]}
+  - {id: ts.after_damaged, source: ready_ts, text: "Stay away from damaged buildings, roads and bridges.", tiers: [red], situations: [all]}
+  - {id: ts.texts, source: ready_ts, text: "Save phone calls for emergencies. Phone systems often are down or busy after a disaster. Use text messages or social media to communicate with family and friends.", tiers: [red, green], situations: [all]}

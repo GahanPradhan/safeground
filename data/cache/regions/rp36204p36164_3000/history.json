@@ -1,0 +1,106 @@
+[
+ {
+  "type": "extreme rainfall",
+  "date": "2003-12-08",
+  "what_happened": "115 mm of rain in one day at this location (CHIRPS satellite-gauge estimate).",
+  "source_url": "https://developers.google.com/earth-engine/datasets/catalog/UCSB-CHG_CHIRPS_DAILY",
+  "url": "https://developers.google.com/earth-engine/datasets/catalog/UCSB-CHG_CHIRPS_DAILY",
+  "evidence_kind": "dataset"
+ },
+ {
+  "type": "extreme rainfall",
+  "date": "2011-12-08",
+  "what_happened": "99 mm of rain in one day at this location (CHIRPS satellite-gauge estimate).",
+  "source_url": "https://developers.google.com/earth-engine/datasets/catalog/UCSB-CHG_CHIRPS_DAILY",
+  "url": "https://developers.google.com/earth-engine/datasets/catalog/UCSB-CHG_CHIRPS_DAILY",
+  "evidence_kind": "dataset"
+ },
+ {
+  "type": "extreme rainfall",
+  "date": "2003-03-24",
+  "what_happened": "93 mm of rain in one day at this location (CHIRPS satellite-gauge estimate).",
+  "source_url": "https://developers.google.com/earth-engine/datasets/catalog/UCSB-CHG_CHIRPS_DAILY",
+  "url": "https://developers.google.com/earth-engine/datasets/catalog/UCSB-CHG_CHIRPS_DAILY",
+  "evidence_kind": "dataset"
+ },
+ {
+  "type": "extreme rainfall",
+  "date": "2011-11-11",
+  "what_happened": "90 mm of rain in one day at this location (CHIRPS satellite-gauge estimate).",
+  "source_url": "https://developers.google.com/earth-engine/datasets/catalog/UCSB-CHG_CHIRPS_DAILY",
+  "url": "https://developers.google.com/earth-engine/datasets/catalog/UCSB-CHG_CHIRPS_DAILY",
+  "evidence_kind": "dataset"
+ },
+ {
+  "type": "extreme rainfall",
+  "date": "2012-01-30",
+  "what_happened": "83 mm of rain in one day at this location (CHIRPS satellite-gauge estimate).",
+  "source_url": "https://developers.google.com/earth-engine/datasets/catalog/UCSB-CHG_CHIRPS_DAILY",
+  "url": "https://developers.google.com/earth-engine/datasets/catalog/UCSB-CHG_CHIRPS_DAILY",
+  "evidence_kind": "dataset"
+ },
+ {
+  "type": "extreme rainfall (summary)",
+  "date": "2001-2025",
+  "what_happened": "0 days with at least 115.6 mm of rain between 2001 and 2025 (CHIRPS satellite-gauge estimate; 115.6 mm is the India Meteorological Department 'very heavy' threshold, used here as a common marker).",
+  "source_url": "https://developers.google.com/earth-engine/datasets/catalog/UCSB-CHG_CHIRPS_DAILY",
+  "url": "https://developers.google.com/earth-engine/datasets/catalog/UCSB-CHG_CHIRPS_DAILY",
+  "evidence_kind": "dataset"
+ },
+ {
+  "type": "fire (satellite detection)",
+  "date": "2004-2012",
+  "what_happened": "Satellite fire detections on 3 days (by year: {'2004': 1, '2007': 1, '2012': 1}); in a city these are often industrial flares or waste burning, not wildfires (FIRMS, 1 km).",
+  "source_url": "https://developers.google.com/earth-engine/datasets/catalog/FIRMS",
+  "url": "https://developers.google.com/earth-engine/datasets/catalog/FIRMS",
+  "evidence_kind": "dataset"
+ },
+ {
+  "type": "earthquake",
+  "date": "2023-02-06",
+  "what_happened": "Magnitude 7.8 earthquake, 137 km from this place (Pazarcik earthquake, Kahramanmaras earthquake sequence); depth 10 km.",
+  "source_url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000jllz",
+  "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000jllz",
+  "evidence_kind": "dataset"
+ },
+ {
+  "type": "earthquake",
+  "date": "2023-02-06",
+  "what_happened": "Magnitude 6.7 earthquake, 127 km from this place (14 km E of Nurda??, Turkey); depth 10 km.",
+  "source_url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000jlm1",
+  "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000jlm1",
+  "evidence_kind": "dataset"
+ },
+ {
+  "type": "earthquake",
+  "date": "2023-02-20",
+  "what_happened": "Magnitude 6.3 earthquake, 13 km from this place (2 km NNW of Uzunba?, Turkey); depth 16 km.",
+  "source_url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000jqcn",
+  "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000jqcn",
+  "evidence_kind": "dataset"
+ },
+ {
+  "type": "earthquake",
+  "date": "1998-06-27",
+  "what_happened": "Magnitude 6.3 earthquake, 107 km from this place (12 km S of Adana, Turkey); depth 33 km.",
+  "source_url": "https://earthquake.usgs.gov/earthquakes/eventpage/usp0008qkc",
+  "url": "https://earthquake.usgs.gov/earthquakes/eventpage/usp0008qkc",
+  "evidence_kind": "dataset"
+ },
+ {
+  "type": "earthquake",
+  "date": "1971-07-11",
+  "what_happened": "Magnitude 5.79 earthquake, 123 km from this place (9 km E of Nurda\u011f\u0131, Turkey); depth 15 km.",
+  "source_url": "https://earthquake.usgs.gov/earthquakes/eventpage/iscgem782114",
+  "url": "https://earthquake.usgs.gov/earthquakes/eventpage/iscgem782114",
+  "evidence_kind": "dataset"
+ },
+ {
+  "type": "earthquake (summary)",
+  "date": "1970-2026",
+  "what_happened": "11 earthquakes of magnitude 5.5 or more within 200 km since 1970 (USGS catalogue).",
+  "source_url": "https://earthquake.usgs.gov/earthquakes/search/",
+  "url": "https://earthquake.usgs.gov/earthquakes/search/",
+  "evidence_kind": "dataset"
+ }
+]

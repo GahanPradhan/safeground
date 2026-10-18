@@ -1,0 +1,42 @@
+hazard: cyclone
+title: Cyclone / hurricane / typhoon
+group: natural
+sources:
+  ready_hu: {title: "Ready.gov (US FEMA) — Hurricanes", url: "https://www.ready.gov/hurricanes"}
+  nhc_sshws: {title: "NOAA National Hurricane Center — Saffir-Simpson Hurricane Wind Scale", url: "https://www.nhc.noaa.gov/aboutsshws.php"}
+caveats:
+  - "Storm-surge and flood exposure is a SafeGround estimate from land height and surface water; it is not an official evacuation zone."
+  - "Wind damage depends on building construction, which map data does not show."
+  - "Hurricanes of all categories can produce deadly storm surge, rain-induced floods and tornadoes (NHC)."
+
+zone_model:
+  type: storm
+  low_rel_elev_m: -1.5
+  low_abs_elev_m: 5
+  water_occ_pct: 10
+
+params:
+  - {key: strength, label: "Strength", type: choice, default: hurricane, options: [[tropical_storm, "Tropical storm"], [hurricane, "Category 1–2"], [major, "Category 3–5 (major)"]]}
+
+tiers:
+  red: "Low-lying block (possible storm surge or flooding) during a hurricane"
+  orange: "Damaging winds — shelter in a sturdy building"
+  yellow: "Strong winds and heavy rain — stay indoors and alert"
+
+moves:
+  red: [GO_UP, SHELTER_INTERIOR]
+  orange: [SHELTER_INTERIOR]
+  yellow: [SHELTER_INTERIOR, STAY_ALERT]
+  forbidden: [GO_OUTSIDE_DURING_STORM, DRIVE_THROUGH_WATER, CLIMB_INTO_CLOSED_ATTIC]
+
+advice:
+  - {id: cy.alerts, source: ready_hu, text: "Stay Informed Pay attention to emergency information and alerts.", tiers: [red, orange, yellow], situations: [all]}
+  - {id: cy.evacuate, source: ready_hu, text: "If you live in a mandatory evacuation zone and local officials tell you to evacuate, do so immediately.", tiers: [red, orange], situations: [all]}
+  - {id: cy.interior, source: ready_hu, text: "Take refuge in a designated storm shelter or an interior room for high winds.", tiers: [red, orange, yellow], situations: [all]}
+  - {id: cy.highest_level, source: ready_hu, text: "Go to the highest level of the building if you are trapped by flooding. Do not climb into a closed attic. You may become trapped by rising flood water.", tiers: [red], situations: [home_ground, home_upper, institution, needs_assistance]}
+  - {id: cy.no_flood_water, source: ready_hu, text: "Do not walk, swim or drive through flood waters. Turn Around. Don't Drown! Just six inches of fast-moving water can knock you down, and one foot of moving water can sweep your vehicle away.", tiers: [red, orange, yellow], situations: [all]}
+  - {id: cy.protect, source: ready_hu, text: "Dealing with the Weather Determine how best to protect yourself from high winds and flooding.", tiers: [red, orange, yellow], situations: [all]}
+  - {id: cy.after_electric, source: ready_hu, text: "Do not touch electrical equipment if it is wet or if you are standing in water. If it is safe to do so, turn off electricity at the main breaker or fuse box to prevent electric shock.", tiers: [red, orange], situations: [home_ground, home_upper, institution]}
+  - {id: cy.after_water, source: ready_hu, text: "Do not wade in flood water, which can contain dangerous pathogens that cause illnesses. This water also can contain debris, chemicals, waste and wildlife. Underground or downed power lines can electrically charge the water.", tiers: [red, orange], situations: [all]}
+  - {id: cy.texts, source: ready_hu, text: "Save phone calls for emergencies. Phone systems often are down or busy after a disaster. Use text messages or social media to communicate with family and friends.", tiers: [red, orange, yellow], situations: [all]}
+  - {id: cy.major_winds, source: nhc_sshws, text: "While all hurricanes produce life-threatening winds, hurricanes rated Category 3 and higher are known as major hurricanes. Major hurricanes can cause devastating to catastrophic wind damage and significant loss of life simply due to the strength of their winds.", tiers: [red, orange], situations: [all], scenarios: [major]}

@@ -1,0 +1,56 @@
+hazard: explosion
+title: Bomb threat / explosion
+group: security
+sources:
+  bomb_chart: {title: "Bomb Threat Stand-Off Chart (US DHS / FBI; copy published by State of New Mexico General Services)", url: "https://www.generalservices.state.nm.us/wp-content/uploads/2021/02/BombThreatChart.pdf"}
+  erg112: {title: "Emergency Response Guidebook 2024, Guide 112 (Explosives, Division 1.1, 1.2, 1.3, 1.5)", url: "https://cameochemicals.noaa.gov/erg_guides/en/Guide_112.pdf"}
+  erg115: {title: "Emergency Response Guidebook 2024, Guide 115 (Gases - Flammable, incl. LPG)", url: "https://cameochemicals.noaa.gov/erg_guides/en/Guide_115.pdf"}
+caveats:
+  - "Bomb stand-off distances are estimates based on test data; the chart states they do not guarantee safety and that the area near the evacuation distances is still potentially dangerous."
+  - "Building distances assume typical US commercial construction; buildings elsewhere may perform differently."
+
+zone_model:
+  type: rings
+  scenarios:
+    # IED threats (bomb_chart): building_evacuation_ft = everyone (inside and outside) must evacuate;
+    # between building and outdoor distance: shelter inside away from windows, nobody outside;
+    # beyond outdoor_evacuation_ft: preferred area for people evacuated from buildings, mandatory for people outdoors.
+    pipe_bomb: {label: "Pipe bomb (5 lb TNT eq.)", source: bomb_chart, building_evacuation_ft: 70, outdoor_evacuation_ft: 1200}
+    suicide_bomber: {label: "Suicide bomber (20 lb)", source: bomb_chart, building_evacuation_ft: 110, outdoor_evacuation_ft: 1700}
+    briefcase: {label: "Briefcase / suitcase (50 lb)", source: bomb_chart, building_evacuation_ft: 150, outdoor_evacuation_ft: 1850}
+    car: {label: "Car (500 lb)", source: bomb_chart, building_evacuation_ft: 320, outdoor_evacuation_ft: 1500}
+    suv_van: {label: "SUV / van (1,000 lb)", source: bomb_chart, building_evacuation_ft: 400, outdoor_evacuation_ft: 2400}
+    delivery_truck: {label: "Small moving van / delivery truck (4,000 lb)", source: bomb_chart, building_evacuation_ft: 640, outdoor_evacuation_ft: 3800}
+    water_truck: {label: "Moving van / water truck (10,000 lb)", source: bomb_chart, building_evacuation_ft: 860, outdoor_evacuation_ft: 5100}
+    semi_trailer: {label: "Semi-trailer (60,000 lb)", source: bomb_chart, building_evacuation_ft: 1570, outdoor_evacuation_ft: 9300}
+    # Hazmat fires (ERG): isolate and consider evacuation in all directions.
+    lpg_tanker_fire: {label: "LPG tanker / tank involved in fire", source: erg115, isolate_m: 1600}
+    explosives_vehicle_fire: {label: "Explosives vehicle involved in fire", source: erg112, isolate_m: 1600}
+
+params:
+  - {key: scenario, label: "Threat", type: select, default: car, from: scenarios}
+
+tiers:
+  red: "Mandatory evacuation for everyone (inside and outside buildings)"
+  orange: "Shelter inside a building away from windows; nobody outdoors"
+  green: "Beyond the outdoor evacuation distance"
+
+moves:
+  red: [MOVE_AWAY]
+  orange: [STAY_INSIDE_AWAY_FROM_WINDOWS, MOVE_AWAY]
+  green: [STAY_ALERT]
+  forbidden: [APPROACH_SOURCE, GATHER_AT_WINDOWS, ENTER_ZONE]
+
+advice:
+  - {id: exp.red_evacuate, source: bomb_chart, text: "All personnel must evacuate (both inside of buildings and out).", tiers: [red], situations: [all]}
+  - {id: exp.orange_shelter, source: bomb_chart, text: "All personnel in this area should seek shelter immediately inside a building away from windows and exterior walls. Avoid having anyone outside - including those evacuating - in this area.", tiers: [orange], situations: [all]}
+  - {id: exp.green_area, source: bomb_chart, text: "Preferred area (beyond this line) for evacuation of people in buildings and mandatory for people outdoors.", tiers: [green], situations: [all]}
+  - {id: exp.secondary, source: bomb_chart, text: "A known terrorist tactic is to attract bystanders to windows, doorways, and the outside with gunfire, small bombs, or other methods and then detonate a larger, more destructive device, significantly increasing human casualties.", tiers: [red, orange, green], situations: [all]}
+  - {id: exp.no_guarantee, source: bomb_chart, text: "It is important to note that the given distances do not guarantee safety, they are estimates based on test data and the area near and around the evacuation distances are still potentially dangerous.", tiers: [red, orange, green], situations: [all]}
+  - {id: exp.line_of_sight, source: erg112, text: "Move people out of line of sight of the scene and away from windows.", tiers: [red, orange, green], situations: [all]}
+  - {id: exp.keep_away, source: erg112, text: "Keep unauthorized personnel away.", tiers: [red, orange], situations: [all]}
+  - {id: exp.upwind, source: erg112, text: "Stay upwind, uphill and/or upstream.", tiers: [red, orange], situations: [outdoors, vehicle, needs_assistance]}
+  - {id: exp.fragments, source: erg112, text: "MAY EXPLODE AND THROW FRAGMENTS 1600 METERS (1 MILE) OR MORE IF FIRE REACHES CARGO.", tiers: [red], situations: [all], scenarios: [explosives_vehicle_fire]}
+  - {id: exp.lpg_fire_isolate, source: erg115, text: "If tank, rail tank car or highway tank is involved in a fire, ISOLATE for 1600 meters (1 mile) in all directions; also, consider initial evacuation for 1600 meters (1 mile) in all directions.", tiers: [red], situations: [all], scenarios: [lpg_tanker_fire]}
+  - {id: exp.lpg_low_areas, source: erg115, text: "Many gases are heavier than air and will spread along the ground and collect in low or confined areas (sewers, basements, tanks, etc.).", tiers: [red], situations: [all], scenarios: [lpg_tanker_fire]}
+  - {id: exp.lpg_ignition, source: erg115, text: "ELIMINATE all ignition sources (no smoking, flares, sparks or flames) from immediate area.", tiers: [red], situations: [all], scenarios: [lpg_tanker_fire]}

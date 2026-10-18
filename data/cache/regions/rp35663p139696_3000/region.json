@@ -1,0 +1,35 @@
+{
+ "id": "rp35663p139696_3000",
+ "name": "Shibuya",
+ "admin": null,
+ "country": "Japan",
+ "country_code": "JP",
+ "lat": 35.6633709,
+ "lon": 139.6964952,
+ "radius_m": 3000,
+ "built_at": "2026-10-18T18:25:02+0530",
+ "build_seconds": 95.0,
+ "roads": 14883,
+ "graph_nodes": 21430,
+ "features": 2283,
+ "blocks": 323,
+ "blocks_with_satellite_data": 323,
+ "history_records": 20,
+ "notes": [],
+ "emergency": {
+  "call": [
+   {
+    "number": "110",
+    "for": "Police"
+   },
+   {
+    "number": "119",
+    "for": "Fire and ambulance"
+   }
+  ],
+  "source": "https://en.wikipedia.org/wiki/List_of_emergency_telephone_numbers",
+  "known": true
+ },
+ "map_data_source": "OpenStreetMap via the Overpass API",
+ "osm_timestamp": "2026-10-18T12:52:21Z"
+}

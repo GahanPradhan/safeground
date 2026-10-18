@@ -1,0 +1,120 @@
+# Every dataset used by SafeGround, with provider, licence and how we use it.
+# validate_data.py checks that each snapshot layer has an entry here.
+openstreetmap:
+  provider: OpenStreetMap contributors, via Geofabrik (southern-zone extract)
+  url: https://download.geofabrik.de/asia/india/southern-zone.html
+  licence: ODbL 1.0 — attribution "© OpenStreetMap contributors"; derived database is share-alike
+  use: road/footpath graph, hospitals, schools, elderly homes, police, fire stations, metro stations, parking, shelters, parks, vets, animal shelters, industrial sites, place names
+  caveats: Completeness varies; missing tags never mean "safe". Hospital capacity is not mapped. Basements rarely mapped.
+open_buildings_temporal:
+  provider: Google Research — Open Buildings 2.5D Temporal (Earth Engine GOOGLE/Research/open-buildings-temporal/v1)
+  url: https://developers.google.com/earth-engine/datasets/catalog/GOOGLE_Research_open-buildings-temporal_v1
+  licence: CC BY 4.0 and ODbL v1.0
+  use: building presence, fractional building count and estimated building height per hex
+  caveats: Heights are model estimates from Sentinel-2 (~4 m effective resolution); validated against OSM height tags in eval.
+dynamic_world:
+  provider: Google & World Resources Institute — Dynamic World V1 (Earth Engine GOOGLE/DYNAMICWORLD/V1)
+  url: https://developers.google.com/earth-engine/datasets/catalog/GOOGLE_DYNAMICWORLD_V1
+  licence: CC BY 4.0
+  use: tree / water / built / grass / flooded-vegetation share per hex and change between years
+  caveats: 10 m; class mode over cloud-free scenes in a year.
+copernicus_dem:
+  provider: European Space Agency — Copernicus DEM GLO-30, 2024 release (Earth Engine COPERNICUS/DEM/GLO30_2024_1)
+  url: https://developers.google.com/earth-engine/datasets/catalog/COPERNICUS_DEM_GLO30_2024_1
+  licence: Copernicus DEM licence (free use with attribution)
+  use: elevation and relative low-lying index
+  caveats: 30 m surface model incl. buildings/trees; vertical error of several metres — labelled ESTIMATE.
+jrc_surface_water:
+  provider: EC JRC / Google — Global Surface Water (Earth Engine JRC/GSW1_4/GlobalSurfaceWater)
+  url: https://developers.google.com/earth-engine/datasets/catalog/JRC_GSW1_4_GlobalSurfaceWater
+  licence: free use with attribution (Copernicus programme)
+  use: water occurrence near each hex
+worldpop:
+  provider: WorldPop — Global population 100 m (Earth Engine WorldPop/GP/100m/pop)
+  url: https://developers.google.com/earth-engine/datasets/catalog/WorldPop_GP_100m_pop
+  licence: CC BY 4.0
+  use: residents per hex (2020)
+  caveats: Modelled estimate, not a census count.
+gpm_imerg:
+  provider: NASA — GPM IMERG (Earth Engine NASA/GPM_L3/IMERG_V07)
+  url: https://developers.google.com/earth-engine/datasets/catalog/NASA_GPM_L3_IMERG_V07
+  licence: NASA open data
+  use: extreme-rain history; rainfall for replays
+  caveats: ~10 km resolution.
+global_flood_db:
+  provider: Cloud to Street / Google — Global Flood Database (Earth Engine GLOBAL_FLOOD_DB/MODIS_EVENTS/V1)
+  url: https://developers.google.com/earth-engine/datasets/catalog/GLOBAL_FLOOD_DB_MODIS_EVENTS_V1
+  licence: CC BY-NC 4.0
+  use: historical flood events 2000–2018 intersecting an area
+  caveats: MODIS 250 m; misses short urban floods.
+firms:
+  provider: NASA LANCE — FIRMS (Earth Engine FIRMS)
+  url: https://developers.google.com/earth-engine/datasets/catalog/FIRMS
+  licence: NASA open data
+  use: satellite fire detections history
+  caveats: 1 km; near-real-time product is not science quality.
+wdpa:
+  provider: UNEP-WCMC — World Database on Protected Areas (Earth Engine WCMC/WDPA/current/polygons)
+  url: https://developers.google.com/earth-engine/datasets/catalog/WCMC_WDPA_current_polygons
+  licence: WDPA terms (non-commercial use with attribution)
+  use: protected nature areas (e.g. wetlands) at risk
+erg_2024:
+  provider: US DOT PHMSA / Transport Canada / SCT Mexico — Emergency Response Guidebook 2024 (via NOAA CAMEO Chemicals)
+  url: https://cameochemicals.noaa.gov/
+  licence: US government publication
+  use: chemical isolation / protective-action distances and public-safety advice
+  caveats: Designed for the first phase of transport incidents; used as a screening proxy for fixed facilities.
+imd_flood_guidance:
+  provider: India Meteorological Department — Floods Do's and Don'ts
+  url: https://www.imdnagpur.gov.in/docs_general/Floods_Dos_and_Donts.pdf
+  licence: Government of India publication
+  use: official flood advice lines
+google_weather_api:
+  provider: Google Maps Platform — Weather API
+  url: https://developers.google.com/maps/documentation/weather
+  licence: Google Maps Platform Terms (display only, no caching beyond terms)
+  use: live wind, rain and alerts for RESPOND / LIVE WATCH
+chirps:
+  provider: UCSB Climate Hazards Center — CHIRPS daily rainfall (Earth Engine UCSB-CHG/CHIRPS/DAILY)
+  url: https://developers.google.com/earth-engine/datasets/catalog/UCSB-CHG_CHIRPS_DAILY
+  licence: public domain (CC0)
+  use: wettest days 2001-2025 and count of very-heavy-rain days per showcase area
+  caveats: ~5 km satellite-gauge blend; point estimate, not a rain-gauge reading.
+gemini_google_search:
+  provider: Gemini API with Grounding with Google Search
+  url: https://ai.google.dev/gemini-api/docs/google-search
+  licence: Gemini API terms
+  use: finding reported past calamities for an area; every link is opened and checked to mention the place/Chennai and the year
+  caveats: link check confirms the source exists and fits; it does not prove every detail. Lists are not exhaustive.
+curated_events:
+  provider: SafeGround team, hand-curated from news and official reports (safeground/curated/events.yaml)
+  url: safeground/curated/events_verification.json
+  licence: links to third-party articles; summaries are paraphrased
+  use: past calamities for the showcase areas when live search is off
+usgs_comcat:
+  provider: U.S. Geological Survey — ANSS Comprehensive Earthquake Catalog (FDSN event API)
+  url: https://earthquake.usgs.gov/fdsnws/event/1/
+  licence: US government public domain
+  use: strongest earthquakes (M5.5+) within 200 km of a searched place since 1970, and a count
+gdacs:
+  provider: Global Disaster Alert and Coordination System (UN OCHA / European Commission JRC)
+  url: https://www.gdacs.org/
+  licence: GDACS terms of use (free use with attribution)
+  use: earthquake, cyclone, flood, volcano, drought and wildfire alerts since 2000 near a searched place
+  caveats: events are matched by their reference point distance, not by footprint
+openfreemap:
+  provider: OpenFreeMap vector tiles (OpenMapTiles schema) built from OpenStreetMap
+  url: https://openfreemap.org/
+  licence: OpenMapTiles schema/ODbL data © OpenStreetMap contributors
+  use: roads, points of interest, building heights and place names when the Overpass API is busy
+  caveats: no street names on roads; hospital size unknown
+photon:
+  provider: Photon geocoder by komoot (OpenStreetMap data)
+  url: https://photon.komoot.io/
+  licence: ODbL data; fair-use public API
+  use: place search
+era5_land:
+  provider: ECMWF / Copernicus Climate Change Service — ERA5-Land daily aggregates (Earth Engine ECMWF/ERA5_LAND/DAILY_AGGR)
+  url: https://developers.google.com/earth-engine/datasets/catalog/ECMWF_ERA5_LAND_DAILY_AGGR
+  licence: Copernicus licence (free use with attribution)
+  use: wettest days for places beyond 50° latitude (outside CHIRPS coverage)

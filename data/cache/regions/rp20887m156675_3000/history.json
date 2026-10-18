@@ -1,0 +1,122 @@
+[
+ {
+  "type": "extreme rainfall",
+  "date": "2003-12-02",
+  "what_happened": "54 mm of rain in one day at this location (CHIRPS satellite-gauge estimate).",
+  "source_url": "https://developers.google.com/earth-engine/datasets/catalog/UCSB-CHG_CHIRPS_DAILY",
+  "url": "https://developers.google.com/earth-engine/datasets/catalog/UCSB-CHG_CHIRPS_DAILY",
+  "evidence_kind": "dataset"
+ },
+ {
+  "type": "extreme rainfall",
+  "date": "2007-12-05",
+  "what_happened": "50 mm of rain in one day at this location (CHIRPS satellite-gauge estimate).",
+  "source_url": "https://developers.google.com/earth-engine/datasets/catalog/UCSB-CHG_CHIRPS_DAILY",
+  "url": "https://developers.google.com/earth-engine/datasets/catalog/UCSB-CHG_CHIRPS_DAILY",
+  "evidence_kind": "dataset"
+ },
+ {
+  "type": "extreme rainfall",
+  "date": "2021-12-05",
+  "what_happened": "46 mm of rain in one day at this location (CHIRPS satellite-gauge estimate).",
+  "source_url": "https://developers.google.com/earth-engine/datasets/catalog/UCSB-CHG_CHIRPS_DAILY",
+  "url": "https://developers.google.com/earth-engine/datasets/catalog/UCSB-CHG_CHIRPS_DAILY",
+  "evidence_kind": "dataset"
+ },
+ {
+  "type": "extreme rainfall",
+  "date": "2004-03-22",
+  "what_happened": "44 mm of rain in one day at this location (CHIRPS satellite-gauge estimate).",
+  "source_url": "https://developers.google.com/earth-engine/datasets/catalog/UCSB-CHG_CHIRPS_DAILY",
+  "url": "https://developers.google.com/earth-engine/datasets/catalog/UCSB-CHG_CHIRPS_DAILY",
+  "evidence_kind": "dataset"
+ },
+ {
+  "type": "extreme rainfall",
+  "date": "2014-12-05",
+  "what_happened": "43 mm of rain in one day at this location (CHIRPS satellite-gauge estimate).",
+  "source_url": "https://developers.google.com/earth-engine/datasets/catalog/UCSB-CHG_CHIRPS_DAILY",
+  "url": "https://developers.google.com/earth-engine/datasets/catalog/UCSB-CHG_CHIRPS_DAILY",
+  "evidence_kind": "dataset"
+ },
+ {
+  "type": "extreme rainfall (summary)",
+  "date": "2001-2025",
+  "what_happened": "0 days with at least 115.6 mm of rain between 2001 and 2025 (CHIRPS satellite-gauge estimate; 115.6 mm is the India Meteorological Department 'very heavy' threshold, used here as a common marker).",
+  "source_url": "https://developers.google.com/earth-engine/datasets/catalog/UCSB-CHG_CHIRPS_DAILY",
+  "url": "https://developers.google.com/earth-engine/datasets/catalog/UCSB-CHG_CHIRPS_DAILY",
+  "evidence_kind": "dataset"
+ },
+ {
+  "type": "fire (satellite detection)",
+  "date": "2001-2025",
+  "what_happened": "Satellite fire detections on 40 days (by year: {'2001': 1, '2002': 2, '2003': 3, '2004': 1, '2006': 2, '2007': 4, '2010': 1, '2011': 4, '2012': 1, '2013': 4, '2015': 1, '2016': 2, '2018': 5, '2019': 2, '2020': 1, '2022': 1, '2023': 3, '2025': 2}); in a city these are often industrial flares or waste burning, not wildfires (FIRMS, 1 km).",
+  "source_url": "https://developers.google.com/earth-engine/datasets/catalog/FIRMS",
+  "url": "https://developers.google.com/earth-engine/datasets/catalog/FIRMS",
+  "evidence_kind": "dataset"
+ },
+ {
+  "type": "earthquake",
+  "date": "2006-10-15",
+  "what_happened": "Magnitude 6.7 earthquake, 136 km from this place (14 km SW of Puako, Hawaii); depth 38 km.",
+  "source_url": "https://earthquake.usgs.gov/earthquakes/eventpage/hv5532127",
+  "url": "https://earthquake.usgs.gov/earthquakes/eventpage/hv5532127",
+  "evidence_kind": "dataset"
+ },
+ {
+  "type": "earthquake",
+  "date": "1973-04-26",
+  "what_happened": "Magnitude 6.2 earthquake, 196 km from this place (3 km WSW of Honomu, Hawaii); depth 37 km.",
+  "source_url": "https://earthquake.usgs.gov/earthquakes/eventpage/hv19730624",
+  "url": "https://earthquake.usgs.gov/earthquakes/eventpage/hv19730624",
+  "evidence_kind": "dataset"
+ },
+ {
+  "type": "earthquake",
+  "date": "2006-10-15",
+  "what_happened": "Magnitude 6 earthquake, 111 km from this place (20 km SW of Hawi, Hawaii); depth 16 km.",
+  "source_url": "https://earthquake.usgs.gov/earthquakes/eventpage/hv6000471",
+  "url": "https://earthquake.usgs.gov/earthquakes/eventpage/hv6000471",
+  "evidence_kind": "dataset"
+ },
+ {
+  "type": "earthquake",
+  "date": "2026-05-23",
+  "what_happened": "Magnitude 5.96 earthquake, 193 km from this place (13 km S of Honaunau-Napoopoo, Hawaii); depth 23 km.",
+  "source_url": "https://earthquake.usgs.gov/earthquakes/eventpage/hv74966427",
+  "url": "https://earthquake.usgs.gov/earthquakes/eventpage/hv74966427",
+  "evidence_kind": "dataset"
+ },
+ {
+  "type": "earthquake (summary)",
+  "date": "1970-2026",
+  "what_happened": "4 earthquakes of magnitude 5.5 or more within 200 km since 1970 (USGS catalogue).",
+  "source_url": "https://earthquake.usgs.gov/earthquakes/search/",
+  "url": "https://earthquake.usgs.gov/earthquakes/search/",
+  "evidence_kind": "dataset"
+ },
+ {
+  "type": "tropical cyclone",
+  "date": "2025-08-31",
+  "what_happened": "Tropical Cyclone KIKO-25 \u2014 GDACS green alert; Tropical Depression (maximum wind speed of 231 km/h) (event reference point 268 km away).",
+  "source_url": "https://www.gdacs.org/report.aspx?eventid=1001203&episodeid=42&eventtype=TC",
+  "url": "https://www.gdacs.org/report.aspx?eventid=1001203&episodeid=42&eventtype=TC",
+  "evidence_kind": "dataset"
+ },
+ {
+  "type": "flood",
+  "date": "2021-03-08",
+  "what_happened": "Flood in United States \u2014 GDACS green alert (event reference point 45 km away).",
+  "source_url": "https://www.gdacs.org/report.aspx?eventid=1100790&episodeid=1&eventtype=FL",
+  "url": "https://www.gdacs.org/report.aspx?eventid=1100790&episodeid=1&eventtype=FL",
+  "evidence_kind": "dataset"
+ },
+ {
+  "type": "tropical cyclone",
+  "date": "2013-07-25",
+  "what_happened": "Tropical Cyclone FLOSSIE-13 \u2014 GDACS green alert; Tropical Depression (maximum wind speed of 111 km/h) (event reference point 223 km away).",
+  "source_url": "https://www.gdacs.org/report.aspx?eventid=39097&episodeid=22&eventtype=TC",
+  "url": "https://www.gdacs.org/report.aspx?eventid=39097&episodeid=22&eventtype=TC",
+  "evidence_kind": "dataset"
+ }
+]

@@ -1,0 +1,325 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>SafeGround deck</title>
+<style>
+  @page { size: 1920px 1080px; margin: 0; }
+  :root { --navy: #0A0E14; --ink: #0E1623; --muted: #5B6574; --blue: #2F5BFF; --line: #E2E6EC;
+          --red: #C4272D; --orange: #C24F06; --yellow: #946C00; --green: #1C7A4D; --bg: #F4F6F9; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: Inter, -apple-system, "Helvetica Neue", Helvetica, Arial, sans-serif; color: var(--ink); background: #fff; }
+  .slide { width: 1920px; height: 1080px; padding: 72px 96px; position: relative; overflow: hidden;
+           page-break-after: always; break-after: page; display: flex; flex-direction: column; }
+  .slide:last-child { page-break-after: auto; break-after: auto; }
+  .kicker { font-size: 22px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--blue); margin-bottom: 14px; }
+  h1 { font-size: 64px; line-height: 1.1; letter-spacing: -.02em; }
+  h2 { font-size: 50px; line-height: 1.12; letter-spacing: -.02em; margin-bottom: 34px; }
+  h3 { font-size: 29px; margin-bottom: 10px; letter-spacing: -.01em; }
+  p, li { font-size: 27px; line-height: 1.42; }
+  ul { padding-left: 32px; } li { margin-bottom: 10px; }
+  .muted { color: var(--muted); }
+  .small { font-size: 22px; line-height: 1.42; }
+  .foot { position: absolute; left: 96px; right: 96px; bottom: 32px; font-size: 18px; color: var(--muted); display: flex; justify-content: space-between; }
+  .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 44px; flex: 1; min-height: 0; }
+  .grid3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 28px; }
+  .grid4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 22px; }
+  .card { border: 2px solid var(--line); border-radius: 16px; padding: 26px 28px; background: #fff; }
+  .card.tint { background: var(--bg); border-color: var(--bg); }
+  .shot { width: 100%; border-radius: 14px; border: 2px solid var(--line); display: block; object-fit: cover; object-position: left top; }
+  .big { font-size: 68px; font-weight: 800; letter-spacing: -.03em; line-height: 1; }
+  .tag { display: inline-block; font-size: 19px; font-weight: 700; padding: 5px 13px; border-radius: 8px; margin: 0 8px 8px 0; }
+  .t-red { background: #FDECEC; color: var(--red); } .t-orange { background: #FEF0E6; color: var(--orange); }
+  .t-yellow { background: #FFF7DC; color: var(--yellow); } .t-green { background: #E7F6EE; color: var(--green); }
+  .t-blue { background: #EBF0FF; color: var(--blue); } .t-grey { background: #EEF1F5; color: #475467; }
+  table { border-collapse: collapse; width: 100%; font-size: 26px; }
+  th, td { text-align: left; padding: 15px 18px; border-bottom: 2px solid var(--line); vertical-align: top; }
+  th { font-size: 19px; text-transform: uppercase; letter-spacing: .06em; color: var(--muted); }
+  td.num { font-weight: 800; font-size: 34px; }
+  .good { color: var(--green); } .bad { color: var(--red); }
+  .title { background: var(--navy); color: #fff; justify-content: center; }
+  .title .sub { font-size: 38px; color: #A9B2C0; margin-top: 22px; max-width: 1400px; line-height: 1.3; }
+  .title .meta { margin-top: 56px; font-size: 25px; color: #7E8899; line-height: 1.7; }
+  .title .meta b { color: #fff; font-weight: 600; }
+  .arch { display: grid; grid-template-columns: 1fr 1.25fr 1fr; gap: 26px; align-items: stretch; flex: 1; }
+  .col { display: flex; flex-direction: column; gap: 16px; }
+  .box { border-radius: 12px; padding: 16px 20px; font-size: 22px; line-height: 1.35; border: 2px solid var(--line); background: #fff; }
+  .box b { display: block; font-size: 24px; margin-bottom: 4px; }
+  .box.g { border-color: #B9C8FF; background: #F2F5FF; }
+  .box.c { border-color: #D5DAE1; background: var(--bg); }
+  .colhead { font-size: 19px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
+  .flow { display: flex; gap: 12px; align-items: stretch; }
+  .flow .step { flex: 1; border-radius: 12px; padding: 18px 20px; background: var(--bg); font-size: 22px; line-height: 1.35; }
+  .flow .step b { display: block; font-size: 24px; margin-bottom: 6px; }
+  .flow .arrow { align-self: center; font-size: 32px; color: var(--muted); }
+  .quote { border-left: 6px solid var(--blue); padding: 6px 0 6px 22px; font-size: 25px; line-height: 1.4; }
+  .mark { width: 84px; height: 84px; border-radius: 20px; background: var(--blue); display: grid; place-items: center; }
+  .mark svg { width: 54px; height: 54px; fill: none; stroke: #fff; stroke-width: 2.1; stroke-linecap: round; stroke-linejoin: round; }
+  .hz-t td { font-size: 21px; padding: 10px 14px; } .hz-t th { padding: 10px 14px; }
+</style>
+</head>
+<body>
+
+<!-- 1 -->
+<section class="slide title" style="padding-right:0">
+  <div style="display:grid; grid-template-columns: 0.9fr 1.1fr; gap:56px; align-items:center; height:100%">
+    <div>
+      <div class="kicker" style="color:#9DB2FF">Google Cloud AI Builder Cup 2026 · Sustainability &amp; Social Impact</div>
+      <div style="display:flex; align-items:center; gap:24px; margin-top:8px">
+        <span class="mark"><svg viewBox="0 0 24 24"><path d="M12 18.5s-5.5-4.6-5.5-9.2a5.5 5.5 0 0 1 11 0c0 4.6-5.5 9.2-5.5 9.2z"/><path d="m9.7 9.4 1.6 1.6 3-3.1"/><path d="M5 21.5h14"/></svg></span>
+        <h1 style="font-size:100px">SafeGround</h1>
+      </div>
+      <div class="sub" style="font-size:44px; color:#fff; font-weight:700; margin-top:22px">Hazard readiness and response planning for any place on Earth.</div>
+      <div class="sub" style="font-size:29px">What hits a place, how ready it is, and what each person should do if it strikes right here — with a route to safety and every claim traced to its source.</div>
+      <div class="meta">
+        9 hazards · official guidance · Google Earth Engine data<br>
+        Gemini agents on Google ADK · Cloud Run<br>
+        <b>Live:</b> safeground-653135417611.asia-south1.run.app
+      </div>
+    </div>
+    <img src="img/n8_heat.jpg" style="width:100%; border-radius:24px 0 0 24px; box-shadow:0 30px 80px rgba(0,0,0,.5)">
+  </div>
+</section>
+
+<!-- 2 -->
+<section class="slide">
+  <div class="kicker">The problem</div>
+  <h2>The right move depends on the hazard and the exact spot — generic advice fails people</h2>
+  <div class="grid2" style="grid-template-columns: 1.05fr 1fr">
+    <div>
+      <ul>
+        <li><b>Disasters hit specific places:</b> Paiporta’s flash flood (2024), the Beirut port explosion (2020), the Antakya earthquake (2023), the Lahaina wildfire (2023).</li>
+        <li><b>Planners can’t see it in one place:</b> which hazards are on record, which blocks lack a refuge, a hospital or a shelter, and who needs help first.</li>
+        <li><b>A chatbot alone guesses:</b> in our test, Gemini without computed facts gave the wrong danger level in <b>14 of 20</b> cases.</li>
+      </ul>
+    </div>
+    <div class="col">
+      <div class="colhead">One street corner in Shibuya, Tokyo · four hazards · four right moves</div>
+      <div class="grid2" style="gap:16px; grid-template-columns:1fr 1fr">
+        <div class="card"><span class="tag t-red">Earthquake</span><h3>Drop, cover, hold</h3><p class="small">When shaking stops and a building is damaged: open area 185 m away.</p></div>
+        <div class="card"><span class="tag t-orange">Air-raid alert</span><h3>Go down</h3><p class="small">Underground car park 120 m away (1.6 min walk).</p></div>
+        <div class="card"><span class="tag t-yellow">Chlorine leak</span><h3>Stay in &amp; seal</h3><p class="small">Never go down — gas collects low. Exits crosswind, never downwind.</p></div>
+        <div class="card"><span class="tag t-green">Tsunami warning</span><h3>Stay put</h3><p class="small">This spot is above 30 m (Ready.gov’s 100 ft) — follow officials.</p></div>
+      </div>
+    </div>
+  </div>
+  <div class="foot"><span>Shibuya moves computed by SafeGround’s engine (35.6612 N, 139.6985 E) · eval/RESULTS.md</span><span>2</span></div>
+</section>
+
+<!-- 3 -->
+<section class="slide">
+  <div class="kicker">The solution</div>
+  <h2>One platform, three steps — for any place on Earth</h2>
+  <div class="grid3" style="flex:1">
+    <div class="card tint"><span class="tag t-blue">1 · Overview</span><h3 style="margin-top:8px">What hits this place?</h3>
+      <ul class="small" style="margin-top:10px"><li>Hazard profile from the place’s <b>own records</b>: floods, rain extremes, earthquakes, cyclones, fires, checked news.</li>
+      <li>Exposure: residents, low ground, schools, elderly homes, hospitals, shelters, open areas.</li><li>Country emergency numbers.</li></ul></div>
+    <div class="card tint"><span class="tag t-orange">2 · Readiness</span><h3 style="margin-top:8px">How ready is it?</h3>
+      <ul class="small" style="margin-top:10px"><li>An AI investigator picks the checks that matter here.</li>
+      <li>Readiness <b>before / during / after</b> for <b>people, animals and nature</b>.</li><li>Ranked, map-linked actions; every number traced to a dataset.</li></ul></div>
+    <div class="card tint"><span class="tag t-red">3 · Simulate</span><h3 style="margin-top:8px">If it happens here, what now?</h3>
+      <ul class="small" style="margin-top:10px"><li><b>9 hazards</b>, conditions you set, a spot and a person’s situation.</li>
+      <li>Danger zone from official guidance → safe move → nearest safe place → route + <b>Google Maps directions</b>.</li><li>Plain-English plan; every step cites official advice.</li></ul></div>
+  </div>
+  <p class="small" style="margin-top:26px"><b>For:</b> city and district disaster teams · companies protecting sites and staff · schools and hospitals planning drills · NGOs pre-positioning relief · residents.</p>
+  <p class="small muted" style="margin-top:6px">A planning and training tool: no alerts are sent, no personal data is collected, and nothing replaces official instructions.</p>
+  <div class="foot"><span>SafeGround</span><span>3</span></div>
+</section>
+
+<!-- 4 -->
+<section class="slide">
+  <div class="kicker">1 · Overview · Antakya, Türkiye</div>
+  <h2>A hazard profile built from the place’s own records</h2>
+  <div class="grid2" style="grid-template-columns: 0.8fr 1.2fr">
+    <div>
+      <ul class="small">
+        <li><b>Earthquake — frequent here:</b> 5 strong earthquakes on record from USGS, including M7.8 on 2023-02-06.</li>
+        <li>Hazards are sorted by these records, and the simulator uses the same order — <b>proactive, not a fixed menu</b>.</li>
+        <li><b>Exposure</b> from Google Earth Engine and OpenStreetMap: residents (WorldPop), height above sea level (Copernicus DEM), low-lying blocks, tree cover 2016→2025 (Dynamic World), schools, elderly homes, hospitals, underground shelters, open areas.</li>
+        <li>Click any block on the map for its population, height and land cover.</li>
+      </ul>
+    </div>
+    <img class="shot" src="img/n2_overview.jpg" style="height:820px; object-position:left top">
+  </div>
+  <div class="foot"><span>History: USGS earthquake catalogue · GDACS · Global Flood Database · CHIRPS / ERA5-Land · FIRMS · link-checked news</span><span>4</span></div>
+</section>
+
+<!-- 5 -->
+<section class="slide">
+  <div class="kicker">2 · Readiness · Port of Beirut</div>
+  <h2>Context-based readiness, not a fixed checklist</h2>
+  <div class="grid2" style="grid-template-columns: 1fr 1.1fr">
+    <div>
+      <div class="flow" style="flex-direction:column; gap:12px">
+        <div class="step"><b>1 · Past disasters</b>Gemini + Google Search grounding; every link is opened and must mention the place and the year. The 2020 explosion page blocks bots, so it was checked on its Internet Archive copy.</div>
+        <div class="step"><b>2 · Investigator agent</b>Chooses the tools for <i>this</i> place: flood exposure, refuge / hospital / fire-station walking access, industrial exposure, land-cover change, animal facilities.</div>
+        <div class="step"><b>3 · Writer → validator</b>Every number must appear in a tool result; links must come from the checked list.</div>
+      </div>
+      <p class="small" style="margin-top:18px"><b>Found:</b> 6,074 residents in flood-prone blocks lack a nearby vertical refuge; 18 industrial sites within 4.2 km. <b>Lahaina:</b> no hospital mapped within 3 km; 0% of residents within a 1 km walk of a fire station; bare land 1.8% → 15.4% (2016 → 2025).</p>
+    </div>
+    <img class="shot" src="img/n5_readiness.jpg" style="height:800px; object-position:left top">
+  </div>
+  <div class="foot"><span>data/cache/reports/*.json · each report validated by code</span><span>5</span></div>
+</section>
+
+<!-- 6 -->
+<section class="slide">
+  <div class="kicker">3 · Simulate · 9 hazards, one engine</div>
+  <h2>Official guidance → danger zone → safe move → route</h2>
+  <table class="hz-t">
+    <tr><th>Hazard</th><th>Danger computed from</th><th>Safe move and target</th><th>Guidance</th></tr>
+    <tr><td><b>Flood</b></td><td>Low land (DEM), surface water, rain; reported flooding overrides</td><td>Go up: tall building / high ground, no underpasses</td><td>State flood do’s and don’ts</td></tr>
+    <tr><td><b>Earthquake</b></td><td>Shaking now / after shaking</td><td>Drop, cover, hold; then nearest open area</td><td>Ready.gov (FEMA)</td></tr>
+    <tr><td><b>Cyclone</b></td><td>Surge-exposed vs wind-only blocks; Saffir-Simpson</td><td>Go up, or interior room</td><td>Ready.gov, NOAA NHC</td></tr>
+    <tr><td><b>Tsunami</b></td><td>Height vs Ready.gov’s 100 ft (30 m)</td><td>Nearest ground ≥ 30 m, inland</td><td>Ready.gov</td></tr>
+    <tr><td><b>Wildfire</b></td><td>Fire + wind: spread ≈ 10% of wind speed</td><td>Leave early, crosswind, never downwind</td><td>Ready.gov; Cruz &amp; Alexander 2019</td></tr>
+    <tr><td><b>Extreme heat</b></td><td>NWS heat index (temperature, humidity)</td><td>Get cool; nearest public building</td><td>Ready.gov, US NWS</td></tr>
+    <tr><td><b>Gas leak</b></td><td>ERG 2024 distances, shaped by wind</td><td>Shelter and seal, or move crosswind</td><td>ERG 2024, Ready.gov</td></tr>
+    <tr><td><b>Bomb / blast</b></td><td>DHS/FBI stand-off distances</td><td>Evacuate, or shelter away from glass</td><td>DHS/FBI, ERG 2024</td></tr>
+    <tr><td><b>Air raid</b></td><td>Whole-area alert</td><td>Nearest underground shelter</td><td>Civil-defence drill guidance</td></tr>
+  </table>
+  <p class="small muted" style="margin-top:14px">Each hazard is a rulebook file (zone model, conditions, allowed / forbidden moves, verbatim advice with sources). The UI builds its controls from these files. Every plan also lists schools, elderly homes and clinics within 500 m.</p>
+  <div class="foot"><span>safeground/rulebooks/*.yaml · safeground/engine/zones.py · respond.py</span><span>6</span></div>
+</section>
+
+<!-- 7 -->
+<section class="slide">
+  <div class="kicker">3 · Simulate · Lahaina, Hawaii</div>
+  <h2>A plan a person can follow — with directions in Google Maps</h2>
+  <div class="grid2" style="gap:30px">
+    <div><img class="shot" src="img/n3_tsunami.jpg" style="height:600px">
+      <p class="small" style="margin-top:12px"><b>Tsunami warning:</b> this block is below 30 m, so the plan says go to high ground — ground ~42 m above sea level, 1.6 km ENE, a 22-min walk that avoids underpasses.</p></div>
+    <div><img class="shot" src="img/n4_wildfire.jpg" style="height:600px">
+      <p class="small" style="margin-top:12px"><b>Wildfire, wind from NE at 6 m/s:</b> the fire could reach this spot within an hour. Leave now — 939 m NW, out of the spread zone, never downwind.</p></div>
+  </div>
+  <div class="foot"><span>Provenance first: computed facts above, validated Gemini text below · print, PDF, copy, share link · dark-first, WCAG 2.2 AA</span><span>7</span></div>
+</section>
+
+<!-- 8 -->
+<section class="slide">
+  <div class="kicker">Any place on Earth</div>
+  <h2>Search, drop a pin or pick a quick start — the place is built live</h2>
+  <div class="grid2" style="grid-template-columns: 1.45fr 0.55fr; gap:30px">
+    <img class="shot" src="img/n1_landing.jpg" style="height:560px">
+    <img class="shot" src="img/n7_mobile.jpg" style="height:560px; object-position:center top">
+  </div>
+  <div class="flow" style="margin-top:22px">
+    <div class="step"><b>1 · Map data</b>OpenStreetMap (Overpass); OpenFreeMap vector tiles when it is busy</div><div class="arrow">→</div>
+    <div class="step"><b>2 · Earth Engine</b>Population, buildings, height, water, land cover for ~300 blocks</div><div class="arrow">→</div>
+    <div class="step"><b>3 · History</b>Flood DB, rain extremes, fires, USGS quakes, GDACS alerts, checked news</div><div class="arrow">→</div>
+    <div class="step"><b>4 · Same agents</b>Readiness report and safety plans, validated by code</div>
+  </div>
+  <div class="foot"><span>Ready now: Paiporta (ES) · Shibuya (JP) · Port of Beirut (LB) · Antakya (TR) · Kyiv (UA) · Lahaina (US) · Derna (LY) — any other place in ~2 minutes</span><span>8</span></div>
+</section>
+
+<!-- 9 -->
+<section class="slide">
+  <div class="kicker">Built on Google Cloud &amp; Google AI</div>
+  <h2>Code computes the facts. Gemini reasons and explains.</h2>
+  <div class="arch">
+    <div class="col">
+      <div class="colhead">Data</div>
+      <div class="box g"><b>Google Earth Engine (live)</b>WorldPop · Open Buildings · Dynamic World 2016→2025 · Copernicus DEM · JRC water · WDPA</div>
+      <div class="box g"><b>Earth Engine history</b>Global Flood Database · CHIRPS / ERA5-Land rain · FIRMS fires</div>
+      <div class="box c"><b>Open data</b>OpenStreetMap walking graph and facilities · USGS · GDACS · Photon geocoder</div>
+      <div class="box c"><b>Official rulebooks (9)</b>Ready.gov, ERG 2024, DHS/FBI, NOAA NHC, NWS, flood and civil-defence guidance</div>
+    </div>
+    <div class="col">
+      <div class="colhead">Agents (Google ADK · Gemini 3.5 Flash)</div>
+      <div class="box g"><b>NewsResearcher</b>Google Search grounding; every link opened and checked (Internet Archive fallback)</div>
+      <div class="box g"><b>Readiness investigator → writer</b>Tool-calling agent picks checks; writer outputs a typed ReadinessReport</div>
+      <div class="box g"><b>SafetyPlanner</b>Typed SafetyPlan from computed facts and rulebook lines only</div>
+      <div class="box" style="border-color:#E5484D"><b>Validator (code)</b>Rejects a wrong tier, forbidden moves, uncited advice, numbers not in the facts, unsafe phrases → feedback loop (3 tries) → official-text fallback</div>
+    </div>
+    <div class="col">
+      <div class="colhead">Serving</div>
+      <div class="box g"><b>Cloud Run</b>FastAPI + engine, scales to zero, dedicated service account</div>
+      <div class="box g"><b>Cloud Build · Secret Manager</b>Source deploy; Gemini key never in code</div>
+      <div class="box c"><b>Engine (code)</b>9 hazard zones, Dijkstra routes that avoid danger and underpasses, access fields, overview</div>
+      <div class="box c"><b>Web</b>Landing + map-first workspace; provenance badges; print / PDF / share; WCAG 2.2 AA; dark-first</div>
+    </div>
+  </div>
+  <div class="foot"><span>Repo: safeground/ (engine, agents, api, rulebooks) · web/ · eval/ · tests/ (22 tests)</span><span>9</span></div>
+</section>
+
+<!-- 10 -->
+<section class="slide">
+  <div class="kicker">Accuracy &amp; trust</div>
+  <h2>Every answer is checked by code before anyone sees it</h2>
+  <div class="grid3" style="gap:26px">
+    <div class="card"><h3>Validator catches invention</h3><p class="small">In one readiness report the writer’s first two drafts added up residents on their own. Both were rejected as numbers not in any tool result; the third draft passed.</p></div>
+    <div class="card"><h3>Sources are opened, not trusted</h3><p class="small">Each news link is fetched and must mention the place and the year. Sites that block bots are checked on their Internet Archive copy. Unchecked links never reach a report.</p></div>
+    <div class="card"><h3>Unsafe moves are blocked</h3><p class="small">Basement in a gas leak, downwind in a wildfire, the shore in a tsunami, a doorway in an earthquake, wading through flood water — rejected by rule.</p></div>
+  </div>
+  <div class="grid3" style="gap:26px; margin-top:26px">
+    <div class="card tint"><h3>Labelled estimates</h3><p class="small">Flood, surge and tsunami tiers, gas and fire zones and population are shown with their method and limits.</p></div>
+    <div class="card tint"><h3>Unknown stays unknown</h3><p class="small">Hospital capacity, basements, distance from the coast and whether a building is open are shown as gaps.</p></div>
+    <div class="card tint"><h3>No guessed numbers</h3><p class="small">Emergency numbers come from a checked table per country; if a country is missing, the app says so.</p></div>
+  </div>
+  <div class="foot"><span>safeground/agents/validators.py · README “Limitations”</span><span>10</span></div>
+</section>
+
+<!-- 11 -->
+<section class="slide">
+  <div class="kicker">Evaluation · 20 safety-plan cases</div>
+  <h2>Same Gemini model: with SafeGround’s facts vs. on its own</h2>
+  <table>
+    <tr><th>Check</th><th>SafeGround</th><th>Gemini alone</th></tr>
+    <tr><td>Danger level matches the official-distance tier</td><td class="num good">100%</td><td class="num bad">30%</td></tr>
+    <tr><td>Main move allowed for that tier</td><td class="num good">100%</td><td class="num bad">70%</td></tr>
+    <tr><td>Plans with invented distances or times</td><td class="num good">0</td><td class="num bad">3</td></tr>
+    <tr><td>Plans with an unsafe instruction</td><td class="num">0</td><td class="num">0</td></tr>
+  </table>
+  <p class="small muted" style="margin-top:20px">Cases at real street locations: a night ammonia leak with wind, bomb threats, an air-raid alert and very heavy rain with reported waterlogging, across 6 situations. Scoring is rule-based against the engine’s official zone; 19/20 SafeGround plans passed the validator the first time. The 5 newer hazards (earthquake, cyclone, tsunami, wildfire, heat) passed validation on the first attempt in live tests and are covered by unit tests; they are not yet in this comparison.</p>
+  <div class="foot"><span>eval/run_eval.py · eval/results.json · eval/RESULTS.md · tests/test_hazards.py</span><span>11</span></div>
+</section>
+
+<!-- 12 -->
+<section class="slide">
+  <div class="kicker">Impact</div>
+  <h2>Findings a disaster team can act on — on four continents</h2>
+  <div class="grid4">
+    <div class="card"><span class="tag t-red">Antakya · earthquake, flood</span><div class="big" style="margin:14px 0">42,007</div><p class="small">residents in flood-prone blocks with no flood refuge within a 300 m walk</p></div>
+    <div class="card"><span class="tag t-orange">Lahaina · wildfire</span><div class="big" style="margin:14px 0">0</div><p class="small">hospitals mapped within 3 km; 0% of residents within a 1 km walk of a fire station; bare land 1.8% → 15.4% since 2016</p></div>
+    <div class="card"><span class="tag t-blue">Port of Beirut · coast</span><div class="big" style="margin:14px 0">182 / 264</div><p class="small">blocks below 30 m above sea level; 18 industrial sites within 4.2 km</p></div>
+    <div class="card"><span class="tag t-yellow">Shibuya · crowds</span><div class="big" style="margin:14px 0">11 + 2</div><p class="small">schools and elderly homes within 500 m of one station corner — who to help first</p></div>
+  </div>
+  <div class="grid2" style="margin-top:34px; gap:34px; flex:0">
+    <div class="quote"><b>Social impact:</b> drills, refuges and evacuation routes planned from a place’s real records, for the people least able to move — elderly homes, schools, hospitals.</div>
+    <div class="quote"><b>Sustainability:</b> readiness covers animals and nature too — tree and wetland loss (Dynamic World 2016→2025), vet access, protected areas.</div>
+  </div>
+  <div class="foot"><span>Numbers from validated readiness reports and the place overview (data/cache/)</span><span>12</span></div>
+</section>
+
+<!-- 13 -->
+<section class="slide">
+  <div class="kicker">Limits &amp; next steps</div>
+  <h2>What it is not — yet</h2>
+  <div class="grid2">
+    <div class="card">
+      <h3>Limitations</h3>
+      <ul class="small">
+        <li>Flood, surge and tsunami tiers are estimates from a 30 m elevation model; distance from the coast is not measured.</li>
+        <li>ERG distances are made for transport incidents; the wildfire spread is a rule of thumb, not a fire model.</li>
+        <li>OpenStreetMap gaps: hospital capacity, basements, elderly homes, animals.</li>
+        <li>Each place covers a 3 km circle; conditions (wind, rain, heat) are set by the user.</li>
+        <li>Official advice is from US and Indian sources; local guidance may differ.</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Next</h3>
+      <ul class="small">
+        <li>Live conditions and alerts (Google Weather API, Flood Hub, GDACS) to keep plans current.</li>
+        <li>Local official guidance and languages per country; voice for people who can’t read the screen.</li>
+        <li>Area impact briefs with actions by role (residents, responders, city) and drill exports.</li>
+        <li>Team workspaces and saved scenarios for organisations.</li>
+        <li>Human review of readiness reports with local disaster-management officers.</li>
+      </ul>
+    </div>
+  </div>
+  <p class="small" style="margin-top:26px"><b>Try it:</b> safeground-653135417611.asia-south1.run.app · In a real emergency, follow official instructions and call the local emergency number.</p>
+  <div class="foot"><span>SafeGround · Google Cloud AI Builder Cup 2026</span><span>13</span></div>
+</section>
+
+</body>
+</html>

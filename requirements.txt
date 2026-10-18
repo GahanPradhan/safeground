@@ -1,0 +1,21 @@
+# Agents + Gemini (Vertex AI)
+google-adk==2.11.0
+google-genai
+# Geospatial
+earthengine-api
+osmnx
+networkx
+geopandas
+shapely
+pyproj
+h3>=4
+# App
+fastapi
+uvicorn[standard]
+httpx
+pydantic>=2
+pyyaml
+rapidfuzz
+# Pipeline / eval
+pypdf
+pytest

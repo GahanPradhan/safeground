@@ -1,0 +1,66 @@
+[
+ {
+  "type": "fire (satellite detection)",
+  "date": "2003-2020",
+  "what_happened": "Satellite fire detections on 4 days (by year: {'2003': 1, '2013': 1, '2019': 1, '2020': 1}); in a city these are often industrial flares or waste burning, not wildfires (FIRMS, 1 km).",
+  "source_url": "https://developers.google.com/earth-engine/datasets/catalog/FIRMS",
+  "url": "https://developers.google.com/earth-engine/datasets/catalog/FIRMS",
+  "evidence_kind": "dataset"
+ },
+ {
+  "type": "flood",
+  "date": "2023-04-05",
+  "what_happened": "Flood in Ukraine \u2014 GDACS green alert (event reference point 35 km away).",
+  "source_url": "https://www.gdacs.org/report.aspx?eventid=1101925&episodeid=2&eventtype=FL",
+  "url": "https://www.gdacs.org/report.aspx?eventid=1101925&episodeid=2&eventtype=FL",
+  "evidence_kind": "dataset"
+ },
+ {
+  "type": "extreme rainfall",
+  "date": "2024-06-12",
+  "what_happened": "53 mm of rain in one day at this location (ERA5-Land reanalysis).",
+  "source_url": "https://developers.google.com/earth-engine/datasets/catalog/ECMWF_ERA5_LAND_DAILY_AGGR",
+  "url": "https://developers.google.com/earth-engine/datasets/catalog/ECMWF_ERA5_LAND_DAILY_AGGR",
+  "evidence_kind": "dataset"
+ },
+ {
+  "type": "extreme rainfall",
+  "date": "2003-10-09",
+  "what_happened": "52 mm of rain in one day at this location (ERA5-Land reanalysis).",
+  "source_url": "https://developers.google.com/earth-engine/datasets/catalog/ECMWF_ERA5_LAND_DAILY_AGGR",
+  "url": "https://developers.google.com/earth-engine/datasets/catalog/ECMWF_ERA5_LAND_DAILY_AGGR",
+  "evidence_kind": "dataset"
+ },
+ {
+  "type": "extreme rainfall",
+  "date": "2012-08-13",
+  "what_happened": "40 mm of rain in one day at this location (ERA5-Land reanalysis).",
+  "source_url": "https://developers.google.com/earth-engine/datasets/catalog/ECMWF_ERA5_LAND_DAILY_AGGR",
+  "url": "https://developers.google.com/earth-engine/datasets/catalog/ECMWF_ERA5_LAND_DAILY_AGGR",
+  "evidence_kind": "dataset"
+ },
+ {
+  "type": "extreme rainfall",
+  "date": "2011-07-01",
+  "what_happened": "40 mm of rain in one day at this location (ERA5-Land reanalysis).",
+  "source_url": "https://developers.google.com/earth-engine/datasets/catalog/ECMWF_ERA5_LAND_DAILY_AGGR",
+  "url": "https://developers.google.com/earth-engine/datasets/catalog/ECMWF_ERA5_LAND_DAILY_AGGR",
+  "evidence_kind": "dataset"
+ },
+ {
+  "type": "extreme rainfall",
+  "date": "2011-10-09",
+  "what_happened": "39 mm of rain in one day at this location (ERA5-Land reanalysis).",
+  "source_url": "https://developers.google.com/earth-engine/datasets/catalog/ECMWF_ERA5_LAND_DAILY_AGGR",
+  "url": "https://developers.google.com/earth-engine/datasets/catalog/ECMWF_ERA5_LAND_DAILY_AGGR",
+  "evidence_kind": "dataset"
+ },
+ {
+  "type": "extreme rainfall (summary)",
+  "date": "2001-2025",
+  "what_happened": "0 days with at least 115.6 mm of rain between 2001 and 2025 (ERA5-Land reanalysis; 115.6 mm is the India Meteorological Department 'very heavy' threshold, used here as a common marker).",
+  "source_url": "https://developers.google.com/earth-engine/datasets/catalog/ECMWF_ERA5_LAND_DAILY_AGGR",
+  "url": "https://developers.google.com/earth-engine/datasets/catalog/ECMWF_ERA5_LAND_DAILY_AGGR",
+  "evidence_kind": "dataset"
+ }
+]

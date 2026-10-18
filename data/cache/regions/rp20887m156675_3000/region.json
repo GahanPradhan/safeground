@@ -1,0 +1,31 @@
+{
+ "id": "rp20887m156675_3000",
+ "name": "Lahaina",
+ "admin": "Hawaii",
+ "country": "United States",
+ "country_code": "US",
+ "lat": 20.8871774,
+ "lon": -156.6748024,
+ "radius_m": 3000,
+ "built_at": "2026-10-18T18:43:10+0530",
+ "build_seconds": 139.3,
+ "roads": 470,
+ "graph_nodes": 564,
+ "features": 88,
+ "blocks": 252,
+ "blocks_with_satellite_data": 252,
+ "history_records": 15,
+ "notes": [],
+ "emergency": {
+  "call": [
+   {
+    "number": "911",
+    "for": "Emergency (police, fire, ambulance)"
+   }
+  ],
+  "source": "https://en.wikipedia.org/wiki/List_of_emergency_telephone_numbers",
+  "known": true
+ },
+ "map_data_source": "OpenStreetMap via the Overpass API",
+ "osm_timestamp": "2026-10-18T13:09:37Z"
+}

@@ -1,0 +1,30 @@
+{
+  "built_at": "2026-10-18T13:18:35+0530",
+  "project": "gen-lang-client-0657024026",
+  "h3_res": 9,
+  "hexes": 6712,
+  "bands": [
+    "bld_frac",
+    "bld_h_mean",
+    "bld_h_p90",
+    "dw_bare_2016",
+    "dw_bare_2025",
+    "dw_built_2016",
+    "dw_built_2025",
+    "dw_flooded_vegetation_2016",
+    "dw_flooded_vegetation_2025",
+    "dw_grass_2016",
+    "dw_grass_2025",
+    "dw_trees_2016",
+    "dw_trees_2025",
+    "dw_water_2016",
+    "dw_water_2025",
+    "elev_mean",
+    "h3",
+    "pop",
+    "protected",
+    "rel_elev",
+    "water_near_m",
+    "water_occ"
+  ]
+}

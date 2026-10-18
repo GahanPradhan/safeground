@@ -1,0 +1,130 @@
+[
+ {
+  "type": "flood",
+  "date": "2003-02-04",
+  "what_happened": "Satellite (MODIS) saw flood water on about 2 pixels of 250 m (not counting permanent water) in this area during Global Flood Database event 2175 (2003-02-04 to 2003-03-12; main cause: Heavy rain; reported deaths 0, displaced 0 for the whole event).",
+  "source_url": "https://developers.google.com/earth-engine/datasets/catalog/GLOBAL_FLOOD_DB_MODIS_EVENTS_V1",
+  "url": "https://developers.google.com/earth-engine/datasets/catalog/GLOBAL_FLOOD_DB_MODIS_EVENTS_V1",
+  "evidence_kind": "dataset"
+ },
+ {
+  "type": "flood",
+  "date": "2004-01-24",
+  "what_happened": "Satellite (MODIS) saw flood water on about 7 pixels of 250 m (not counting permanent water) in this area during Global Flood Database event 2433 (2004-01-24 to 2004-02-14; main cause: Heavy rain; reported deaths 0, displaced 0 for the whole event).",
+  "source_url": "https://developers.google.com/earth-engine/datasets/catalog/GLOBAL_FLOOD_DB_MODIS_EVENTS_V1",
+  "url": "https://developers.google.com/earth-engine/datasets/catalog/GLOBAL_FLOOD_DB_MODIS_EVENTS_V1",
+  "evidence_kind": "dataset"
+ },
+ {
+  "type": "flood",
+  "date": "2014-12-04",
+  "what_happened": "Satellite (MODIS) saw flood water on about 2 pixels of 250 m (not counting permanent water) in this area during Global Flood Database event 4211 (2014-12-04 to 2014-12-14; main cause: Heavy Rain; reported deaths 40, displaced 1000 for the whole event).",
+  "source_url": "https://developers.google.com/earth-engine/datasets/catalog/GLOBAL_FLOOD_DB_MODIS_EVENTS_V1",
+  "url": "https://developers.google.com/earth-engine/datasets/catalog/GLOBAL_FLOOD_DB_MODIS_EVENTS_V1",
+  "evidence_kind": "dataset"
+ },
+ {
+  "type": "extreme rainfall",
+  "date": "2003-03-24",
+  "what_happened": "187 mm of rain in one day at this location (CHIRPS satellite-gauge estimate).",
+  "source_url": "https://developers.google.com/earth-engine/datasets/catalog/UCSB-CHG_CHIRPS_DAILY",
+  "url": "https://developers.google.com/earth-engine/datasets/catalog/UCSB-CHG_CHIRPS_DAILY",
+  "evidence_kind": "dataset"
+ },
+ {
+  "type": "extreme rainfall",
+  "date": "2013-01-06",
+  "what_happened": "182 mm of rain in one day at this location (CHIRPS satellite-gauge estimate).",
+  "source_url": "https://developers.google.com/earth-engine/datasets/catalog/UCSB-CHG_CHIRPS_DAILY",
+  "url": "https://developers.google.com/earth-engine/datasets/catalog/UCSB-CHG_CHIRPS_DAILY",
+  "evidence_kind": "dataset"
+ },
+ {
+  "type": "extreme rainfall",
+  "date": "2003-02-12",
+  "what_happened": "181 mm of rain in one day at this location (CHIRPS satellite-gauge estimate).",
+  "source_url": "https://developers.google.com/earth-engine/datasets/catalog/UCSB-CHG_CHIRPS_DAILY",
+  "url": "https://developers.google.com/earth-engine/datasets/catalog/UCSB-CHG_CHIRPS_DAILY",
+  "evidence_kind": "dataset"
+ },
+ {
+  "type": "extreme rainfall",
+  "date": "2015-01-10",
+  "what_happened": "176 mm of rain in one day at this location (CHIRPS satellite-gauge estimate).",
+  "source_url": "https://developers.google.com/earth-engine/datasets/catalog/UCSB-CHG_CHIRPS_DAILY",
+  "url": "https://developers.google.com/earth-engine/datasets/catalog/UCSB-CHG_CHIRPS_DAILY",
+  "evidence_kind": "dataset"
+ },
+ {
+  "type": "extreme rainfall",
+  "date": "2003-02-21",
+  "what_happened": "172 mm of rain in one day at this location (CHIRPS satellite-gauge estimate).",
+  "source_url": "https://developers.google.com/earth-engine/datasets/catalog/UCSB-CHG_CHIRPS_DAILY",
+  "url": "https://developers.google.com/earth-engine/datasets/catalog/UCSB-CHG_CHIRPS_DAILY",
+  "evidence_kind": "dataset"
+ },
+ {
+  "type": "extreme rainfall (summary)",
+  "date": "2001-2025",
+  "what_happened": "15 days with at least 115.6 mm of rain between 2001 and 2025 (CHIRPS satellite-gauge estimate; 115.6 mm is the India Meteorological Department 'very heavy' threshold, used here as a common marker).",
+  "source_url": "https://developers.google.com/earth-engine/datasets/catalog/UCSB-CHG_CHIRPS_DAILY",
+  "url": "https://developers.google.com/earth-engine/datasets/catalog/UCSB-CHG_CHIRPS_DAILY",
+  "evidence_kind": "dataset"
+ },
+ {
+  "type": "fire (satellite detection)",
+  "date": "2022-2022",
+  "what_happened": "Satellite fire detections on 1 days (by year: {'2022': 1}); in a city these are often industrial flares or waste burning, not wildfires (FIRMS, 1 km).",
+  "source_url": "https://developers.google.com/earth-engine/datasets/catalog/FIRMS",
+  "url": "https://developers.google.com/earth-engine/datasets/catalog/FIRMS",
+  "evidence_kind": "dataset"
+ },
+ {
+  "type": "flood",
+  "date": "2025-11-24",
+  "what_happened": "Flood in Lebanon \u2014 GDACS green alert (event reference point 2 km away).",
+  "source_url": "https://www.gdacs.org/report.aspx?eventid=1103631&episodeid=1&eventtype=FL",
+  "url": "https://www.gdacs.org/report.aspx?eventid=1103631&episodeid=1&eventtype=FL",
+  "evidence_kind": "dataset"
+ },
+ {
+  "type": "flood",
+  "date": "2024-11-10",
+  "what_happened": "Flood in Lebanon \u2014 GDACS green alert (event reference point 14 km away).",
+  "source_url": "https://www.gdacs.org/report.aspx?eventid=1103004&episodeid=1&eventtype=FL",
+  "url": "https://www.gdacs.org/report.aspx?eventid=1103004&episodeid=1&eventtype=FL",
+  "evidence_kind": "dataset"
+ },
+ {
+  "type": "flood",
+  "date": "2022-11-29",
+  "what_happened": "Flood in Lebanon \u2014 GDACS green alert (event reference point 31 km away).",
+  "source_url": "https://www.gdacs.org/report.aspx?eventid=1101765&episodeid=1&eventtype=FL",
+  "url": "https://www.gdacs.org/report.aspx?eventid=1101765&episodeid=1&eventtype=FL",
+  "evidence_kind": "dataset"
+ },
+ {
+  "type": "flood",
+  "date": "2019-01-08",
+  "what_happened": "Flood in Lebanon \u2014 GDACS green alert (event reference point 30 km away).",
+  "source_url": "https://www.gdacs.org/report.aspx?eventid=1000217&episodeid=1&eventtype=FL",
+  "url": "https://www.gdacs.org/report.aspx?eventid=1000217&episodeid=1&eventtype=FL",
+  "evidence_kind": "dataset"
+ },
+ {
+  "type": "flood",
+  "date": "2003-02-21",
+  "what_happened": "Flood in Lebanon \u2014 GDACS green alert; Magnitude 4.40 (event reference point 47 km away).",
+  "source_url": "https://www.gdacs.org/report.aspx?eventid=2164&episodeid=1&eventtype=FL",
+  "url": "https://www.gdacs.org/report.aspx?eventid=2164&episodeid=1&eventtype=FL",
+  "evidence_kind": "dataset"
+ },
+ {
+  "type": "flood",
+  "date": "2002-12-20",
+  "what_happened": "Flood in Lebanon \u2014 GDACS green alert; Magnitude 4.09 (event reference point 25 km away).",
+  "source_url": "https://www.gdacs.org/report.aspx?eventid=2107&episodeid=1&eventtype=FL",
+  "url": "https://www.gdacs.org/report.aspx?eventid=2107&episodeid=1&eventtype=FL",
+  "evidence_kind": "dataset"
+ }
+]

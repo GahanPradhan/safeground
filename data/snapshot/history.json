@@ -1,0 +1,290 @@
+{
+ "Velachery": [
+  {
+   "type": "extreme rainfall",
+   "date": "2008-11-27",
+   "what_happened": "182 mm of rain in one day at this location (CHIRPS satellite-gauge estimate).",
+   "source_url": "https://developers.google.com/earth-engine/datasets/catalog/UCSB-CHG_CHIRPS_DAILY",
+   "url": "https://developers.google.com/earth-engine/datasets/catalog/UCSB-CHG_CHIRPS_DAILY",
+   "evidence_kind": "dataset"
+  },
+  {
+   "type": "extreme rainfall",
+   "date": "2015-11-16",
+   "what_happened": "173 mm of rain in one day at this location (CHIRPS satellite-gauge estimate).",
+   "source_url": "https://developers.google.com/earth-engine/datasets/catalog/UCSB-CHG_CHIRPS_DAILY",
+   "url": "https://developers.google.com/earth-engine/datasets/catalog/UCSB-CHG_CHIRPS_DAILY",
+   "evidence_kind": "dataset"
+  },
+  {
+   "type": "extreme rainfall",
+   "date": "2019-12-01",
+   "what_happened": "172 mm of rain in one day at this location (CHIRPS satellite-gauge estimate).",
+   "source_url": "https://developers.google.com/earth-engine/datasets/catalog/UCSB-CHG_CHIRPS_DAILY",
+   "url": "https://developers.google.com/earth-engine/datasets/catalog/UCSB-CHG_CHIRPS_DAILY",
+   "evidence_kind": "dataset"
+  },
+  {
+   "type": "extreme rainfall",
+   "date": "2015-11-23",
+   "what_happened": "161 mm of rain in one day at this location (CHIRPS satellite-gauge estimate).",
+   "source_url": "https://developers.google.com/earth-engine/datasets/catalog/UCSB-CHG_CHIRPS_DAILY",
+   "url": "https://developers.google.com/earth-engine/datasets/catalog/UCSB-CHG_CHIRPS_DAILY",
+   "evidence_kind": "dataset"
+  },
+  {
+   "type": "extreme rainfall",
+   "date": "2011-11-26",
+   "what_happened": "152 mm of rain in one day at this location (CHIRPS satellite-gauge estimate).",
+   "source_url": "https://developers.google.com/earth-engine/datasets/catalog/UCSB-CHG_CHIRPS_DAILY",
+   "url": "https://developers.google.com/earth-engine/datasets/catalog/UCSB-CHG_CHIRPS_DAILY",
+   "evidence_kind": "dataset"
+  },
+  {
+   "type": "extreme rainfall (summary)",
+   "date": "2001-2025",
+   "what_happened": "19 days with at least 115.6 mm of rain (IMD 'very heavy' threshold) between 2001 and 2025 (CHIRPS).",
+   "source_url": "https://developers.google.com/earth-engine/datasets/catalog/UCSB-CHG_CHIRPS_DAILY",
+   "url": "https://developers.google.com/earth-engine/datasets/catalog/UCSB-CHG_CHIRPS_DAILY",
+   "evidence_kind": "dataset"
+  },
+  {
+   "type": "fire (satellite detection)",
+   "date": "2017-2017",
+   "what_happened": "Satellite fire detections on 1 days (by year: {'2017': 1}); in a city these are often industrial flares or waste burning, not wildfires (FIRMS, 1 km).",
+   "source_url": "https://developers.google.com/earth-engine/datasets/catalog/FIRMS",
+   "url": "https://developers.google.com/earth-engine/datasets/catalog/FIRMS",
+   "evidence_kind": "dataset"
+  }
+ ],
+ "Ennore": [
+  {
+   "type": "flood",
+   "date": "2005-09-14",
+   "what_happened": "Satellite (MODIS) saw flood water on about 7 pixels of 250 m (not counting permanent water) in this area during Global Flood Database event 2728 (2005-09-14 to 2005-09-30; main cause: Heavy rain; reported deaths 89, displaced 550000 for the whole event).",
+   "source_url": "https://developers.google.com/earth-engine/datasets/catalog/GLOBAL_FLOOD_DB_MODIS_EVENTS_V1",
+   "url": "https://developers.google.com/earth-engine/datasets/catalog/GLOBAL_FLOOD_DB_MODIS_EVENTS_V1",
+   "evidence_kind": "dataset"
+  },
+  {
+   "type": "flood",
+   "date": "2005-10-23",
+   "what_happened": "Satellite (MODIS) saw flood water on about 8 pixels of 250 m (not counting permanent water) in this area during Global Flood Database event 2758 (2005-10-23 to 2005-12-09; main cause: Monsoonal rain; reported deaths 279, displaced 300000 for the whole event).",
+   "source_url": "https://developers.google.com/earth-engine/datasets/catalog/GLOBAL_FLOOD_DB_MODIS_EVENTS_V1",
+   "url": "https://developers.google.com/earth-engine/datasets/catalog/GLOBAL_FLOOD_DB_MODIS_EVENTS_V1",
+   "evidence_kind": "dataset"
+  },
+  {
+   "type": "flood",
+   "date": "2009-09-25",
+   "what_happened": "Satellite (MODIS) saw flood water on about 3 pixels of 250 m (not counting permanent water) in this area during Global Flood Database event 3551 (2009-09-25 to 2009-10-12; main cause: Heavy Rain; reported deaths 303, displaced 0 for the whole event).",
+   "source_url": "https://developers.google.com/earth-engine/datasets/catalog/GLOBAL_FLOOD_DB_MODIS_EVENTS_V1",
+   "url": "https://developers.google.com/earth-engine/datasets/catalog/GLOBAL_FLOOD_DB_MODIS_EVENTS_V1",
+   "evidence_kind": "dataset"
+  },
+  {
+   "type": "flood",
+   "date": "2012-11-04",
+   "what_happened": "Satellite (MODIS) saw flood water on about 4 pixels of 250 m (not counting permanent water) in this area during Global Flood Database event 4001 (2012-11-04 to 2012-11-08; main cause: Tropical Storm Nilam; reported deaths 40, displaced 70000 for the whole event).",
+   "source_url": "https://developers.google.com/earth-engine/datasets/catalog/GLOBAL_FLOOD_DB_MODIS_EVENTS_V1",
+   "url": "https://developers.google.com/earth-engine/datasets/catalog/GLOBAL_FLOOD_DB_MODIS_EVENTS_V1",
+   "evidence_kind": "dataset"
+  },
+  {
+   "type": "flood",
+   "date": "2014-10-12",
+   "what_happened": "Satellite (MODIS) saw flood water on about 6 pixels of 250 m (not counting permanent water) in this area during Global Flood Database event 4198 (2014-10-12 to 2014-10-27; main cause: Tropical Storm Hudhug; reported deaths 42, displaced 0 for the whole event).",
+   "source_url": "https://developers.google.com/earth-engine/datasets/catalog/GLOBAL_FLOOD_DB_MODIS_EVENTS_V1",
+   "url": "https://developers.google.com/earth-engine/datasets/catalog/GLOBAL_FLOOD_DB_MODIS_EVENTS_V1",
+   "evidence_kind": "dataset"
+  },
+  {
+   "type": "flood",
+   "date": "2015-11-10",
+   "what_happened": "Satellite (MODIS) saw flood water on about 21 pixels of 250 m (not counting permanent water) in this area during Global Flood Database event 4309 (2015-11-10 to 2015-12-04; main cause: Tropical Storm Rovan; reported deaths 180, displaced 400000 for the whole event).",
+   "source_url": "https://developers.google.com/earth-engine/datasets/catalog/GLOBAL_FLOOD_DB_MODIS_EVENTS_V1",
+   "url": "https://developers.google.com/earth-engine/datasets/catalog/GLOBAL_FLOOD_DB_MODIS_EVENTS_V1",
+   "evidence_kind": "dataset"
+  },
+  {
+   "type": "extreme rainfall",
+   "date": "2008-11-27",
+   "what_happened": "194 mm of rain in one day at this location (CHIRPS satellite-gauge estimate).",
+   "source_url": "https://developers.google.com/earth-engine/datasets/catalog/UCSB-CHG_CHIRPS_DAILY",
+   "url": "https://developers.google.com/earth-engine/datasets/catalog/UCSB-CHG_CHIRPS_DAILY",
+   "evidence_kind": "dataset"
+  },
+  {
+   "type": "extreme rainfall",
+   "date": "2019-12-01",
+   "what_happened": "145 mm of rain in one day at this location (CHIRPS satellite-gauge estimate).",
+   "source_url": "https://developers.google.com/earth-engine/datasets/catalog/UCSB-CHG_CHIRPS_DAILY",
+   "url": "https://developers.google.com/earth-engine/datasets/catalog/UCSB-CHG_CHIRPS_DAILY",
+   "evidence_kind": "dataset"
+  },
+  {
+   "type": "extreme rainfall",
+   "date": "2023-11-21",
+   "what_happened": "145 mm of rain in one day at this location (CHIRPS satellite-gauge estimate).",
+   "source_url": "https://developers.google.com/earth-engine/datasets/catalog/UCSB-CHG_CHIRPS_DAILY",
+   "url": "https://developers.google.com/earth-engine/datasets/catalog/UCSB-CHG_CHIRPS_DAILY",
+   "evidence_kind": "dataset"
+  },
+  {
+   "type": "extreme rainfall",
+   "date": "2015-12-01",
+   "what_happened": "141 mm of rain in one day at this location (CHIRPS satellite-gauge estimate).",
+   "source_url": "https://developers.google.com/earth-engine/datasets/catalog/UCSB-CHG_CHIRPS_DAILY",
+   "url": "https://developers.google.com/earth-engine/datasets/catalog/UCSB-CHG_CHIRPS_DAILY",
+   "evidence_kind": "dataset"
+  },
+  {
+   "type": "extreme rainfall",
+   "date": "2015-11-16",
+   "what_happened": "128 mm of rain in one day at this location (CHIRPS satellite-gauge estimate).",
+   "source_url": "https://developers.google.com/earth-engine/datasets/catalog/UCSB-CHG_CHIRPS_DAILY",
+   "url": "https://developers.google.com/earth-engine/datasets/catalog/UCSB-CHG_CHIRPS_DAILY",
+   "evidence_kind": "dataset"
+  },
+  {
+   "type": "extreme rainfall (summary)",
+   "date": "2001-2025",
+   "what_happened": "8 days with at least 115.6 mm of rain (IMD 'very heavy' threshold) between 2001 and 2025 (CHIRPS).",
+   "source_url": "https://developers.google.com/earth-engine/datasets/catalog/UCSB-CHG_CHIRPS_DAILY",
+   "url": "https://developers.google.com/earth-engine/datasets/catalog/UCSB-CHG_CHIRPS_DAILY",
+   "evidence_kind": "dataset"
+  },
+  {
+   "type": "fire (satellite detection)",
+   "date": "2001-2019",
+   "what_happened": "Satellite fire detections on 5 days (by year: {'2001': 1, '2012': 3, '2019': 1}); in a city these are often industrial flares or waste burning, not wildfires (FIRMS, 1 km).",
+   "source_url": "https://developers.google.com/earth-engine/datasets/catalog/FIRMS",
+   "url": "https://developers.google.com/earth-engine/datasets/catalog/FIRMS",
+   "evidence_kind": "dataset"
+  }
+ ],
+ "Manali": [
+  {
+   "type": "flood",
+   "date": "2005-10-23",
+   "what_happened": "Satellite (MODIS) saw flood water on about 3 pixels of 250 m (not counting permanent water) in this area during Global Flood Database event 2758 (2005-10-23 to 2005-12-09; main cause: Monsoonal rain; reported deaths 279, displaced 300000 for the whole event).",
+   "source_url": "https://developers.google.com/earth-engine/datasets/catalog/GLOBAL_FLOOD_DB_MODIS_EVENTS_V1",
+   "url": "https://developers.google.com/earth-engine/datasets/catalog/GLOBAL_FLOOD_DB_MODIS_EVENTS_V1",
+   "evidence_kind": "dataset"
+  },
+  {
+   "type": "extreme rainfall",
+   "date": "2008-11-27",
+   "what_happened": "218 mm of rain in one day at this location (CHIRPS satellite-gauge estimate).",
+   "source_url": "https://developers.google.com/earth-engine/datasets/catalog/UCSB-CHG_CHIRPS_DAILY",
+   "url": "https://developers.google.com/earth-engine/datasets/catalog/UCSB-CHG_CHIRPS_DAILY",
+   "evidence_kind": "dataset"
+  },
+  {
+   "type": "extreme rainfall",
+   "date": "2015-11-16",
+   "what_happened": "175 mm of rain in one day at this location (CHIRPS satellite-gauge estimate).",
+   "source_url": "https://developers.google.com/earth-engine/datasets/catalog/UCSB-CHG_CHIRPS_DAILY",
+   "url": "https://developers.google.com/earth-engine/datasets/catalog/UCSB-CHG_CHIRPS_DAILY",
+   "evidence_kind": "dataset"
+  },
+  {
+   "type": "extreme rainfall",
+   "date": "2015-12-01",
+   "what_happened": "174 mm of rain in one day at this location (CHIRPS satellite-gauge estimate).",
+   "source_url": "https://developers.google.com/earth-engine/datasets/catalog/UCSB-CHG_CHIRPS_DAILY",
+   "url": "https://developers.google.com/earth-engine/datasets/catalog/UCSB-CHG_CHIRPS_DAILY",
+   "evidence_kind": "dataset"
+  },
+  {
+   "type": "extreme rainfall",
+   "date": "2019-12-01",
+   "what_happened": "162 mm of rain in one day at this location (CHIRPS satellite-gauge estimate).",
+   "source_url": "https://developers.google.com/earth-engine/datasets/catalog/UCSB-CHG_CHIRPS_DAILY",
+   "url": "https://developers.google.com/earth-engine/datasets/catalog/UCSB-CHG_CHIRPS_DAILY",
+   "evidence_kind": "dataset"
+  },
+  {
+   "type": "extreme rainfall",
+   "date": "2020-12-02",
+   "what_happened": "137 mm of rain in one day at this location (CHIRPS satellite-gauge estimate).",
+   "source_url": "https://developers.google.com/earth-engine/datasets/catalog/UCSB-CHG_CHIRPS_DAILY",
+   "url": "https://developers.google.com/earth-engine/datasets/catalog/UCSB-CHG_CHIRPS_DAILY",
+   "evidence_kind": "dataset"
+  },
+  {
+   "type": "extreme rainfall (summary)",
+   "date": "2001-2025",
+   "what_happened": "13 days with at least 115.6 mm of rain (IMD 'very heavy' threshold) between 2001 and 2025 (CHIRPS).",
+   "source_url": "https://developers.google.com/earth-engine/datasets/catalog/UCSB-CHG_CHIRPS_DAILY",
+   "url": "https://developers.google.com/earth-engine/datasets/catalog/UCSB-CHG_CHIRPS_DAILY",
+   "evidence_kind": "dataset"
+  },
+  {
+   "type": "fire (satellite detection)",
+   "date": "2001-2025",
+   "what_happened": "Satellite fire detections on 18 days (by year: {'2001': 1, '2004': 1, '2008': 2, '2014': 1, '2016': 1, '2017': 3, '2018': 1, '2019': 3, '2020': 1, '2023': 3, '2025': 1}); in a city these are often industrial flares or waste burning, not wildfires (FIRMS, 1 km).",
+   "source_url": "https://developers.google.com/earth-engine/datasets/catalog/FIRMS",
+   "url": "https://developers.google.com/earth-engine/datasets/catalog/FIRMS",
+   "evidence_kind": "dataset"
+  }
+ ],
+ "T. Nagar": [
+  {
+   "type": "extreme rainfall",
+   "date": "2015-11-16",
+   "what_happened": "273 mm of rain in one day at this location (CHIRPS satellite-gauge estimate).",
+   "source_url": "https://developers.google.com/earth-engine/datasets/catalog/UCSB-CHG_CHIRPS_DAILY",
+   "url": "https://developers.google.com/earth-engine/datasets/catalog/UCSB-CHG_CHIRPS_DAILY",
+   "evidence_kind": "dataset"
+  },
+  {
+   "type": "extreme rainfall",
+   "date": "2019-12-01",
+   "what_happened": "207 mm of rain in one day at this location (CHIRPS satellite-gauge estimate).",
+   "source_url": "https://developers.google.com/earth-engine/datasets/catalog/UCSB-CHG_CHIRPS_DAILY",
+   "url": "https://developers.google.com/earth-engine/datasets/catalog/UCSB-CHG_CHIRPS_DAILY",
+   "evidence_kind": "dataset"
+  },
+  {
+   "type": "extreme rainfall",
+   "date": "2008-11-27",
+   "what_happened": "201 mm of rain in one day at this location (CHIRPS satellite-gauge estimate).",
+   "source_url": "https://developers.google.com/earth-engine/datasets/catalog/UCSB-CHG_CHIRPS_DAILY",
+   "url": "https://developers.google.com/earth-engine/datasets/catalog/UCSB-CHG_CHIRPS_DAILY",
+   "evidence_kind": "dataset"
+  },
+  {
+   "type": "extreme rainfall",
+   "date": "2015-11-23",
+   "what_happened": "179 mm of rain in one day at this location (CHIRPS satellite-gauge estimate).",
+   "source_url": "https://developers.google.com/earth-engine/datasets/catalog/UCSB-CHG_CHIRPS_DAILY",
+   "url": "https://developers.google.com/earth-engine/datasets/catalog/UCSB-CHG_CHIRPS_DAILY",
+   "evidence_kind": "dataset"
+  },
+  {
+   "type": "extreme rainfall",
+   "date": "2015-12-01",
+   "what_happened": "168 mm of rain in one day at this location (CHIRPS satellite-gauge estimate).",
+   "source_url": "https://developers.google.com/earth-engine/datasets/catalog/UCSB-CHG_CHIRPS_DAILY",
+   "url": "https://developers.google.com/earth-engine/datasets/catalog/UCSB-CHG_CHIRPS_DAILY",
+   "evidence_kind": "dataset"
+  },
+  {
+   "type": "extreme rainfall (summary)",
+   "date": "2001-2025",
+   "what_happened": "24 days with at least 115.6 mm of rain (IMD 'very heavy' threshold) between 2001 and 2025 (CHIRPS).",
+   "source_url": "https://developers.google.com/earth-engine/datasets/catalog/UCSB-CHG_CHIRPS_DAILY",
+   "url": "https://developers.google.com/earth-engine/datasets/catalog/UCSB-CHG_CHIRPS_DAILY",
+   "evidence_kind": "dataset"
+  },
+  {
+   "type": "fire (satellite detection)",
+   "date": "2017-2017",
+   "what_happened": "Satellite fire detections on 1 days (by year: {'2017': 1}); in a city these are often industrial flares or waste burning, not wildfires (FIRMS, 1 km).",
+   "source_url": "https://developers.google.com/earth-engine/datasets/catalog/FIRMS",
+   "url": "https://developers.google.com/earth-engine/datasets/catalog/FIRMS",
+   "evidence_kind": "dataset"
+  }
+ ]
+}

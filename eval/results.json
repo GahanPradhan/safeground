@@ -1,0 +1,3320 @@
+{
+ "run_at": "2026-10-18T13:33:59+0530",
+ "model": "gemini-3.5-flash",
+ "e1_summary": {
+  "safeground": {
+   "cases": 20,
+   "danger_level_matches_official_pct": 100.0,
+   "allowed_main_move_pct": 100.0,
+   "plans_with_unsafe_instruction": 0,
+   "plans_with_invented_numbers": 0,
+   "gas_plans_sending_downwind": 0,
+   "median_latency_s": 10.95
+  },
+  "baseline_gemini_only": {
+   "cases": 20,
+   "danger_level_matches_official_pct": 30.0,
+   "allowed_main_move_pct": 70.0,
+   "plans_with_unsafe_instruction": 0,
+   "plans_with_invented_numbers": 3,
+   "gas_plans_sending_downwind": 0,
+   "median_latency_s": 9.05
+  },
+  "safeground_first_try_pass": 19
+ },
+ "e1_cases": [
+  {
+   "hazard": "gas",
+   "situation": "outdoors",
+   "spot": [
+    13.212,
+    80.315
+   ],
+   "official_tier": "orange",
+   "safeground": {
+    "tier_ok": true,
+    "move_ok": true,
+    "unsafe": [],
+    "invented_numbers": [],
+    "sends_downwind": false,
+    "latency_s": 8.6,
+    "generated_by": "gemini",
+    "attempts": 1
+   },
+   "baseline": {
+    "tier_ok": false,
+    "move_ok": true,
+    "unsafe": [],
+    "invented_numbers": [],
+    "sends_downwind": false,
+    "latency_s": 8.8
+   },
+   "safeground_plan": {
+    "danger_level": "orange",
+    "danger_reason": "You are in a Protective action zone (downwind of the source) based on an ammonia release from a rail tank car (ERG Table 3).",
+    "main_move": "STAY_IN_SEAL",
+    "main_move_text": "Stay inside and seal the room",
+    "where_to_go": "Stay where you are and find the closest building to shelter-in-place.",
+    "do_now": [
+     {
+      "text": "Find the closest building to shelter-in-place.",
+      "advice_ids": [
+       "gas.outdoor_nearest_building"
+      ]
+     },
+     {
+      "text": "Quickly find the fastest way to clean air and move upwind of the source.",
+      "advice_ids": [
+       "gas.outdoor_clean_air",
+       "gas.upwind"
+      ]
+     },
+     {
+      "text": "If asked to evacuate, do so immediately.",
+      "advice_ids": [
+       "gas.evacuate_now"
+      ]
+     }
+    ],
+    "do_not": [
+     {
+      "text": "Do not touch or walk through spilled material, and avoid low or confined areas.",
+      "advice_ids": [
+       "gas.no_touch",
+       "gas.low_areas"
+      ]
+     },
+     {
+      "text": "Avoid eating or drinking any food or water that may be contaminated.",
+      "advice_ids": [
+       "gas.food"
+      ]
+     }
+    ],
+    "if_you_are": [
+     {
+      "situation": "vehicle",
+      "text": "If in a car, keep windows and vents closed and shut off the air conditioner and heater.",
+      "advice_ids": [
+       "gas.vehicle"
+      ]
+     },
+     {
+      "situation": "home_ground",
+      "text": "Seek shelter in an internal room, close all exterior doors and windows, and turn off AC systems.",
+      "advice_ids": [
+       "gas.indoor_room",
+       "gas.indoor_ac"
+      ]
+     }
+    ],
+    "call": [
+     "112 - National emergency number",
+     "108 - Ambulance",
+     "101 - Fire and rescue"
+    ],
+    "confidence": "medium",
+    "confidence_reason": "Medium confidence due to data gaps regarding walking exit feasibility and unverified hospital emergency status.",
+    "unknowns": [
+     "Exit on foot is long; official advice is to find the closest building to shelter in.",
+     "Hospitals shown are mapped major hospitals (emergency tag or large campus); their emergency services, capacity and current status are not verified.",
+     "ERG distances are designed for the first 30 minutes of transport incidents; for fixed facilities they are a screening estimate, not a dispersion model.",
+     "Day/night uses 06:00\u201318:00 local time as an approximation of sunrise\u2013sunset.",
+     "The yellow band (\u00b122.5\u00b0 around the wind direction) is a CityGuard buffer for wind uncertainty, not an ERG distance."
+    ],
+    "valid_while": [
+     "Wind from 45\u00b0 (\u00b122.5\u00b0) at 1.5 m/s"
+    ]
+   },
+   "baseline_plan": {
+    "danger_level": "red",
+    "danger_reason": "You are outdoors directly downwind (southwest) of a major toxic anhydrous ammonia gas release.",
+    "main_move": "MOVE_CROSSWIND_UPWIND",
+    "main_move_text": "Move immediately crosswind (towards the Northwest or Southeast) to exit the toxic plume path, or enter an airtight indoor shelter.",
+    "where_to_go": "Move at least 1 to 2 km crosswind towards the Southeast (Ennore/Ernavoor side) or Northwest, away from the southwest wind vector.",
+    "do_now": [
+     {
+      "text": "Cover your mouth and nose immediately with a wet cloth or towel to filter ammonia vapor.",
+      "advice_ids": [
+       "ADV_RESPIRATORY_PROTECTION"
+      ]
+     },
+     {
+      "text": "Move crosswind (perpendicular to the wind from NE, heading SE or NW) rapidly on foot.",
+      "advice_ids": [
+       "ADV_CROSSWIND_EVACUATION"
+      ]
+     },
+     {
+      "text": "If unable to clear the area, seek immediate shelter indoors in a high room, close all doors and windows, and turn off AC/ventilation.",
+      "advice_ids": [
+       "ADV_SHELTER_IN_PLACE"
+      ]
+     }
+    ],
+    "do_not": [
+     {
+      "text": "Do not move downwind (Southwest) or directly toward the release site (Northeast).",
+      "advice_ids": [
+       "ADV_AVOID_DOWNWIND"
+      ]
+     },
+     {
+      "text": "Do not stay outdoors or in low-lying areas where dense gas may settle.",
+      "advice_ids": [
+       "ADV_AVOID_LOW_GROUND"
+      ]
+     }
+    ],
+    "if_you_are": [
+     {
+      "situation": "experiencing severe eye, throat, or skin burning",
+      "text": "Rinse eyes and exposed skin thoroughly with clean water as soon as you reach safe shelter.",
+      "advice_ids": [
+       "ADV_FIRST_AID_CHEMICAL"
+      ]
+     },
+     {
+      "situation": "near a sturdy building",
+      "text": "Go inside immediately, close all doors/windows, seal gaps with wet cloths, and stay on an upper floor.",
+      "advice_ids": [
+       "ADV_INDOOR_SEAL"
+      ]
+     }
+    ],
+    "call": [
+     "112",
+     "101",
+     "108"
+    ],
+    "confidence": "high",
+    "confidence_reason": "Wind at 1.5 m/s from 45 degrees directly carries the toxic ammonia plume southwest towards Kathivakkam.",
+    "unknowns": [
+     "Exact duration of the rail tank car leak",
+     "Specific real-time concentration at ground level"
+    ],
+    "valid_while": [
+     "Wind direction remains from NE (45 degrees)",
+     "Active release continues without containment"
+    ]
+   }
+  },
+  {
+   "hazard": "gas",
+   "situation": "home_ground",
+   "spot": [
+    13.212,
+    80.315
+   ],
+   "official_tier": "orange",
+   "safeground": {
+    "tier_ok": true,
+    "move_ok": true,
+    "unsafe": [],
+    "invented_numbers": [],
+    "sends_downwind": false,
+    "latency_s": 10.2,
+    "generated_by": "gemini",
+    "attempts": 1
+   },
+   "baseline": {
+    "tier_ok": false,
+    "move_ok": true,
+    "unsafe": [],
+    "invented_numbers": [],
+    "sends_downwind": false,
+    "latency_s": 9.3
+   },
+   "safeground_plan": {
+    "danger_level": "orange",
+    "danger_reason": "You are in a Protective action zone (downwind of the source) for an ammonia chemical release requiring a protective distance of 4184 m.",
+    "main_move": "STAY_IN_SEAL",
+    "main_move_text": "Stay inside and seal the room",
+    "where_to_go": "Stay where you are and shelter inside an internal room.",
+    "do_now": [
+     {
+      "text": "Seek shelter in an internal room and close all exterior doors and windows.",
+      "advice_ids": [
+       "gas.indoor_room"
+      ]
+     },
+     {
+      "text": "Turn off air conditioners and ventilation systems.",
+      "advice_ids": [
+       "gas.indoor_ac"
+      ]
+     },
+     {
+      "text": "Close vents and interior doors, and seal the room with duct tape and plastic sheeting.",
+      "advice_ids": [
+       "gas.indoor_vents"
+      ]
+     },
+     {
+      "text": "Bring pets inside immediately.",
+      "advice_ids": [
+       "gas.pets"
+      ]
+     }
+    ],
+    "do_not": [
+     {
+      "text": "Do not go to basements, sewers, or low areas where heavy gases collect.",
+      "advice_ids": [
+       "gas.low_areas"
+      ]
+     },
+     {
+      "text": "Do not move downwind or toward the source of the leak.",
+      "advice_ids": [
+       "gas.upwind"
+      ]
+     },
+     {
+      "text": "Do not eat or drink food or water that may be contaminated.",
+      "advice_ids": [
+       "gas.food"
+      ]
+     }
+    ],
+    "if_you_are": [
+     {
+      "situation": "outdoors",
+      "text": "Move immediately upwind toward clean air or find the closest building to shelter inside.",
+      "advice_ids": [
+       "gas.outdoor_clean_air",
+       "gas.outdoor_nearest_building"
+      ]
+     },
+     {
+      "situation": "vehicle",
+      "text": "Keep windows and vents closed, and turn off the air conditioner and heater.",
+      "advice_ids": [
+       "gas.vehicle"
+      ]
+     },
+     {
+      "situation": "chemical inside building",
+      "text": "Get out of the building without passing through the contaminated area.",
+      "advice_ids": [
+       "gas.inside_building_leak"
+      ]
+     },
+     {
+      "situation": "trapped",
+      "text": "Move as far away as possible from the affected area and shelter-in-place.",
+      "advice_ids": [
+       "gas.trapped"
+      ]
+     }
+    ],
+    "call": [
+     "112 - National emergency number",
+     "108 - Ambulance",
+     "101 - Fire and rescue"
+    ],
+    "confidence": "high",
+    "confidence_reason": "The safety zone comes directly from official ERG distance tables and there is only one data gap.",
+    "unknowns": [
+     "Hospitals shown are mapped major hospitals (emergency tag or large campus); their emergency services, capacity and current status are not verified.",
+     "ERG distances are designed for the first 30 minutes of transport incidents; for fixed facilities they are a screening estimate, not a dispersion model.",
+     "Day/night uses 06:00\u201318:00 local time as an approximation of sunrise\u2013sunset.",
+     "The yellow band (\u00b122.5\u00b0 around the wind direction) is a CityGuard buffer for wind uncertainty, not an ERG distance."
+    ],
+    "valid_while": [
+     "Wind from 45\u00b0 (\u00b122.5\u00b0) at 1.5 m/s"
+    ]
+   },
+   "baseline_plan": {
+    "danger_level": "red",
+    "danger_reason": "You are directly downwind of a major anhydrous ammonia gas release at Kathivakkam with wind blowing toxic fumes towards your area.",
+    "main_move": "MOVE_CROSSWIND_UPWIND",
+    "main_move_text": "Evacuate perpendicular to the wind direction toward the North-West or South-East immediately, or shelter inside on an upper floor if unable to leave.",
+    "where_to_go": "Move at least 1 to 2 km perpendicular to the wind towards Ennore High Road / North-West or shelter in a closed upper-floor room.",
+    "do_now": [
+     {
+      "text": "Cover your mouth and nose with a damp cloth or wet towel to filter ammonia gas.",
+      "advice_ids": [
+       "ADV_AMMONIA_01"
+      ]
+     },
+     {
+      "text": "Move crosswind immediately to the North-West or South-East away from the plume path.",
+      "advice_ids": [
+       "ADV_AMMONIA_02"
+      ]
+     },
+     {
+      "text": "If remaining indoors, go to an upper floor, close all doors and windows, and seal ventilation points.",
+      "advice_ids": [
+       "ADV_SHELTER_01"
+      ]
+     }
+    ],
+    "do_not": [
+     {
+      "text": "Do not stay on the ground floor or basement where dense toxic vapor mixtures may concentrate.",
+      "advice_ids": [
+       "ADV_DONT_01"
+      ]
+     },
+     {
+      "text": "Do not move downwind in the direction of the wind towards the South-West.",
+      "advice_ids": [
+       "ADV_DONT_02"
+      ]
+     }
+    ],
+    "if_you_are": [
+     {
+      "situation": "Trapped indoors on the ground floor",
+      "text": "Move to the highest available floor, seal doors and windows with damp cloths, and turn off air conditioning or fans.",
+      "advice_ids": [
+       "ADV_INDOOR_01"
+      ]
+     },
+     {
+      "situation": "Outdoors",
+      "text": "Travel perpendicular to the wind direction toward safer areas away from the gas cloud.",
+      "advice_ids": [
+       "ADV_OUTDOOR_01"
+      ]
+     }
+    ],
+    "call": [
+     "112 (Emergency)",
+     "101 (Fire & Rescue)",
+     "108 (Ambulance)"
+    ],
+    "confidence": "high",
+    "confidence_reason": "Location calculation shows the person is directly downwind of the release site given 45-degree wind direction.",
+    "unknowns": [
+     "Exact concentration level of ammonia at the person's location",
+     "Estimated time to stop the chemical leak"
+    ],
+    "valid_while": [
+     "Wind direction remains from the North-East (45 degrees)",
+     "Ammonia leak remains uncontained"
+    ]
+   }
+  },
+  {
+   "hazard": "gas",
+   "situation": "needs_assistance",
+   "spot": [
+    13.205,
+    80.308
+   ],
+   "official_tier": "orange",
+   "safeground": {
+    "tier_ok": true,
+    "move_ok": true,
+    "unsafe": [],
+    "invented_numbers": [],
+    "sends_downwind": false,
+    "latency_s": 10.4,
+    "generated_by": "gemini",
+    "attempts": 1
+   },
+   "baseline": {
+    "tier_ok": false,
+    "move_ok": true,
+    "unsafe": [],
+    "invented_numbers": [],
+    "sends_downwind": false,
+    "latency_s": 10.5
+   },
+   "safeground_plan": {
+    "danger_level": "orange",
+    "danger_reason": "You are in a protective action zone downwind of an ammonia toxic gas leak from a rail tank car.",
+    "main_move": "STAY_IN_SEAL",
+    "main_move_text": "Stay inside and seal the room",
+    "where_to_go": "Stay where you are and shelter in place inside the closest building.",
+    "do_now": [
+     {
+      "text": "Seek shelter in an internal room and lock all exterior doors and windows.",
+      "advice_ids": [
+       "gas.indoor_room"
+      ]
+     },
+     {
+      "text": "Close vents, interior doors, and seal the room with plastic sheeting and duct tape.",
+      "advice_ids": [
+       "gas.indoor_vents"
+      ]
+     },
+     {
+      "text": "Turn off air conditioners and ventilation systems.",
+      "advice_ids": [
+       "gas.indoor_ac"
+      ]
+     },
+     {
+      "text": "Take shallow breaths through a towel or cloth if vapors enter the room.",
+      "advice_ids": [
+       "gas.indoor_breathe"
+      ]
+     }
+    ],
+    "do_not": [
+     {
+      "text": "Do not move downwind, approach the source, or go into low areas where gases collect.",
+      "advice_ids": [
+       "gas.low_areas"
+      ]
+     },
+     {
+      "text": "Do not touch or walk through spilled chemical material.",
+      "advice_ids": [
+       "gas.no_touch"
+      ]
+     }
+    ],
+    "if_you_are": [
+     {
+      "situation": "outdoors",
+      "text": "Find the closest building to shelter-in-place or move away upwind immediately.",
+      "advice_ids": [
+       "gas.outdoor_nearest_building",
+       "gas.outdoor_clean_air"
+      ]
+     },
+     {
+      "situation": "vehicle",
+      "text": "Keep car windows and vents closed and shut off the air conditioner and heater.",
+      "advice_ids": [
+       "gas.vehicle"
+      ]
+     }
+    ],
+    "call": [
+     "112 - National emergency number",
+     "108 - Ambulance",
+     "101 - Fire and rescue"
+    ],
+    "confidence": "medium",
+    "confidence_reason": "Medium confidence because multiple data gaps exist regarding walking distance and hospital status.",
+    "unknowns": [
+     "Exit on foot is long; official advice is to find the closest building to shelter in.",
+     "Hospitals shown are mapped major hospitals; emergency status is not verified.",
+     "ERG distances are a screening estimate for the first 30 minutes of transport incidents."
+    ],
+    "valid_while": [
+     "Wind from 45\u00b0 (\u00b122.5\u00b0) at 1.5 m/s"
+    ]
+   },
+   "baseline_plan": {
+    "danger_level": "red",
+    "danger_reason": "You are approximately 2.2 km directly downwind of a major anhydrous ammonia tank car leak.",
+    "main_move": "MOVE_CROSSWIND_UPWIND",
+    "main_move_text": "Move crosswind towards the North-West or South-East perpendicular to the wind, or seal yourself indoors if unable to evacuate quickly.",
+    "where_to_go": "Move North-West or South-East away from the plume path, or Stay where you are in a sealed upper-floor room.",
+    "do_now": [
+     {
+      "text": "Cover your mouth and nose with a wet cloth or mask immediately to reduce ammonia inhalation.",
+      "advice_ids": [
+       "ADV_AMMONIA_PROTECT_BREATHING"
+      ]
+     },
+     {
+      "text": "If staying indoors, close all windows and doors, turn off AC/ventilation, and seal gaps with damp towels.",
+      "advice_ids": [
+       "ADV_SHELTER_IN_PLACE_SEAL"
+      ]
+     },
+     {
+      "text": "Assist children and elderly individuals to move crosswind (perpendicular to wind from North-East) if evacuating.",
+      "advice_ids": [
+       "ADV_CROSSWIND_EVACUATION"
+      ]
+     }
+    ],
+    "do_not": [
+     {
+      "text": "Do not move downwind towards the South-West into the path of the chemical cloud.",
+      "advice_ids": [
+       "ADV_AVOID_DOWNWIND"
+      ]
+     },
+     {
+      "text": "Do not stay in basements or low-lying areas where dense gas concentrations can accumulate.",
+      "advice_ids": [
+       "ADV_AVOID_LOW_AREAS"
+      ]
+     }
+    ],
+    "if_you_are": [
+     {
+      "situation": "With elderly people or children who move slowly",
+      "text": "If rapid crosswind evacuation is difficult, immediately shelter in place on an upper floor and seal all doors, windows, and vents.",
+      "advice_ids": [
+       "ADV_SHELTER_VULNERABLE"
+      ]
+     }
+    ],
+    "call": [
+     "112",
+     "101",
+     "108"
+    ],
+    "confidence": "high",
+    "confidence_reason": "Position coordinates place you directly downwind of the ammonia leak given 45-degree wind direction.",
+    "unknowns": [
+     "Building seal quality at person's location",
+     "Current state of local traffic and road clearings"
+    ],
+    "valid_while": [
+     "Wind continues blowing from 45 degrees",
+     "Ammonia release remains uncontained"
+    ]
+   }
+  },
+  {
+   "hazard": "gas",
+   "situation": "institution",
+   "spot": [
+    13.2195,
+    80.3235
+   ],
+   "official_tier": "red",
+   "safeground": {
+    "tier_ok": true,
+    "move_ok": true,
+    "unsafe": [],
+    "invented_numbers": [],
+    "sends_downwind": false,
+    "latency_s": 9.7,
+    "generated_by": "gemini",
+    "attempts": 1
+   },
+   "baseline": {
+    "tier_ok": true,
+    "move_ok": true,
+    "unsafe": [],
+    "invented_numbers": [],
+    "sends_downwind": false,
+    "latency_s": 10.4
+   },
+   "safeground_plan": {
+    "danger_level": "red",
+    "danger_reason": "You are in the red zone because you are in the initial isolation zone in all directions around the source based on ERG Table 3 for ammonia.",
+    "main_move": "STAY_IN_SEAL",
+    "main_move_text": "Stay inside and seal the room",
+    "where_to_go": "Stay where you are and shelter in place inside your building.",
+    "do_now": [
+     {
+      "text": "Seek shelter in an internal room and close and lock all exterior doors and windows.",
+      "advice_ids": [
+       "gas.indoor_room"
+      ]
+     },
+     {
+      "text": "Turn off air conditioners and ventilation systems.",
+      "advice_ids": [
+       "gas.indoor_ac"
+      ]
+     },
+     {
+      "text": "Close vents and seal the room with duct tape and plastic sheeting.",
+      "advice_ids": [
+       "gas.indoor_vents"
+      ]
+     },
+     {
+      "text": "Take shallow breaths through a cloth or towel if vapors enter the building.",
+      "advice_ids": [
+       "gas.indoor_breathe"
+      ]
+     }
+    ],
+    "do_not": [
+     {
+      "text": "Do not go into basements, sewers, or low areas where heavier gases collect.",
+      "advice_ids": [
+       "gas.low_areas"
+      ]
+     },
+     {
+      "text": "Do not eat or drink any food or water that may be contaminated.",
+      "advice_ids": [
+       "gas.food"
+      ]
+     }
+    ],
+    "if_you_are": [
+     {
+      "situation": "outdoors",
+      "text": "Move away immediately in an upwind direction to clean air or enter the closest building.",
+      "advice_ids": [
+       "gas.outdoor_clean_air",
+       "gas.outdoor_nearest_building"
+      ]
+     },
+     {
+      "situation": "in a vehicle",
+      "text": "Keep car windows and vents closed and shut off the air conditioner and heater.",
+      "advice_ids": [
+       "gas.vehicle"
+      ]
+     }
+    ],
+    "call": [
+     "112 - National emergency number",
+     "108 - Ambulance",
+     "101 - Fire and rescue"
+    ],
+    "confidence": "high",
+    "confidence_reason": "The isolation zone is derived from official ERG UN1005 tables and there is only one data gap listed.",
+    "unknowns": [
+     "Hospitals shown are mapped major hospitals (emergency tag or large campus); their emergency services, capacity and current status are not verified.",
+     "ERG distances are designed for the first 30 minutes of transport incidents; for fixed facilities they are a screening estimate, not a dispersion model.",
+     "Day/night uses 06:00\u201318:00 local time as an approximation of sunrise\u2013sunset.",
+     "The yellow band (\u00b122.5\u00b0 around the wind direction) is a CityGuard buffer for wind uncertainty, not an ERG distance."
+    ],
+    "valid_while": [
+     "Wind from 45\u00b0 (\u00b122.5\u00b0) at 1.5 m/s"
+    ]
+   },
+   "baseline_plan": {
+    "danger_level": "red",
+    "danger_reason": "You are approximately 155 meters away from a large toxic anhydrous ammonia release point.",
+    "main_move": "STAY_IN_SEAL",
+    "main_move_text": "Shelter indoors immediately, seal all windows and doors, and turn off ventilation systems.",
+    "where_to_go": "Stay inside the institution building, Nehru Nagar, 155 meters northeast of the release point.",
+    "do_now": [
+     {
+      "text": "Close all doors and windows and seal gaps with wet cloths or tape.",
+      "advice_ids": [
+       "ADV_SHELTER_SEAL"
+      ]
+     },
+     {
+      "text": "Turn off all air conditioning, heating, and ventilation systems immediately.",
+      "advice_ids": [
+       "ADV_DISABLE_HVAC"
+      ]
+     },
+     {
+      "text": "Cover your mouth and nose with a damp cloth to protect against ammonia fumes.",
+      "advice_ids": [
+       "ADV_PROTECT_RESPIRATORY"
+      ]
+     }
+    ],
+    "do_not": [
+     {
+      "text": "Do not go outside or venture into low-lying outdoor areas.",
+      "advice_ids": [
+       "ADV_AVOID_OUTDOORS"
+      ]
+     },
+     {
+      "text": "Do not turn on exhaust fans or air handling units.",
+      "advice_ids": [
+       "ADV_NO_VENTILATION"
+      ]
+     }
+    ],
+    "if_you_are": [
+     {
+      "situation": "In a school, hospital or other institution",
+      "text": "Keep all occupants inside, shut down central air units, and coordinate with institution emergency wardens.",
+      "advice_ids": [
+       "ADV_INSTITUTION_ACTION"
+      ]
+     }
+    ],
+    "call": [
+     "112",
+     "101",
+     "108"
+    ],
+    "confidence": "high",
+    "confidence_reason": "Exact location coordinates and wind vector allow clear proximity and plume assessment.",
+    "unknowns": [
+     "Building air-tightness level",
+     "Central HVAC shutoff capability"
+    ],
+    "valid_while": [
+     "Until emergency personnel give official evacuation orders or all-clear."
+    ]
+   }
+  },
+  {
+   "hazard": "gas",
+   "situation": "outdoors",
+   "spot": [
+    13.223,
+    80.327
+   ],
+   "official_tier": "green",
+   "safeground": {
+    "tier_ok": true,
+    "move_ok": true,
+    "unsafe": [],
+    "invented_numbers": [],
+    "sends_downwind": false,
+    "latency_s": 11.1,
+    "generated_by": "gemini",
+    "attempts": 1
+   },
+   "baseline": {
+    "tier_ok": false,
+    "move_ok": false,
+    "unsafe": [],
+    "invented_numbers": [
+     "500"
+    ],
+    "sends_downwind": false,
+    "latency_s": 10.6
+   },
+   "safeground_plan": {
+    "danger_level": "green",
+    "danger_reason": "You are outside the computed zones based on Table 3 (large spill, rail tank car) for ammonia.",
+    "main_move": "STAY_ALERT",
+    "main_move_text": "Stay alert and follow official updates",
+    "where_to_go": "Stay where you are and remain alert.",
+    "do_now": [
+     {
+      "text": "Stay upwind, uphill, and upstream from the gas leak.",
+      "advice_ids": [
+       "gas.upwind"
+      ]
+     },
+     {
+      "text": "Keep to higher ground if gas moves toward your area.",
+      "advice_ids": [
+       "gas.upwind"
+      ]
+     }
+    ],
+    "do_not": [
+     {
+      "text": "Do not move downwind, approach the source, or enter low areas.",
+      "advice_ids": [
+       "gas.upwind"
+      ]
+     }
+    ],
+    "if_you_are": [
+     {
+      "situation": "In any situation",
+      "text": "Stay upwind, uphill, and upstream.",
+      "advice_ids": [
+       "gas.upwind"
+      ]
+     }
+    ],
+    "call": [
+     "112 - National emergency number",
+     "108 - Ambulance",
+     "101 - Fire and rescue"
+    ],
+    "confidence": "high",
+    "confidence_reason": "The safety assessment relies on official ERG distance tables and has only one data gap.",
+    "unknowns": [
+     "Hospitals shown are mapped major hospitals (emergency tag or large campus); their emergency services, capacity and current status are not verified.",
+     "ERG distances are designed for the first 30 minutes of transport incidents; for fixed facilities they are a screening estimate, not a dispersion model.",
+     "Day/night uses 06:00\u201318:00 local time as an approximation of sunrise\u2013sunset.",
+     "The yellow band (\u00b122.5\u00b0 around the wind direction) is a CityGuard buffer for wind uncertainty, not an ERG distance."
+    ],
+    "valid_while": []
+   },
+   "baseline_plan": {
+    "danger_level": "orange",
+    "danger_reason": "A large anhydrous ammonia leak occurred nearby at latitude 13.2185, longitude 80.3225 while you are outdoors on foot.",
+    "main_move": "MOVE_CROSSWIND_UPWIND",
+    "main_move_text": "Move crosswind or upwind immediately and get indoors to shelter from toxic vapors.",
+    "where_to_go": "Move further northeast away from the release point into the nearest sturdy indoor shelter within 500 meters.",
+    "do_now": [
+     {
+      "text": "Cover your mouth and nose immediately with a damp cloth or garment to filter toxic ammonia fumes.",
+      "advice_ids": [
+       "ADV_AMMONIA_RESPIRATORY_PROTECTION"
+      ]
+     },
+     {
+      "text": "Move crosswind or upwind away from the chemical source and get inside a secure building immediately.",
+      "advice_ids": [
+       "ADV_AMMONIA_EVACUATE_UPWIND"
+      ]
+     },
+     {
+      "text": "Once inside, close all doors and windows and turn off any ventilation or cooling systems.",
+      "advice_ids": [
+       "ADV_SHELTER_IN_PLACE_SEAL"
+      ]
+     }
+    ],
+    "do_not": [
+     {
+      "text": "Do not walk downwind towards the south-west where the gas plume is traveling.",
+      "advice_ids": [
+       "ADV_DO_NOT_GO_DOWNWIND"
+      ]
+     },
+     {
+      "text": "Do not remain outdoors or stay in low-lying areas where dense gas can accumulate.",
+      "advice_ids": [
+       "ADV_DO_NOT_STAY_OUTDOORS"
+      ]
+     }
+    ],
+    "if_you_are": [
+     {
+      "situation": "Outdoors on foot with eye or throat irritation",
+      "text": "Rinse eyes with clean water if available, keep face covered, and move crosswind to the nearest indoor shelter.",
+      "advice_ids": [
+       "ADV_FIRST_AID_AMMONIA_EXPOSURE"
+      ]
+     }
+    ],
+    "call": [
+     "112",
+     "108"
+    ],
+    "confidence": "high",
+    "confidence_reason": "The release coordinates and wind vector clearly indicate a dangerous gas cloud moving south-west from the source.",
+    "unknowns": [
+     "Exact containment status of the rail tank car release",
+     "Availability of open public shelter structures nearby"
+    ],
+    "valid_while": [
+     "Wind direction remains consistently from the north-east",
+     "Ammonia plume remains active"
+    ]
+   }
+  },
+  {
+   "hazard": "gas",
+   "situation": "vehicle",
+   "spot": [
+    13.195,
+    80.3
+   ],
+   "official_tier": "orange",
+   "safeground": {
+    "tier_ok": true,
+    "move_ok": true,
+    "unsafe": [],
+    "invented_numbers": [],
+    "sends_downwind": false,
+    "latency_s": 13.2,
+    "generated_by": "gemini",
+    "attempts": 1
+   },
+   "baseline": {
+    "tier_ok": false,
+    "move_ok": true,
+    "unsafe": [],
+    "invented_numbers": [],
+    "sends_downwind": false,
+    "latency_s": 9.3
+   },
+   "safeground_plan": {
+    "danger_level": "orange",
+    "danger_reason": "You are in a Protective action zone (downwind of the source) due to an ammonia leak from a rail tank car.",
+    "main_move": "MOVE_CROSSWIND_UPWIND",
+    "main_move_text": "Move out sideways to the wind, then upwind",
+    "where_to_go": "Head SE to Safe point outside the danger zone, a distance of 5429 meters (72.4 walking minutes).",
+    "do_now": [
+     {
+      "text": "Keep car windows and vents closed, and shut off the air conditioner and heater.",
+      "advice_ids": [
+       "gas.vehicle"
+      ]
+     },
+     {
+      "text": "Move crosswind and stay upwind, uphill, or upstream.",
+      "advice_ids": [
+       "gas.upwind"
+      ]
+     },
+     {
+      "text": "If asked to evacuate, do so immediately.",
+      "advice_ids": [
+       "gas.evacuate_now"
+      ]
+     }
+    ],
+    "do_not": [
+     {
+      "text": "Do not move downwind or go into low areas where heavier gases collect.",
+      "advice_ids": [
+       "gas.low_areas"
+      ]
+     },
+     {
+      "text": "Do not touch or walk through spilled material.",
+      "advice_ids": [
+       "gas.no_touch"
+      ]
+     },
+     {
+      "text": "Do not eat or drink food or water that may be contaminated.",
+      "advice_ids": [
+       "gas.food"
+      ]
+     }
+    ],
+    "if_you_are": [
+     {
+      "situation": "outdoors",
+      "text": "Quickly move upwind toward clean air or go inside the nearest building.",
+      "advice_ids": [
+       "gas.outdoor_clean_air",
+       "gas.outdoor_nearest_building"
+      ]
+     },
+     {
+      "situation": "home_ground",
+      "text": "Shelter in an internal room, close windows and doors, and turn off air conditioning.",
+      "advice_ids": [
+       "gas.indoor_room",
+       "gas.indoor_ac"
+      ]
+     },
+     {
+      "situation": "needs_assistance",
+      "text": "If trapped, move as far away as possible and shelter in an internal room.",
+      "advice_ids": [
+       "gas.trapped",
+       "gas.indoor_room"
+      ]
+     }
+    ],
+    "call": [
+     "112 - National emergency number",
+     "108 - Ambulance",
+     "101 - Fire and rescue"
+    ],
+    "confidence": "medium",
+    "confidence_reason": "The zone is based on official ERG tables, but there are multiple data gaps regarding route starting points and hospital verification.",
+    "unknowns": [
+     "Nearest mapped path is 474 m away; routes start from there.",
+     "Hospitals shown are mapped major hospitals (emergency tag or large campus); their emergency services, capacity and current status are not verified.",
+     "ERG distances are designed for the first 30 minutes of transport incidents; for fixed facilities they are a screening estimate, not a dispersion model.",
+     "Day/night uses 06:00\u201318:00 local time as an approximation of sunrise\u2013sunset.",
+     "The yellow band (\u00b122.5\u00b0 around the wind direction) is a CityGuard buffer for wind uncertainty, not an ERG distance."
+    ],
+    "valid_while": [
+     "Wind from 45\u00b0 (\u00b122.5\u00b0) at 1.5 m/s"
+    ]
+   },
+   "baseline_plan": {
+    "danger_level": "red",
+    "danger_reason": "You are directly downwind of a major anhydrous ammonia release at night.",
+    "main_move": "MOVE_CROSSWIND_UPWIND",
+    "main_move_text": "Drive crosswind (perpendicular to the wind) immediately to get out of the path of the toxic plume.",
+    "where_to_go": "Drive crosswind towards the North-West or South-East, away from Saidayankuppam, reaching a location at least 3 km crosswind.",
+    "do_now": [
+     {
+      "text": "Roll up all windows and turn off the vehicle ventilation and air recirculation systems immediately.",
+      "advice_ids": [
+       "CHEM_VEH_01"
+      ]
+     },
+     {
+      "text": "Drive perpendicular to the wind direction (towards North-West or South-East) to exit the gas cloud.",
+      "advice_ids": [
+       "CHEM_MOVE_01"
+      ]
+     },
+     {
+      "text": "Cover your mouth and nose with a damp cloth to filter out ammonia gas if odor is detected.",
+      "advice_ids": [
+       "CHEM_PROT_01"
+      ]
+     }
+    ],
+    "do_not": [
+     {
+      "text": "Do not drive downwind (towards South-West) or directly towards the release site (North-East).",
+      "advice_ids": [
+       "CHEM_DONT_01"
+      ]
+     },
+     {
+      "text": "Do not step outside your vehicle while surrounded by ammonia gas unless entering a sealed indoor structure.",
+      "advice_ids": [
+       "CHEM_DONT_02"
+      ]
+     }
+    ],
+    "if_you_are": [
+     {
+      "situation": "In a vehicle",
+      "text": "Keep windows closed, turn off air intake, drive crosswind out of the plume path.",
+      "advice_ids": [
+       "CHEM_VEH_01"
+      ]
+     }
+    ],
+    "call": [
+     "112",
+     "101"
+    ],
+    "confidence": "high",
+    "confidence_reason": "Person's location in Saidayankuppam is directly downwind from the release location based on 45-degree wind direction.",
+    "unknowns": [
+     "Exact duration and rate of the ammonia release"
+    ],
+    "valid_while": [
+     "Wind remains from the North-East",
+     "Ammonia leak is active"
+    ]
+   }
+  },
+  {
+   "hazard": "explosion",
+   "situation": "home_ground",
+   "spot": [
+    13.0412,
+    80.2342
+   ],
+   "official_tier": "red",
+   "safeground": {
+    "tier_ok": true,
+    "move_ok": true,
+    "unsafe": [],
+    "invented_numbers": [],
+    "sends_downwind": false,
+    "latency_s": 9.7,
+    "generated_by": "gemini",
+    "attempts": 1
+   },
+   "baseline": {
+    "tier_ok": true,
+    "move_ok": true,
+    "unsafe": [],
+    "invented_numbers": [],
+    "sends_downwind": false,
+    "latency_s": 9.5
+   },
+   "safeground_plan": {
+    "danger_level": "red",
+    "danger_reason": "Mandatory evacuation for everyone (inside and outside buildings) due to a Car (500 lb) explosion threat.",
+    "main_move": "MOVE_AWAY",
+    "main_move_text": "Move away beyond the safe distance",
+    "where_to_go": "Go to Safe point outside the danger zone, located 474 m to the E, taking approximately 6.3 walking minutes.",
+    "do_now": [
+     {
+      "text": "Evacuate the building immediately, whether indoors or outdoors.",
+      "advice_ids": [
+       "exp.red_evacuate"
+      ]
+     },
+     {
+      "text": "Move out of line of sight of the incident scene and away from all windows.",
+      "advice_ids": [
+       "exp.line_of_sight"
+      ]
+     },
+     {
+      "text": "Keep unauthorized personnel away from the area.",
+      "advice_ids": [
+       "exp.keep_away"
+      ]
+     }
+    ],
+    "do_not": [
+     {
+      "text": "Do not gather at windows or doorways, as secondary devices may be used to target bystanders.",
+      "advice_ids": [
+       "exp.secondary"
+      ]
+     },
+     {
+      "text": "Do not approach the source or enter the hazard zone.",
+      "advice_ids": [
+       "exp.red_evacuate"
+      ]
+     }
+    ],
+    "if_you_are": [
+     {
+      "situation": "Outdoors, in a vehicle, or needing assistance",
+      "text": "Stay upwind, uphill, and upstream.",
+      "advice_ids": [
+       "exp.upwind"
+      ]
+     }
+    ],
+    "call": [
+     "112 - National emergency number",
+     "108 - Ambulance",
+     "101 - Fire and rescue"
+    ],
+    "confidence": "high",
+    "confidence_reason": "The evacuation zone is derived from an official distance chart table and there is only one data gap.",
+    "unknowns": [
+     "Hospitals shown are mapped major hospitals (emergency tag or large campus); their emergency services, capacity and current status are not verified.",
+     "Bomb stand-off distances are estimates based on test data; the chart states they do not guarantee safety and that the area near the evacuation distances is still potentially dangerous.",
+     "Building distances assume typical US commercial construction; Indian buildings may perform differently."
+    ],
+    "valid_while": []
+   },
+   "baseline_plan": {
+    "danger_level": "red",
+    "danger_reason": "You are located approximately 30 meters from a reported car bomb explosion hazard in Thiyagaraya Nagar.",
+    "main_move": "MOVE_AWAY",
+    "main_move_text": "Evacuate the immediate area and move away from the suspected vehicle to protect against blast and debris.",
+    "where_to_go": "Move at least 500 meters away from the vehicle site at latitude 13.041, longitude 80.234.",
+    "do_now": [
+     {
+      "text": "Evacuate the building immediately moving away from the side facing the threat.",
+      "advice_ids": [
+       "ADV_EVACUATE_01"
+      ]
+     },
+     {
+      "text": "Stay away from glass windows, exterior doors, and line of sight to the vehicle.",
+      "advice_ids": [
+       "ADV_GLASS_SAFETY_01"
+      ]
+     },
+     {
+      "text": "Cover your head and neck if you hear an explosion or breaking glass.",
+      "advice_ids": [
+       "ADV_PROTECT_HEAD_01"
+      ]
+     }
+    ],
+    "do_not": [
+     {
+      "text": "Do not approach, touch, or examine any suspicious vehicles or packages.",
+      "advice_ids": [
+       "ADV_DONOT_TOUCH_01"
+      ]
+     },
+     {
+      "text": "Do not use elevators during an emergency evacuation.",
+      "advice_ids": [
+       "ADV_DONOT_ELEVATOR_01"
+      ]
+     }
+    ],
+    "if_you_are": [
+     {
+      "situation": "indoors on the ground floor",
+      "text": "Move away from windows to an interior room or evacuate out the rear exit away from the car.",
+      "advice_ids": [
+       "ADV_INDOOR_POS_01"
+      ]
+     }
+    ],
+    "call": [
+     "112",
+     "100"
+    ],
+    "confidence": "high",
+    "confidence_reason": "Location coordinates place you within the direct impact zone of the reported vehicle threat.",
+    "unknowns": [
+     "Exact explosive yield or nature of the threat",
+     "Active police perimeter boundaries"
+    ],
+    "valid_while": [
+     "Until local authorities and the bomb disposal squad issue an all-clear"
+    ]
+   }
+  },
+  {
+   "hazard": "explosion",
+   "situation": "outdoors",
+   "spot": [
+    13.0425,
+    80.2352
+   ],
+   "official_tier": "orange",
+   "safeground": {
+    "tier_ok": true,
+    "move_ok": true,
+    "unsafe": [],
+    "invented_numbers": [],
+    "sends_downwind": false,
+    "latency_s": 12.7,
+    "generated_by": "gemini",
+    "attempts": 1
+   },
+   "baseline": {
+    "tier_ok": false,
+    "move_ok": true,
+    "unsafe": [],
+    "invented_numbers": [
+     "300"
+    ],
+    "sends_downwind": false,
+    "latency_s": 7.8
+   },
+   "safeground_plan": {
+    "danger_level": "orange",
+    "danger_reason": "Shelter inside a building away from windows; nobody outdoors based on Car (500 lb) stand-off zone.",
+    "main_move": "STAY_INSIDE_AWAY_FROM_WINDOWS",
+    "main_move_text": "Shelter inside, away from windows and outer walls",
+    "where_to_go": "Stay where you are and seek shelter inside a building immediately.",
+    "do_now": [
+     {
+      "text": "Seek shelter immediately inside a building away from windows and exterior walls.",
+      "advice_ids": [
+       "exp.orange_shelter"
+      ]
+     },
+     {
+      "text": "Move out of line of sight of the scene.",
+      "advice_ids": [
+       "exp.line_of_sight"
+      ]
+     },
+     {
+      "text": "Stay upwind, uphill, and upstream from the hazard.",
+      "advice_ids": [
+       "exp.upwind"
+      ]
+     }
+    ],
+    "do_not": [
+     {
+      "text": "Do not stay outdoors or gather near windows and doors.",
+      "advice_ids": [
+       "exp.orange_shelter",
+       "exp.secondary"
+      ]
+     },
+     {
+      "text": "Do not approach the blast scene or enter the danger area.",
+      "advice_ids": [
+       "exp.keep_away"
+      ]
+     }
+    ],
+    "if_you_are": [
+     {
+      "situation": "In a vehicle",
+      "text": "Move upwind and get inside a building away from windows.",
+      "advice_ids": [
+       "exp.orange_shelter",
+       "exp.upwind"
+      ]
+     },
+     {
+      "situation": "Needing assistance",
+      "text": "Seek shelter inside the nearest accessible building away from exterior walls.",
+      "advice_ids": [
+       "exp.orange_shelter"
+      ]
+     }
+    ],
+    "call": [
+     "112 - National emergency number",
+     "108 - Ambulance",
+     "101 - Fire and rescue"
+    ],
+    "confidence": "high",
+    "confidence_reason": "The zone basis comes from official distance tables and there is only one data gap.",
+    "unknowns": [
+     "Hospital emergency services, capacity and current status are not verified.",
+     "Bomb stand-off distances are estimates based on test data; the chart states they do not guarantee safety and that the area near the evacuation distances is still potentially dangerous.",
+     "Building distances assume typical US commercial construction; Indian buildings may perform differently."
+    ],
+    "valid_while": []
+   },
+   "baseline_plan": {
+    "danger_level": "red",
+    "danger_reason": "You are outdoors approximately 210 meters northeast of a reported car bomb explosion hazard.",
+    "main_move": "MOVE_AWAY",
+    "main_move_text": "Move away immediately from the suspect vehicle location and seek shelter behind heavy structures.",
+    "where_to_go": "Move away at least 300 to 500 meters northeast into a solid building, away from latitude 13.041, longitude 80.234.",
+    "do_now": [
+     {
+      "text": "Move away rapidly from the direction of the hazard.",
+      "advice_ids": [
+       "ADV_MOVE_AWAY"
+      ]
+     },
+     {
+      "text": "Get behind solid concrete structures or walls for protection against blast debris.",
+      "advice_ids": [
+       "ADV_TAKE_COVER"
+      ]
+     },
+     {
+      "text": "Cover your head and ears and stay low if you hear an explosion.",
+      "advice_ids": [
+       "ADV_PROTECT_SELF"
+      ]
+     }
+    ],
+    "do_not": [
+     {
+      "text": "Do not approach or inspect the suspicious vehicle.",
+      "advice_ids": [
+       "ADV_DONOT_APPROACH"
+      ]
+     },
+     {
+      "text": "Do not stand near glass windows, doors, or open areas.",
+      "advice_ids": [
+       "ADV_AVOID_GLASS"
+      ]
+     }
+    ],
+    "if_you_are": [
+     {
+      "situation": "Outdoors on foot",
+      "text": "Walk quickly away from the blast area and take shelter inside a concrete building.",
+      "advice_ids": [
+       "ADV_OUTDOORS"
+      ]
+     }
+    ],
+    "call": [
+     "112",
+     "100"
+    ],
+    "confidence": "high",
+    "confidence_reason": "Coordinates for both person and disaster location are clear, indicating close proximity to a high hazard area.",
+    "unknowns": [
+     "Status of secondary explosive devices or official evacuation perimeter radius."
+    ],
+    "valid_while": [
+     "Until local authorities clear the area and declare it safe."
+    ]
+   }
+  },
+  {
+   "hazard": "explosion",
+   "situation": "institution",
+   "spot": [
+    13.044,
+    80.237
+   ],
+   "official_tier": "green",
+   "safeground": {
+    "tier_ok": true,
+    "move_ok": true,
+    "unsafe": [],
+    "invented_numbers": [],
+    "sends_downwind": false,
+    "latency_s": 10.4,
+    "generated_by": "gemini",
+    "attempts": 1
+   },
+   "baseline": {
+    "tier_ok": false,
+    "move_ok": false,
+    "unsafe": [],
+    "invented_numbers": [],
+    "sends_downwind": false,
+    "latency_s": 9.8
+   },
+   "safeground_plan": {
+    "danger_level": "green",
+    "danger_reason": "You are beyond the outdoor evacuation distance of 457 meters for a Car (500 lb) explosion threat.",
+    "main_move": "STAY_ALERT",
+    "main_move_text": "Stay alert and follow official updates",
+    "where_to_go": "Stay where you are and remain inside the building away from line of sight.",
+    "do_now": [
+     {
+      "text": "Stay in this preferred area beyond the evacuation line and follow instructions.",
+      "advice_ids": [
+       "exp.green_area"
+      ]
+     },
+     {
+      "text": "Move people out of line of sight of the scene and away from all windows.",
+      "advice_ids": [
+       "exp.line_of_sight"
+      ]
+     },
+     {
+      "text": "Stay cautious because evacuation distances are estimates and nearby areas remain potentially dangerous.",
+      "advice_ids": [
+       "exp.no_guarantee"
+      ]
+     }
+    ],
+    "do_not": [
+     {
+      "text": "Do not gather at windows, doorways, or go outside, as secondary attacks may target bystanders.",
+      "advice_ids": [
+       "exp.secondary"
+      ]
+     },
+     {
+      "text": "Do not approach the explosion source or enter the danger zone.",
+      "advice_ids": [
+       "exp.secondary"
+      ]
+     }
+    ],
+    "if_you_are": [],
+    "call": [
+     "112 - National emergency number",
+     "108 - Ambulance",
+     "101 - Fire and rescue"
+    ],
+    "confidence": "high",
+    "confidence_reason": "The evacuation zone is derived from official stand-off distance charts and there is only one data gap.",
+    "unknowns": [
+     "Hospitals shown are mapped major hospitals (emergency tag or large campus); their emergency services, capacity and current status are not verified.",
+     "Bomb stand-off distances are estimates based on test data; the chart states they do not guarantee safety and that the area near the evacuation distances is still potentially dangerous.",
+     "Building distances assume typical US commercial construction; Indian buildings may perform differently."
+    ],
+    "valid_while": []
+   },
+   "baseline_plan": {
+    "danger_level": "orange",
+    "danger_reason": "A car bomb threat has been reported approximately 460 meters southwest of your location in Thiyagaraya Nagar.",
+    "main_move": "STAY_INSIDE_AWAY_FROM_WINDOWS",
+    "main_move_text": "Remain inside the institution and stay clear of windows, glass, and exterior walls.",
+    "where_to_go": "Stay inside your current building at Thiyagaraya Nagar, moving to an interior hallway or room.",
+    "do_now": [
+     {
+      "text": "Follow institutional lockdown or safe evacuation directives immediately.",
+      "advice_ids": [
+       "INST_01"
+      ]
+     },
+     {
+      "text": "Move away from exterior windows, glass panels, and doors into interior spaces.",
+      "advice_ids": [
+       "BOMB_01"
+      ]
+     }
+    ],
+    "do_not": [
+     {
+      "text": "Do not stand near windows or go outside to inspect the area.",
+      "advice_ids": [
+       "BOMB_02"
+      ]
+     },
+     {
+      "text": "Do not touch or approach any unattended vehicles or suspicious items.",
+      "advice_ids": [
+       "BOMB_03"
+      ]
+     }
+    ],
+    "if_you_are": [
+     {
+      "situation": "In a school or hospital",
+      "text": "Follow established institutional emergency protocols and listen to official security announcements.",
+      "advice_ids": [
+       "INST_02"
+      ]
+     }
+    ],
+    "call": [
+     "112",
+     "100"
+    ],
+    "confidence": "high",
+    "confidence_reason": "Clear geographical coordinates and hazard context were provided.",
+    "unknowns": [],
+    "valid_while": [
+     "Until police and emergency personnel issue an all-clear notification."
+    ]
+   }
+  },
+  {
+   "hazard": "explosion",
+   "situation": "needs_assistance",
+   "spot": [
+    13.045,
+    80.24
+   ],
+   "official_tier": "red",
+   "safeground": {
+    "tier_ok": true,
+    "move_ok": true,
+    "unsafe": [],
+    "invented_numbers": [],
+    "sends_downwind": false,
+    "latency_s": 11.2,
+    "generated_by": "gemini",
+    "attempts": 1
+   },
+   "baseline": {
+    "tier_ok": false,
+    "move_ok": true,
+    "unsafe": [],
+    "invented_numbers": [],
+    "sends_downwind": false,
+    "latency_s": 5.9
+   },
+   "safeground_plan": {
+    "danger_level": "red",
+    "danger_reason": "Mandatory evacuation for everyone (inside and outside buildings) due to LPG tanker / tank involved in fire.",
+    "main_move": "MOVE_AWAY",
+    "main_move_text": "Move away beyond the safe distance",
+    "where_to_go": "Go to Safe point outside the danger zone, located 846 meters ENE (about 17.6 walking minutes via Gopathi Narayanaswami Road).",
+    "do_now": [
+     {
+      "text": "Evacuate all people, including elderly and children, from inside and outside of buildings.",
+      "advice_ids": [
+       "exp.red_evacuate"
+      ]
+     },
+     {
+      "text": "Move people away from windows and out of line of sight of the scene.",
+      "advice_ids": [
+       "exp.line_of_sight"
+      ]
+     },
+     {
+      "text": "Stay upwind, uphill, and upstream while assisting others to move.",
+      "advice_ids": [
+       "exp.upwind"
+      ]
+     },
+     {
+      "text": "Eliminate all ignition sources such as flames, sparks, and smoking in the immediate area.",
+      "advice_ids": [
+       "exp.lpg_ignition"
+      ]
+     }
+    ],
+    "do_not": [
+     {
+      "text": "Do not gather at windows or doorways, and do not approach the source or enter the danger zone.",
+      "advice_ids": [
+       "exp.secondary"
+      ]
+     },
+     {
+      "text": "Do not go into low or confined areas like basements and sewers where heavy gases collect.",
+      "advice_ids": [
+       "exp.lpg_low_areas"
+      ]
+     }
+    ],
+    "if_you_are": [
+     {
+      "situation": "outdoors",
+      "text": "Stay upwind, uphill and/or upstream.",
+      "advice_ids": [
+       "exp.upwind"
+      ]
+     },
+     {
+      "situation": "vehicle",
+      "text": "Stay upwind, uphill and/or upstream.",
+      "advice_ids": [
+       "exp.upwind"
+      ]
+     }
+    ],
+    "call": [
+     "112 - National emergency number",
+     "108 - Ambulance",
+     "101 - Fire and rescue"
+    ],
+    "confidence": "high",
+    "confidence_reason": "The evacuation zone comes from official distance tables (ERG 115) and data gaps contain at most one item.",
+    "unknowns": [
+     "Hospitals shown are mapped major hospitals (emergency tag or large campus); their emergency services, capacity and current status are not verified.",
+     "Bomb stand-off distances are estimates based on test data; the chart states they do not guarantee safety and that the area near the evacuation distances is still potentially dangerous.",
+     "Building distances assume typical US commercial construction; Indian buildings may perform differently."
+    ],
+    "valid_while": []
+   },
+   "baseline_plan": {
+    "danger_level": "orange",
+    "danger_reason": "An active LPG tanker fire presents a major explosion hazard within 1 km of your location in Teynampet.",
+    "main_move": "MOVE_AWAY",
+    "main_move_text": "Move away from the LPG tanker fire and shelter inside a solid building away from glass windows if evacuation is difficult.",
+    "where_to_go": "Move at least 1.5 km away towards Nandanam Signal to the southeast or stay inside a sturdy concrete building if moving with vulnerable people is unsafe.",
+    "do_now": [
+     {
+      "text": "Assist elderly family members and children to get away from direct line of sight of the tanker fire.",
+      "advice_ids": [
+       "ADV_EVAC_VULNERABLE"
+      ]
+     },
+     {
+      "text": "Close all windows, doors, and shutters to protect against potential blast waves and radiant heat.",
+      "advice_ids": [
+       "ADV_SHELTER_BLAST"
+      ]
+     },
+     {
+      "text": "Stay tuned to official emergency broadcasts and local authorities for evacuation orders.",
+      "advice_ids": [
+       "ADV_LISTEN_OFFICIALS"
+      ]
+     }
+    ],
+    "do_not": [
+     {
+      "text": "Do not go near the fire site to watch or take photographs.",
+      "advice_ids": [
+       "ADV_DONOT_CROWD"
+      ]
+     },
+     {
+      "text": "Do not use open flames, matches, or electrical switches in case gas has leaked nearby.",
+      "advice_ids": [
+       "ADV_DONOT_IGNITE"
+      ]
+     }
+    ],
+    "if_you_are": [
+     {
+      "situation": "With elderly people, children or someone who needs help",
+      "text": "Prioritize moving them into an interior room on a lower floor away from windows if immediate outdoor evacuation is too slow or risky.",
+      "advice_ids": [
+       "ADV_ASSIST_NEEDS"
+      ]
+     }
+    ],
+    "call": [
+     "112",
+     "101",
+     "108"
+    ],
+    "confidence": "high",
+    "confidence_reason": "Location coordinates and hazard type are clearly defined in Teynampet area.",
+    "unknowns": [
+     "Exact wind direction and extent of the flammable vapor plume."
+    ],
+    "valid_while": [
+     "Until the fire is fully extinguished by emergency services and the explosion threat is cleared."
+    ]
+   }
+  },
+  {
+   "hazard": "explosion",
+   "situation": "outdoors",
+   "spot": [
+    13.046,
+    80.239
+   ],
+   "official_tier": "green",
+   "safeground": {
+    "tier_ok": true,
+    "move_ok": true,
+    "unsafe": [],
+    "invented_numbers": [],
+    "sends_downwind": false,
+    "latency_s": 10.7,
+    "generated_by": "gemini",
+    "attempts": 1
+   },
+   "baseline": {
+    "tier_ok": false,
+    "move_ok": false,
+    "unsafe": [],
+    "invented_numbers": [],
+    "sends_downwind": false,
+    "latency_s": 8.2
+   },
+   "safeground_plan": {
+    "danger_level": "green",
+    "danger_reason": "You are currently beyond the outdoor evacuation distance for a Pipe bomb (5 lb TNT eq.).",
+    "main_move": "STAY_ALERT",
+    "main_move_text": "Stay alert and follow official updates",
+    "where_to_go": "Stay where you are and maintain awareness of your surroundings.",
+    "do_now": [
+     {
+      "text": "Remain in this preferred area beyond the outdoor evacuation line.",
+      "advice_ids": [
+       "exp.green_area"
+      ]
+     },
+     {
+      "text": "Move out of line of sight of the incident scene.",
+      "advice_ids": [
+       "exp.line_of_sight"
+      ]
+     },
+     {
+      "text": "Stay cautious as evacuation distances do not guarantee absolute safety.",
+      "advice_ids": [
+       "exp.no_guarantee"
+      ]
+     }
+    ],
+    "do_not": [
+     {
+      "text": "Do not approach the source or enter the danger zone.",
+      "advice_ids": [
+       "exp.no_guarantee"
+      ]
+     },
+     {
+      "text": "Do not gather near windows or doorways to view the incident, as secondary devices could pose a risk.",
+      "advice_ids": [
+       "exp.secondary",
+       "exp.line_of_sight"
+      ]
+     }
+    ],
+    "if_you_are": [
+     {
+      "situation": "Indoors near windows",
+      "text": "Move away from windows and out of line of sight of the scene.",
+      "advice_ids": [
+       "exp.line_of_sight"
+      ]
+     },
+     {
+      "situation": "In a building or shelter",
+      "text": "Remain in the preferred area beyond the building evacuation line.",
+      "advice_ids": [
+       "exp.green_area"
+      ]
+     }
+    ],
+    "call": [
+     "112 - National emergency number",
+     "108 - Ambulance",
+     "101 - Fire and rescue"
+    ],
+    "confidence": "high",
+    "confidence_reason": "Zone limits come from an official bomb chart distance table and there is only one data gap.",
+    "unknowns": [
+     "Hospitals shown are mapped major hospitals (emergency tag or large campus); their emergency services, capacity and current status are not verified.",
+     "Bomb stand-off distances are estimates based on test data; the chart states they do not guarantee safety and that the area near the evacuation distances is still potentially dangerous.",
+     "Building distances assume typical US commercial construction; Indian buildings may perform differently."
+    ],
+    "valid_while": []
+   },
+   "baseline_plan": {
+    "danger_level": "orange",
+    "danger_reason": "You are approximately 780 meters northeast of a reported pipe bomb hazard at latitude 13.041, longitude 80.234.",
+    "main_move": "MOVE_AWAY",
+    "main_move_text": "Move away from the threat location and seek immediate shelter inside a sturdy building away from glass.",
+    "where_to_go": "Move further North-East towards Anna Salai / Teynampet metro area, at least 1 km away from the threat location.",
+    "do_now": [
+     {
+      "text": "Move immediately away from the hazard area in a North-East direction.",
+      "advice_ids": [
+       "adv_move_away"
+      ]
+     },
+     {
+      "text": "Seek shelter inside a concrete building and stay away from glass windows.",
+      "advice_ids": [
+       "adv_shelter_indoors"
+      ]
+     },
+     {
+      "text": "Listen to official announcements from police and emergency services.",
+      "advice_ids": [
+       "adv_follow_authorities"
+      ]
+     }
+    ],
+    "do_not": [
+     {
+      "text": "Do not approach, touch, or disturb any unattended items or suspicious packages.",
+      "advice_ids": [
+       "adv_avoid_suspicious_objects"
+      ]
+     },
+     {
+      "text": "Do not gather near the incident location or stay out in open areas.",
+      "advice_ids": [
+       "adv_avoid_crowds"
+      ]
+     }
+    ],
+    "if_you_are": [
+     {
+      "situation": "Outdoors on foot",
+      "text": "Cover your head and ears, move quickly into the nearest sturdy indoor structure away from windows.",
+      "advice_ids": [
+       "adv_foot_shelter"
+      ]
+     }
+    ],
+    "call": [
+     "112",
+     "100"
+    ],
+    "confidence": "high",
+    "confidence_reason": "User location and incident coordinates are specified precisely.",
+    "unknowns": [
+     "Whether the pipe bomb has detonated or is still active",
+     "Exact cordon boundary set by police"
+    ],
+    "valid_while": [
+     "Until police clear the hazard zone and declare the area safe"
+    ]
+   }
+  },
+  {
+   "hazard": "air_raid",
+   "situation": "outdoors",
+   "spot": [
+    13.0418,
+    80.2341
+   ],
+   "official_tier": "red",
+   "safeground": {
+    "tier_ok": true,
+    "move_ok": true,
+    "unsafe": [],
+    "invented_numbers": [],
+    "sends_downwind": false,
+    "latency_s": 10.8,
+    "generated_by": "gemini",
+    "attempts": 1
+   },
+   "baseline": {
+    "tier_ok": true,
+    "move_ok": true,
+    "unsafe": [],
+    "invented_numbers": [],
+    "sends_downwind": false,
+    "latency_s": 6.4
+   },
+   "safeground_plan": {
+    "danger_level": "red",
+    "danger_reason": "There is a city-wide alert and no mapped underground shelter within a 15-minute walk.",
+    "main_move": "GO_DOWN_INSIDE",
+    "main_move_text": "Go down to underground shelter",
+    "where_to_go": "Head ESE to Teynampet Metro (underground), which is 1710 m away taking about 22.8 minutes on foot.",
+    "do_now": [
+     {
+      "text": "Immediately stop outdoor activities and find shelter in a basement, underground car park, or building.",
+      "advice_ids": [
+       "ar.stop_outdoor",
+       "ar.shelter_types"
+      ]
+     },
+     {
+      "text": "Seek shelter inside a building and stay away from windows and exterior walls.",
+      "advice_ids": [
+       "ar.away_from_windows"
+      ]
+     },
+     {
+      "text": "Avoid using your phone to keep lines open for emergency services after the siren sounds.",
+      "advice_ids": [
+       "ar.no_phones",
+       "ar.siren"
+      ]
+     }
+    ],
+    "do_not": [
+     {
+      "text": "Do not stay outdoors, show lights, or gather at windows.",
+      "advice_ids": [
+       "ar.stop_outdoor",
+       "ar.away_from_windows"
+      ]
+     },
+     {
+      "text": "Do not enter restricted areas or take photographs.",
+      "advice_ids": [
+       "ar.restricted",
+       "ar.no_photos"
+      ]
+     }
+    ],
+    "if_you_are": [
+     {
+      "situation": "Indoors or at home",
+      "text": "Install blackout curtains and do not use any light visible from outside.",
+      "advice_ids": [
+       "ar.blackout_curtains",
+       "ar.lights_off"
+      ]
+     },
+     {
+      "situation": "In a vehicle",
+      "text": "Do not use lights visible from outside and stay out of restricted areas.",
+      "advice_ids": [
+       "ar.lights_off",
+       "ar.restricted"
+      ]
+     }
+    ],
+    "call": [
+     "112 - National emergency number",
+     "108 - Ambulance",
+     "101 - Fire and rescue"
+    ],
+    "confidence": "medium",
+    "confidence_reason": "Medium confidence because multiple data gaps exist regarding unmapped basements and hospital operational status.",
+    "unknowns": [
+     "Basements are rarely mapped; a building basement near you may not appear here.",
+     "Hospitals shown are mapped major hospitals (emergency tag or large campus); their emergency services, capacity and current status are not verified.",
+     "An air-raid alert covers the whole city; CityGuard cannot predict where a strike may fall. It only measures how far people are from underground shelter.",
+     "Basements are rarely mapped; 'no shelter found' can mean 'not mapped', not 'none exists'.",
+     "Official guidance text is from a press report of a Delhi Government document; the original notice was not available to us."
+    ],
+    "valid_while": []
+   },
+   "baseline_plan": {
+    "danger_level": "red",
+    "danger_reason": "City-wide air-raid sirens are sounding while you are outdoors on foot in Thiyagaraya Nagar.",
+    "main_move": "GO_DOWN_INSIDE",
+    "main_move_text": "Immediately move inside the nearest concrete building, basement, or underground structure away from windows.",
+    "where_to_go": "Nearest sturdy concrete building, basement, or underground shelter in Thiyagaraya Nagar",
+    "do_now": [
+     {
+      "text": "Run immediately into the nearest sturdy concrete building, basement, or underground facility.",
+      "advice_ids": [
+       "AIR_RAID_SHELTER_01"
+      ]
+     },
+     {
+      "text": "Move away from glass windows, exterior doors, and open spaces once indoors.",
+      "advice_ids": [
+       "AIR_RAID_SHELTER_02"
+      ]
+     },
+     {
+      "text": "Crouch low to the ground, cover your head and neck with your arms, and stay protected.",
+      "advice_ids": [
+       "AIR_RAID_PROTECT_01"
+      ]
+     }
+    ],
+    "do_not": [
+     {
+      "text": "Do not stay outside in the open or remain near glass facades and loose structures.",
+      "advice_ids": [
+       "AIR_RAID_DONOT_OUTDOORS"
+      ]
+     },
+     {
+      "text": "Do not use elevators to seek shelter during an active air alert.",
+      "advice_ids": [
+       "AIR_RAID_DONOT_ELEVATOR"
+      ]
+     }
+    ],
+    "if_you_are": [
+     {
+      "situation": "Outdoors on foot with no visible shelter",
+      "text": "Lie flat in a low ditch or depression, facing down, covering your head with your hands.",
+      "advice_ids": [
+       "AIR_RAID_OPEN_SPACE_01"
+      ]
+     }
+    ],
+    "call": [
+     "112",
+     "100"
+    ],
+    "confidence": "high",
+    "confidence_reason": "Standard air-raid defense procedures apply immediately to persons caught outdoors during sirens.",
+    "unknowns": [
+     "Specific locations of designated bomb shelters in the immediate street block"
+    ],
+    "valid_while": [
+     "Air-raid alert siren remains active",
+     "Until official all-clear signal is given"
+    ]
+   }
+  },
+  {
+   "hazard": "air_raid",
+   "situation": "home_upper",
+   "spot": [
+    13.085,
+    80.2101
+   ],
+   "official_tier": "orange",
+   "safeground": {
+    "tier_ok": true,
+    "move_ok": true,
+    "unsafe": [],
+    "invented_numbers": [],
+    "sends_downwind": false,
+    "latency_s": 9.5,
+    "generated_by": "gemini",
+    "attempts": 1
+   },
+   "baseline": {
+    "tier_ok": false,
+    "move_ok": true,
+    "unsafe": [],
+    "invented_numbers": [],
+    "sends_downwind": false,
+    "latency_s": 7.5
+   },
+   "safeground_plan": {
+    "danger_level": "orange",
+    "danger_reason": "This is a city-wide alert where an underground shelter is within a short walk.",
+    "main_move": "GO_DOWN_INSIDE",
+    "main_move_text": "Go down to underground shelter",
+    "where_to_go": "Head W to Anna Nagar Tower Metro (underground), 197 meters away (2.6 walking minutes).",
+    "do_now": [
+     {
+      "text": "Stop outdoor activities and proceed immediately to the nearest shelter such as an underground metro or basement.",
+      "advice_ids": [
+       "ar.stop_outdoor",
+       "ar.shelter_types"
+      ]
+     },
+     {
+      "text": "Turn off any lights visible from outside and use thick curtains or blinds on windows.",
+      "advice_ids": [
+       "ar.lights_off",
+       "ar.blackout_curtains"
+      ]
+     }
+    ],
+    "do_not": [
+     {
+      "text": "Do not stay outdoors, show lights visible from outside, or gather near windows.",
+      "advice_ids": [
+       "ar.lights_off"
+      ]
+     },
+     {
+      "text": "Do not use phones after the siren sounds to keep lines clear, and avoid taking or sharing photos.",
+      "advice_ids": [
+       "ar.no_phones",
+       "ar.no_photos"
+      ]
+     }
+    ],
+    "if_you_are": [
+     {
+      "situation": "outdoors or in a vehicle",
+      "text": "Do not enter restricted areas and turn off any lights visible from outside.",
+      "advice_ids": [
+       "ar.restricted",
+       "ar.lights_off"
+      ]
+     }
+    ],
+    "call": [
+     "112 - National emergency number",
+     "108 - Ambulance",
+     "101 - Fire and rescue"
+    ],
+    "confidence": "medium",
+    "confidence_reason": "Confidence is medium because there are multiple data gaps regarding unmapped basements and hospital operational statuses.",
+    "unknowns": [
+     "Basements are rarely mapped; a building basement near you may not appear here.",
+     "Hospitals shown are mapped major hospitals (emergency tag or large campus); their emergency services, capacity and current status are not verified.",
+     "An air-raid alert covers the whole city; CityGuard cannot predict where a strike may fall. It only measures how far people are from underground shelter.",
+     "Basements are rarely mapped; 'no shelter found' can mean 'not mapped', not 'none exists'.",
+     "Official guidance text is from a press report of a Delhi Government document; the original notice was not available to us."
+    ],
+    "valid_while": []
+   },
+   "baseline_plan": {
+    "danger_level": "red",
+    "danger_reason": "City-wide air-raid sirens indicate an imminent threat of aerial attack or strike.",
+    "main_move": "GO_DOWN_INSIDE",
+    "main_move_text": "Move down to the lowest available floor or basement and stay in an interior windowless room.",
+    "where_to_go": "Ground floor, basement, or windowless interior room of your current building in AC Block.",
+    "do_now": [
+     {
+      "text": "Move to the ground floor or a central windowless room immediately using stairs.",
+      "advice_ids": [
+       "AIR_RAID_01"
+      ]
+     },
+     {
+      "text": "Cover your head and sit against an interior load-bearing wall away from glass windows.",
+      "advice_ids": [
+       "AIR_RAID_02"
+      ]
+     },
+     {
+      "text": "Keep your emergency bag, mobile phone, and water close at hand.",
+      "advice_ids": [
+       "AIR_RAID_03"
+      ]
+     }
+    ],
+    "do_not": [
+     {
+      "text": "Do not stay on upper floors or stand near exterior windows or glass walls.",
+      "advice_ids": [
+       "AIR_RAID_04"
+      ]
+     },
+     {
+      "text": "Do not use elevators during an active air raid alert.",
+      "advice_ids": [
+       "AIR_RAID_05"
+      ]
+     }
+    ],
+    "if_you_are": [
+     {
+      "situation": "On an upper floor",
+      "text": "Take the stairs down to the ground floor or basement immediately.",
+      "advice_ids": [
+       "AIR_RAID_01"
+      ]
+     },
+     {
+      "situation": "Outdoors",
+      "text": "Enter the nearest sturdy reinforced building or basement shelter right away.",
+      "advice_ids": [
+       "AIR_RAID_06"
+      ]
+     }
+    ],
+    "call": [
+     "112",
+     "100"
+    ],
+    "confidence": "high",
+    "confidence_reason": "Standard safety response for air-raid siren alerts is well-established.",
+    "unknowns": [
+     "Specific target area of aerial threat",
+     "Duration of the active siren alert"
+    ],
+    "valid_while": [
+     "Air-raid sirens are active",
+     "Until an official all-clear signal is declared"
+    ]
+   }
+  },
+  {
+   "hazard": "air_raid",
+   "situation": "needs_assistance",
+   "spot": [
+    12.9792,
+    80.221
+   ],
+   "official_tier": "red",
+   "safeground": {
+    "tier_ok": true,
+    "move_ok": true,
+    "unsafe": [],
+    "invented_numbers": [],
+    "sends_downwind": false,
+    "latency_s": 11.6,
+    "generated_by": "gemini",
+    "attempts": 1
+   },
+   "baseline": {
+    "tier_ok": true,
+    "move_ok": true,
+    "unsafe": [],
+    "invented_numbers": [],
+    "sends_downwind": false,
+    "latency_s": 9.7
+   },
+   "safeground_plan": {
+    "danger_level": "red",
+    "danger_reason": "A city-wide alert is active and there is no mapped underground shelter within a 15-minute walk.",
+    "main_move": "GO_DOWN_INSIDE",
+    "main_move_text": "Go down to underground shelter",
+    "where_to_go": "Stay where you are and seek shelter immediately inside a building away from windows and exterior walls.",
+    "do_now": [
+     {
+      "text": "Immediately stop outdoor activities and help everyone to the nearest shelter, basement, or underground area.",
+      "advice_ids": [
+       "ar.stop_outdoor",
+       "ar.shelter_types"
+      ]
+     },
+     {
+      "text": "Seek shelter inside a building away from windows and exterior walls.",
+      "advice_ids": [
+       "ar.away_from_windows"
+      ]
+     },
+     {
+      "text": "Avoid using phones so communication lines remain free for emergencies.",
+      "advice_ids": [
+       "ar.no_phones"
+      ]
+     }
+    ],
+    "do_not": [
+     {
+      "text": "Do not stay outdoors, show lights, or gather at windows.",
+      "advice_ids": [
+       "ar.away_from_windows"
+      ]
+     },
+     {
+      "text": "Do not photograph or share pictures of the drill online.",
+      "advice_ids": [
+       "ar.no_photos"
+      ]
+     }
+    ],
+    "if_you_are": [
+     {
+      "situation": "At home or in a building",
+      "text": "Turn off lights and close thick curtains or blinds on all windows.",
+      "advice_ids": [
+       "ar.lights_off",
+       "ar.blackout_curtains"
+      ]
+     },
+     {
+      "situation": "Outdoors or in a vehicle",
+      "text": "Stop outdoor activities immediately, do not enter restricted areas, and turn off vehicle lights.",
+      "advice_ids": [
+       "ar.stop_outdoor",
+       "ar.restricted",
+       "ar.lights_off"
+      ]
+     }
+    ],
+    "call": [
+     "112 - National emergency number",
+     "108 - Ambulance",
+     "101 - Fire and rescue"
+    ],
+    "confidence": "medium",
+    "confidence_reason": "Confidence is medium because there are multiple data gaps regarding unmapped basements and unverified hospital capacities.",
+    "unknowns": [
+     "Basements are rarely mapped; a building basement near you may not appear here.",
+     "No mapped underground shelter within a 15-minute walk.",
+     "Hospitals shown are mapped major hospitals; emergency services and capacity are unverified.",
+     "An air-raid alert covers the whole city; CityGuard cannot predict where a strike may fall."
+    ],
+    "valid_while": []
+   },
+   "baseline_plan": {
+    "danger_level": "red",
+    "danger_reason": "Air-raid sirens indicate an active, severe city-wide threat of aerial bombardment.",
+    "main_move": "GO_DOWN_INSIDE",
+    "main_move_text": "Move immediately to a ground floor interior room or basement away from windows and doors.",
+    "where_to_go": "Stay where you are in Tansi Nagar and shelter in the lowest available interior floor or basement.",
+    "do_now": [
+     {
+      "text": "Assist children, elderly, and vulnerable individuals to a safe ground floor interior hallway or windowless room immediately.",
+      "advice_ids": [
+       "AIR_RAID_SHELTER_01"
+      ]
+     },
+     {
+      "text": "Shut all exterior doors and windows, and draw heavy curtains or blinds.",
+      "advice_ids": [
+       "AIR_RAID_SEAL_01"
+      ]
+     },
+     {
+      "text": "Turn off gas connections and electricity mains if safe to do so quickly.",
+      "advice_ids": [
+       "AIR_RAID_UTILITIES_01"
+      ]
+     }
+    ],
+    "do_not": [
+     {
+      "text": "Do not stand near windows, outer walls, glass structures, or top floors.",
+      "advice_ids": [
+       "AIR_RAID_DONOT_01"
+      ]
+     },
+     {
+      "text": "Do not go outside or use elevators during an active siren alert.",
+      "advice_ids": [
+       "AIR_RAID_DONOT_02"
+      ]
+     }
+    ],
+    "if_you_are": [
+     {
+      "situation": "With elderly people, children or someone who needs help",
+      "text": "Guide them slowly to a central windowless room on the ground floor, seating them against an interior wall with cushions for protection.",
+      "advice_ids": [
+       "AIR_RAID_ASSIST_01"
+      ]
+     }
+    ],
+    "call": [
+     "112",
+     "100",
+     "1077"
+    ],
+    "confidence": "high",
+    "confidence_reason": "Air-raid sirens demand immediate indoor blast shelter actions.",
+    "unknowns": [
+     "Exact duration of the alert",
+     "Specific blast target locations"
+    ],
+    "valid_while": [
+     "Air-raid alert remains active",
+     "Until official all-clear announcement"
+    ]
+   }
+  },
+  {
+   "hazard": "air_raid",
+   "situation": "home_ground",
+   "spot": [
+    13.2146,
+    80.3203
+   ],
+   "official_tier": "red",
+   "safeground": {
+    "tier_ok": true,
+    "move_ok": true,
+    "unsafe": [],
+    "invented_numbers": [],
+    "sends_downwind": false,
+    "latency_s": 11.1,
+    "generated_by": "gemini",
+    "attempts": 1
+   },
+   "baseline": {
+    "tier_ok": true,
+    "move_ok": false,
+    "unsafe": [],
+    "invented_numbers": [],
+    "sends_downwind": false,
+    "latency_s": 7.6
+   },
+   "safeground_plan": {
+    "danger_level": "red",
+    "danger_reason": "This is a city-wide alert with no mapped underground shelter within a 15-minute walk.",
+    "main_move": "GO_DOWN_INSIDE",
+    "main_move_text": "Go down to underground shelter",
+    "where_to_go": "Stay where you are and seek shelter inside a building away from windows.",
+    "do_now": [
+     {
+      "text": "Seek shelter immediately inside a building, keeping away from windows and exterior walls.",
+      "advice_ids": [
+       "ar.away_from_windows"
+      ]
+     },
+     {
+      "text": "Do not use any light that could be visible from outside.",
+      "advice_ids": [
+       "ar.lights_off"
+      ]
+     },
+     {
+      "text": "Avoid using phones to keep communication lines free for emergencies after the siren sounds.",
+      "advice_ids": [
+       "ar.no_phones"
+      ]
+     },
+     {
+      "text": "Identify nearest shelter locations such as basements, underground car parks, or designated safe zones.",
+      "advice_ids": [
+       "ar.shelter_types"
+      ]
+     }
+    ],
+    "do_not": [
+     {
+      "text": "Do not stay outdoors, gather at windows, or show lights visible from outside.",
+      "advice_ids": [
+       "ar.lights_off",
+       "ar.away_from_windows"
+      ]
+     },
+     {
+      "text": "Do not photograph or share pictures online.",
+      "advice_ids": [
+       "ar.no_photos"
+      ]
+     }
+    ],
+    "if_you_are": [
+     {
+      "situation": "Outdoors",
+      "text": "Stop outdoor activities immediately, proceed to the nearest shelter, and stay out of restricted areas.",
+      "advice_ids": [
+       "ar.stop_outdoor",
+       "ar.restricted"
+      ]
+     },
+     {
+      "situation": "In a vehicle",
+      "text": "Turn off lights visible from outside and do not enter restricted areas.",
+      "advice_ids": [
+       "ar.lights_off",
+       "ar.restricted"
+      ]
+     },
+     {
+      "situation": "On an upper floor at home",
+      "text": "Install thick curtains or blackout blinds on all windows and move away from windows.",
+      "advice_ids": [
+       "ar.blackout_curtains",
+       "ar.away_from_windows"
+      ]
+     }
+    ],
+    "call": [
+     "112 - National emergency number",
+     "108 - Ambulance",
+     "101 - Fire and rescue"
+    ],
+    "confidence": "medium",
+    "confidence_reason": "Confidence is medium due to multiple data gaps regarding unmapped local basements and unverified hospital statuses.",
+    "unknowns": [
+     "Basements are rarely mapped; a building basement near you may not appear here.",
+     "No mapped underground shelter within a 15-minute walk.",
+     "Hospitals shown are mapped major hospitals; their emergency services, capacity and current status are not verified.",
+     "An air-raid alert covers the whole city; CityGuard cannot predict where a strike may fall."
+    ],
+    "valid_while": []
+   },
+   "baseline_plan": {
+    "danger_level": "red",
+    "danger_reason": "Air-raid sirens are sounding in Kathivakkam, indicating an imminent threat of aerial attack.",
+    "main_move": "STAY_INSIDE_AWAY_FROM_WINDOWS",
+    "main_move_text": "Move immediately to an interior room or hallway on the ground floor, staying away from windows and exterior walls.",
+    "where_to_go": "Stay where you are in Kathivakkam and seek an interior windowless room or basement.",
+    "do_now": [
+     {
+      "text": "Move to a central, windowless room, hallway, or under concrete stairs on the ground floor.",
+      "advice_ids": [
+       "AIR_RAID_COVER_01"
+      ]
+     },
+     {
+      "text": "Close all windows, blinds, and exterior doors to reduce blast and fragment hazards.",
+      "advice_ids": [
+       "AIR_RAID_SEAL_01"
+      ]
+     },
+     {
+      "text": "Lie face down on the ground and cover your head and neck with your arms if an blast occurs.",
+      "advice_ids": [
+       "AIR_RAID_PROTECT_01"
+      ]
+     }
+    ],
+    "do_not": [
+     {
+      "text": "Do not look out windows or stand near glass or exterior walls during sirens or explosions.",
+      "advice_ids": [
+       "AIR_RAID_DONOT_GLASS_01"
+      ]
+     },
+     {
+      "text": "Do not go outside or attempt to drive during an active air-raid alert.",
+      "advice_ids": [
+       "AIR_RAID_DONOT_OUTSIDE_01"
+      ]
+     }
+    ],
+    "if_you_are": [
+     {
+      "situation": "In a high-rise building",
+      "text": "Move down to the lower or basement levels using stairs, avoiding elevators.",
+      "advice_ids": [
+       "AIR_RAID_HIGHRISE_01"
+      ]
+     }
+    ],
+    "call": [
+     "112",
+     "100"
+    ],
+    "confidence": "high",
+    "confidence_reason": "Standard emergency response protocol for active city-wide air-raid alerts.",
+    "unknowns": [
+     "Exact duration of the alert",
+     "Specific targets or incoming vectors"
+    ],
+    "valid_while": [
+     "Until an official all-clear signal is announced by authorities"
+    ]
+   }
+  },
+  {
+   "hazard": "flood",
+   "situation": "home_ground",
+   "spot": [
+    12.9792,
+    80.221
+   ],
+   "official_tier": "red",
+   "safeground": {
+    "tier_ok": true,
+    "move_ok": true,
+    "unsafe": [],
+    "invented_numbers": [],
+    "sends_downwind": false,
+    "latency_s": 9.9,
+    "generated_by": "gemini",
+    "attempts": 1
+   },
+   "baseline": {
+    "tier_ok": true,
+    "move_ok": true,
+    "unsafe": [],
+    "invented_numbers": [],
+    "sends_downwind": false,
+    "latency_s": 7.5
+   },
+   "safeground_plan": {
+    "danger_level": "red",
+    "danger_reason": "You are in a high-risk area because reported flooding is nearby or land is very low-lying next to water during 150.0 mm of heavy rain.",
+    "main_move": "GO_UP",
+    "main_move_text": "Go up: upper floor, tall building or higher ground",
+    "where_to_go": "Go to Block with buildings ~15 m tall (Open Buildings estimate), 259 m to the N, about 3.5 minutes walk via Velachery Main Road.",
+    "do_now": [
+     {
+      "text": "Pack essential medications, clothing, valuables, and documents in waterproof bags, and turn off power and gas before leaving.",
+      "advice_ids": [
+       "fl.evacuation_pack"
+      ]
+     },
+     {
+      "text": "Keep mobile phones charged and listen to radio or TV for weather updates and flood warnings.",
+      "advice_ids": [
+       "fl.phone",
+       "fl.updates"
+      ]
+     },
+     {
+      "text": "Stay in contact with local officials and follow instructions when asked to evacuate.",
+      "advice_ids": [
+       "fl.follow_officials"
+      ]
+     }
+    ],
+    "do_not": [
+     {
+      "text": "Do not enter flood waters or get near electric poles and fallen power lines.",
+      "advice_ids": [
+       "fl.enter_water",
+       "fl.power_lines"
+      ]
+     },
+     {
+      "text": "Do not allow children to play in or near flood waters, and do not eat food that touched flood waters.",
+      "advice_ids": [
+       "fl.children",
+       "fl.food"
+      ]
+     }
+    ],
+    "if_you_are": [
+     {
+      "situation": "vehicle",
+      "text": "Do not drive into flooded areas. Abandon your vehicle and move to higher ground if water rises around it.",
+      "advice_ids": [
+       "fl.drive"
+      ]
+     },
+     {
+      "situation": "outdoors",
+      "text": "Do not walk through moving water or approach gutters, drains, and sewage lines.",
+      "advice_ids": [
+       "fl.moving_water",
+       "fl.drains"
+      ]
+     }
+    ],
+    "call": [
+     "112 - National emergency number",
+     "108 - Ambulance",
+     "101 - Fire and rescue"
+    ],
+    "confidence": "medium",
+    "confidence_reason": "Medium confidence because flood levels are based on surface susceptibility estimates and land elevation models rather than official distance tables.",
+    "unknowns": [
+     "Hospitals shown are mapped major hospitals (emergency tag or large campus); their emergency services, capacity and current status are not verified.",
+     "Flood tiers are a susceptibility estimate from land height, nearby water and rainfall; they are not a flood forecast. Use official IMD / Flood Hub warnings.",
+     "Elevation is a 30 m surface model with several metres of vertical error; small height differences are not reliable.",
+     "Most Chennai street flooding comes from overwhelmed drains and built-over lakes and wetlands, which land-height data does not capture (Velachery flooded in 2015 and 2023 but does not look low in the elevation model). Reported waterlogging points override the estimate."
+    ],
+    "valid_while": [
+     "Rainfall about 150.0 mm in 24 h (very heavy)"
+    ]
+   },
+   "baseline_plan": {
+    "danger_level": "red",
+    "danger_reason": "Velachery and Tansi Nagar are experiencing severe waterlogging from 150 mm heavy rainfall.",
+    "main_move": "GO_UP",
+    "main_move_text": "Move to an upper floor immediately to stay above potential floodwaters.",
+    "where_to_go": "Move to the upper floor of your current building or higher ground nearby.",
+    "do_now": [
+     {
+      "text": "Disconnect main power and gas switches before moving upstairs.",
+      "advice_ids": [
+       "adv_elec_safety"
+      ]
+     },
+     {
+      "text": "Move to the first floor or higher level with medicines, food, water, and phone.",
+      "advice_ids": [
+       "adv_move_higher"
+      ]
+     },
+     {
+      "text": "Keep emergency helpline numbers ready and stay tuned to local weather updates.",
+      "advice_ids": [
+       "adv_stay_updated"
+      ]
+     }
+    ],
+    "do_not": [
+     {
+      "text": "Do not attempt to walk or drive through flooded streets or subways nearby.",
+      "advice_ids": [
+       "adv_avoid_floodwater"
+      ]
+     },
+     {
+      "text": "Do not touch electrical switches or appliances if you are wet or standing in water.",
+      "advice_ids": [
+       "adv_elec_hazard"
+      ]
+     }
+    ],
+    "if_you_are": [
+     {
+      "situation": "On ground floor with water entering the house",
+      "text": "Move upstairs immediately or ask neighbors on upper floors for shelter.",
+      "advice_ids": [
+       "adv_ground_floor_evac"
+      ]
+     }
+    ],
+    "call": [
+     "1913",
+     "112",
+     "1070"
+    ],
+    "confidence": "high",
+    "confidence_reason": "Tansi Nagar is located in Velachery, which is explicitly listed as a waterlogged area during severe rain.",
+    "unknowns": [
+     " exact water depth outside the building in Tansi Nagar"
+    ],
+    "valid_while": [
+     "Heavy rain alert and active waterlogging persist in Chennai"
+    ]
+   }
+  },
+  {
+   "hazard": "flood",
+   "situation": "outdoors",
+   "spot": [
+    12.985,
+    80.218
+   ],
+   "official_tier": "green",
+   "safeground": {
+    "tier_ok": true,
+    "move_ok": true,
+    "unsafe": [],
+    "invented_numbers": [],
+    "sends_downwind": false,
+    "latency_s": 20.8,
+    "generated_by": "gemini",
+    "attempts": 2
+   },
+   "baseline": {
+    "tier_ok": false,
+    "move_ok": false,
+    "unsafe": [],
+    "invented_numbers": [],
+    "sends_downwind": false,
+    "latency_s": 10.4
+   },
+   "safeground_plan": {
+    "danger_level": "green",
+    "danger_reason": "You are on relatively higher ground based on CityGuard susceptibility heuristic (relative elevation, surface water, rainfall) \u2014 not a forecast.",
+    "main_move": "STAY_ALERT",
+    "main_move_text": "Stay alert and follow official updates",
+    "where_to_go": "Stay where you are and monitor official weather bulletins.",
+    "do_now": [
+     {
+      "text": "Keep your mobile phone fully charged.",
+      "advice_ids": [
+       "fl.phone"
+      ]
+     },
+     {
+      "text": "Listen to radio or television for the latest weather bulletins and flood warnings.",
+      "advice_ids": [
+       "fl.updates"
+      ]
+     },
+     {
+      "text": "Stay in touch with local officials and follow instructions if asked to evacuate.",
+      "advice_ids": [
+       "fl.follow_officials"
+      ]
+     }
+    ],
+    "do_not": [
+     {
+      "text": "Do not spread unverified rumours.",
+      "advice_ids": [
+       "fl.rumours"
+      ]
+     }
+    ],
+    "if_you_are": [],
+    "call": [
+     "112 - National emergency number",
+     "108 - Ambulance",
+     "101 - Fire and rescue"
+    ],
+    "confidence": "medium",
+    "confidence_reason": "Confidence is medium because the tier is based on flood susceptibility heuristics and terrain estimates rather than official distance tables.",
+    "unknowns": [
+     "Hospitals shown are mapped major hospitals (emergency tag or large campus); their emergency services, capacity and current status are not verified.",
+     "Flood tiers are a susceptibility estimate from land height, nearby water and rainfall; they are not a flood forecast. Use official IMD / Flood Hub warnings.",
+     "Elevation is a 30 m surface model with several metres of vertical error; small height differences are not reliable.",
+     "Most Chennai street flooding comes from overwhelmed drains and built-over lakes and wetlands, which land-height data does not capture (Velachery flooded in 2015 and 2023 but does not look low in the elevation model). Reported waterlogging points override the estimate."
+    ],
+    "valid_while": []
+   },
+   "baseline_plan": {
+    "danger_level": "red",
+    "danger_reason": "Very heavy rain has caused severe waterlogging in Velachery where Rajalakshmi Nagar is located, creating dangerous conditions for pedestrians outdoors.",
+    "main_move": "GO_UP",
+    "main_move_text": "Get out of floodwater immediately and move to higher ground or upper floors of a sturdy building.",
+    "where_to_go": "Nearest multi-storey concrete building on higher ground in Rajalakshmi Nagar, Velachery",
+    "do_now": [
+     {
+      "text": "Get out of standing water immediately and move to higher ground or upper floors of a sturdy building.",
+      "advice_ids": [
+       "ADV_EVAC_01"
+      ]
+     },
+     {
+      "text": "Watch out for hidden open manholes, submerged drains, and fallen power lines.",
+      "advice_ids": [
+       "ADV_SAFETY_02"
+      ]
+     },
+     {
+      "text": "Keep away from electrical poles, transformers, and damaged wiring to avoid electrocution.",
+      "advice_ids": [
+       "ADV_ELEC_01"
+      ]
+     }
+    ],
+    "do_not": [
+     {
+      "text": "Do not walk through flowing floodwater or attempt to cross submerged streets and subways.",
+      "advice_ids": [
+       "ADV_DONT_WALK_FLOOD"
+      ]
+     }
+    ],
+    "if_you_are": [
+     {
+      "situation": "Trapped outdoors in deep water",
+      "text": "Climb onto a solid structure or high surface and call for emergency help.",
+      "advice_ids": [
+       "ADV_TRAPPED_01"
+      ]
+     },
+     {
+      "situation": "Near open subways or low-lying roads",
+      "text": "Avoid subways like Madley or Doraiswamy as they are deeply flooded and impassable.",
+      "advice_ids": [
+       "ADV_AVOID_SUBWAYS"
+      ]
+     }
+    ],
+    "call": [
+     "1913",
+     "112",
+     "101"
+    ],
+    "confidence": "high",
+    "confidence_reason": "Location is in Rajalakshmi Nagar, Velachery, which is explicitly reported as waterlogged.",
+    "unknowns": [
+     "Exact floodwater depth at specific street location"
+    ],
+    "valid_while": [
+     "During very heavy rainfall and active waterlogging"
+    ]
+   }
+  },
+  {
+   "hazard": "flood",
+   "situation": "vehicle",
+   "spot": [
+    13.0355,
+    80.227
+   ],
+   "official_tier": "red",
+   "safeground": {
+    "tier_ok": true,
+    "move_ok": true,
+    "unsafe": [],
+    "invented_numbers": [],
+    "sends_downwind": false,
+    "latency_s": 11.7,
+    "generated_by": "gemini",
+    "attempts": 1
+   },
+   "baseline": {
+    "tier_ok": false,
+    "move_ok": true,
+    "unsafe": [],
+    "invented_numbers": [],
+    "sends_downwind": false,
+    "latency_s": 8.0
+   },
+   "safeground_plan": {
+    "danger_level": "red",
+    "danger_reason": "This area is at red alert due to reported flooding nearby or very low-lying land next to water during very heavy rain (150.0 mm in 24 h), calculated via CityGuard susceptibility heuristic.",
+    "main_move": "GO_UP",
+    "main_move_text": "Go up: upper floor, tall building or higher ground",
+    "where_to_go": "Head to Block with buildings ~10 m tall (Open Buildings estimate) located NNE, 140 m away via a 1.9 minutes walk.",
+    "do_now": [
+     {
+      "text": "If floodwaters rise around your car, abandon it safely and move to higher ground.",
+      "advice_ids": [
+       "fl.drive"
+      ]
+     },
+     {
+      "text": "Keep your mobile phones charged.",
+      "advice_ids": [
+       "fl.phone"
+      ]
+     },
+     {
+      "text": "Listen to radio or television for official weather bulletins and updates.",
+      "advice_ids": [
+       "fl.updates",
+       "fl.rumours"
+      ]
+     },
+     {
+      "text": "Stay in touch with local officials and follow instructions if asked to evacuate.",
+      "advice_ids": [
+       "fl.follow_officials"
+      ]
+     }
+    ],
+    "do_not": [
+     {
+      "text": "Do not drive into flooded areas or enter flood waters.",
+      "advice_ids": [
+       "fl.drive",
+       "fl.enter_water"
+      ]
+     },
+     {
+      "text": "Do not get near electric poles, fallen power-lines, sewage lines, gutters, or drains.",
+      "advice_ids": [
+       "fl.power_lines",
+       "fl.drains"
+      ]
+     }
+    ],
+    "if_you_are": [
+     {
+      "situation": "Outdoors",
+      "text": "Do not walk through moving water; use a stick to check ground firmness if you must walk in water.",
+      "advice_ids": [
+       "fl.moving_water"
+      ]
+     },
+     {
+      "situation": "Being evacuated from home",
+      "text": "Pack medication, clothing, and documents in waterproof bags, and turn off gas and power before leaving.",
+      "advice_ids": [
+       "fl.evacuation_pack"
+      ]
+     },
+     {
+      "situation": "With children",
+      "text": "Do not allow children to play in or near flood waters.",
+      "advice_ids": [
+       "fl.children"
+      ]
+     },
+     {
+      "situation": "With cattle",
+      "text": "Keep cattle untied to ensure their safety.",
+      "advice_ids": [
+       "fl.cattle"
+      ]
+     }
+    ],
+    "call": [
+     "112 - National emergency number",
+     "108 - Ambulance",
+     "101 - Fire and rescue"
+    ],
+    "confidence": "medium",
+    "confidence_reason": "Confidence is medium because tier assessment relies on susceptibility heuristics and surface models rather than official flood forecasts, and hospital operational statuses are unverified.",
+    "unknowns": [
+     "Hospitals shown are mapped major hospitals; their emergency services, capacity and current status are not verified.",
+     "Flood tiers are a susceptibility estimate from land height, nearby water and rainfall; they are not a flood forecast.",
+     "Elevation is a 30 m surface model with vertical error; small height differences are not reliable.",
+     "Street flooding from overwhelmed drains is not fully captured by elevation data."
+    ],
+    "valid_while": [
+     "Rainfall about 150.0 mm in 24 h (very heavy)"
+    ]
+   },
+   "baseline_plan": {
+    "danger_level": "orange",
+    "danger_reason": "Heavy rainfall of 150 mm has reported waterlogging in nearby areas and flooded subways around Kannammapet.",
+    "main_move": "AVOID",
+    "main_move_text": "Avoid driving through flooded streets or subways, park on elevated ground, and seek shelter inside a sturdy building.",
+    "where_to_go": "Move to a sturdy higher floor building nearby in Kannammapet, away from flooded subways like Madley and Doraiswamy.",
+    "do_now": [
+     {
+      "text": "Park your vehicle on high ground clear of drainage channels and step into a safe indoor building.",
+      "advice_ids": [
+       "rain_vehicle_01",
+       "flood_shelter_01"
+      ]
+     },
+     {
+      "text": "Avoid driving through flooded subways, underpasses, or standing water.",
+      "advice_ids": [
+       "rain_drive_01"
+      ]
+     }
+    ],
+    "do_not": [
+     {
+      "text": "Do not attempt to drive through waterlogged subways or deep flooded roads.",
+      "advice_ids": [
+       "rain_drive_02"
+      ]
+     },
+     {
+      "text": "Do not stay inside a stalled car in rising water.",
+      "advice_ids": [
+       "rain_vehicle_02"
+      ]
+     }
+    ],
+    "if_you_are": [
+     {
+      "situation": "In a vehicle with rising floodwater around it",
+      "text": "Abandon the vehicle immediately and walk carefully to higher ground or a nearby building.",
+      "advice_ids": [
+       "flood_evac_01"
+      ]
+     }
+    ],
+    "call": [
+     "1913",
+     "112",
+     "101"
+    ],
+    "confidence": "high",
+    "confidence_reason": "Location is very close to reported waterlogged subways in the T. Nagar and West Mambalam area.",
+    "unknowns": [
+     "Exact floodwater depth on your specific street"
+    ],
+    "valid_while": [
+     "During current heavy rainfall and severe waterlogging advisory"
+    ]
+   }
+  },
+  {
+   "hazard": "flood",
+   "situation": "needs_assistance",
+   "spot": [
+    13.2146,
+    80.3203
+   ],
+   "official_tier": "green",
+   "safeground": {
+    "tier_ok": true,
+    "move_ok": true,
+    "unsafe": [],
+    "invented_numbers": [],
+    "sends_downwind": false,
+    "latency_s": 11.6,
+    "generated_by": "gemini",
+    "attempts": 1
+   },
+   "baseline": {
+    "tier_ok": false,
+    "move_ok": true,
+    "unsafe": [],
+    "invented_numbers": [
+     "48"
+    ],
+    "sends_downwind": false,
+    "latency_s": 9.6
+   },
+   "safeground_plan": {
+    "danger_level": "green",
+    "danger_reason": "You are on relatively higher ground based on the CityGuard susceptibility heuristic with 150 mm of rain in 24 hours.",
+    "main_move": "STAY_ALERT",
+    "main_move_text": "Stay alert and follow official updates",
+    "where_to_go": "Stay where you are and remain alert, as there is no designated evacuation target.",
+    "do_now": [
+     {
+      "text": "Keep your mobile phones charged.",
+      "advice_ids": [
+       "fl.phone"
+      ]
+     },
+     {
+      "text": "Listen to radio or watch television for the latest weather bulletin and flood warnings.",
+      "advice_ids": [
+       "fl.updates"
+      ]
+     },
+     {
+      "text": "Stay in touch with local officials and follow instructions when asked to evacuate.",
+      "advice_ids": [
+       "fl.follow_officials"
+      ]
+     }
+    ],
+    "do_not": [
+     {
+      "text": "Avoid spreading rumours you are not sure about and rely only on authentic official updates.",
+      "advice_ids": [
+       "fl.rumours"
+      ]
+     }
+    ],
+    "if_you_are": [
+     {
+      "situation": "In any situation",
+      "text": "Listen to radio or watch television for weather bulletins and flood warnings.",
+      "advice_ids": [
+       "fl.updates"
+      ]
+     },
+     {
+      "situation": "Unsure about emergency updates",
+      "text": "Avoid spreading rumours and stay updated through authentic official channels.",
+      "advice_ids": [
+       "fl.rumours"
+      ]
+     }
+    ],
+    "call": [
+     "112 - National emergency number",
+     "108 - Ambulance",
+     "101 - Fire and rescue"
+    ],
+    "confidence": "medium",
+    "confidence_reason": "Confidence is medium because flood tiers are based on a susceptibility estimate heuristic rather than official distance tables.",
+    "unknowns": [
+     "Hospital emergency services, capacity and current status are not verified.",
+     "Flood tiers are a susceptibility estimate from land height, nearby water and rainfall, not a flood forecast.",
+     "Elevation data has vertical error and does not capture street flooding from overwhelmed drains."
+    ],
+    "valid_while": []
+   },
+   "baseline_plan": {
+    "danger_level": "yellow",
+    "danger_reason": "Very heavy rain of 150 mm in 24 hours is causing widespread waterlogging in several subways and low-lying parts of Chennai.",
+    "main_move": "STAY_ALERT",
+    "main_move_text": "Stay indoors on upper levels and stay prepared while supporting elderly persons and children.",
+    "where_to_go": "Stay where you are",
+    "do_now": [
+     {
+      "text": "Move elderly family members, children, and essential medical supplies to upper floors or elevated safe spots inside the house.",
+      "advice_ids": [
+       "ADV_EVAC_01"
+      ]
+     },
+     {
+      "text": "Charge all mobile phones and emergency lanterns while electricity is available.",
+      "advice_ids": [
+       "ADV_PREP_02"
+      ]
+     },
+     {
+      "text": "Store sufficient drinking water, dry food, and necessary daily medications for 24 to 48 hours.",
+      "advice_ids": [
+       "ADV_PREP_03"
+      ]
+     }
+    ],
+    "do_not": [
+     {
+      "text": "Do not attempt to cross flooded roads, subways, or open drains with children or elderly people.",
+      "advice_ids": [
+       "ADV_DONT_01"
+      ]
+     },
+     {
+      "text": "Do not touch electric poles, transformers, or submerged electrical points.",
+      "advice_ids": [
+       "ADV_DONT_02"
+      ]
+     }
+    ],
+    "if_you_are": [
+     {
+      "situation": "In a ground-floor dwelling experiencing rising water",
+      "text": "Move immediately to a higher floor or seek assistance to reach a safe nearby community shelter before roads fill with water.",
+      "advice_ids": [
+       "ADV_SHELTER_01"
+      ]
+     },
+     {
+      "situation": "Assisting individuals with limited mobility",
+      "text": "Keep wheelchairs, walking aids, and medical kits immediately accessible near the exit.",
+      "advice_ids": [
+       "ADV_MED_01"
+      ]
+     }
+    ],
+    "call": [
+     "1913",
+     "112",
+     "1077"
+    ],
+    "confidence": "high",
+    "confidence_reason": "Location coordinates map to Kathivakkam in North Chennai, and disaster facts confirm heavy rain and urban waterlogging risks.",
+    "unknowns": [
+     "Immediate street-level water depth at your specific address in Kathivakkam."
+    ],
+    "valid_while": [
+     "Valid during the ongoing heavy rain alert for the next 24 hours."
+    ]
+   }
+  },
+  {
+   "hazard": "flood",
+   "situation": "home_ground",
+   "spot": [
+    13.085,
+    80.2101
+   ],
+   "official_tier": "green",
+   "safeground": {
+    "tier_ok": true,
+    "move_ok": true,
+    "unsafe": [],
+    "invented_numbers": [],
+    "sends_downwind": false,
+    "latency_s": 13.1,
+    "generated_by": "gemini",
+    "attempts": 1
+   },
+   "baseline": {
+    "tier_ok": false,
+    "move_ok": false,
+    "unsafe": [],
+    "invented_numbers": [],
+    "sends_downwind": false,
+    "latency_s": 7.9
+   },
+   "safeground_plan": {
+    "danger_level": "green",
+    "danger_reason": "You are in a green tier (relatively higher ground) based on the CityGuard susceptibility heuristic using relative elevation, surface water, and rainfall.",
+    "main_move": "STAY_ALERT",
+    "main_move_text": "Stay alert and follow official updates",
+    "where_to_go": "Stay where you are and remain alert.",
+    "do_now": [
+     {
+      "text": "Listen to radio or watch television for the latest weather bulletins and flood warnings.",
+      "advice_ids": [
+       "fl.updates"
+      ]
+     },
+     {
+      "text": "Keep your mobile phones charged.",
+      "advice_ids": [
+       "fl.phone"
+      ]
+     },
+     {
+      "text": "Stay in touch with local officials and follow instructions if asked to evacuate.",
+      "advice_ids": [
+       "fl.follow_officials"
+      ]
+     }
+    ],
+    "do_not": [
+     {
+      "text": "Do not spread rumours that you are not sure about.",
+      "advice_ids": [
+       "fl.rumours"
+      ]
+     },
+     {
+      "text": "Do not ignore official instructions or announcements.",
+      "advice_ids": [
+       "fl.follow_officials"
+      ]
+     }
+    ],
+    "if_you_are": [],
+    "call": [
+     "112 - National emergency number",
+     "108 - Ambulance",
+     "101 - Fire and rescue"
+    ],
+    "confidence": "medium",
+    "confidence_reason": "Confidence is medium because the zone is based on a flood susceptibility estimate rather than official distance tables, and hospital operational statuses are unverified.",
+    "unknowns": [
+     "Hospital emergency services, capacity, and current status are not verified.",
+     "Flood tiers are a susceptibility estimate, not an official flood forecast.",
+     "Elevation data comes from a 30 m surface model with several metres of vertical error.",
+     "Street flooding from overwhelmed drains or built-over wetlands may not be captured by land-height data."
+    ],
+    "valid_while": []
+   },
+   "baseline_plan": {
+    "danger_level": "orange",
+    "danger_reason": "Very heavy rainfall of 150 mm poses localized flooding risk to ground floor residents.",
+    "main_move": "GO_UP",
+    "main_move_text": "Move yourself, essential valuables, and electrical items to an upper floor.",
+    "where_to_go": "Upper floor of your current building or stay on higher ground in AC Block",
+    "do_now": [
+     {
+      "text": "Move essential items, electronics, and documents to upper shelves or higher floors.",
+      "advice_ids": [
+       "ADV_FLOOD_PREP_01"
+      ]
+     },
+     {
+      "text": "Keep your mobile phone fully charged and stock drinking water and emergency lights.",
+      "advice_ids": [
+       "ADV_EMERGENCY_KIT_01"
+      ]
+     },
+     {
+      "text": "Disconnect main electrical supply if floodwater begins entering your ground floor home.",
+      "advice_ids": [
+       "ADV_ELEC_SAFETY_01"
+      ]
+     }
+    ],
+    "do_not": [
+     {
+      "text": "Do not drive or walk through flooded subways like Madley, Doraiswamy, or Rangarajapuram subways.",
+      "advice_ids": [
+       "ADV_SUBWAY_AVOID_01"
+      ]
+     },
+     {
+      "text": "Do not touch electrical equipment or switches with wet hands or while standing in water.",
+      "advice_ids": [
+       "ADV_ELEC_SAFETY_02"
+      ]
+     }
+    ],
+    "if_you_are": [
+     {
+      "situation": "On ground floor with water entering the house",
+      "text": "Move upstairs immediately and alert neighbours.",
+      "advice_ids": [
+       "ADV_FLOOD_EVAC_01"
+      ]
+     }
+    ],
+    "call": [
+     "1913",
+     "112",
+     "101"
+    ],
+    "confidence": "high",
+    "confidence_reason": "Location and flood risk level are clear for ground-floor indoors during heavy rain.",
+    "unknowns": [
+     "Exact localized street water level immediately outside AC Block"
+    ],
+    "valid_while": [
+     "During active heavy rain and waterlogging alerts in Chennai"
+    ]
+   }
+  }
+ ]
+}

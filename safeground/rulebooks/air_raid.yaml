@@ -1,0 +1,39 @@
+hazard: air_raid
+title: Air-raid / missile alert
+group: security
+sources:
+  delhi_cd_2025: {title: "Delhi Government civil-defence drill do's and don'ts, 6 May 2025 (as reported by PTI)", url: "https://www.theweek.in/wire-updates/national/2025/05/06/des76-drill-dl-sop.html"}
+  bomb_chart: {title: "Bomb Threat Stand-Off Chart (US DHS / FBI) — blast sheltering guidance", url: "https://www.generalservices.state.nm.us/wp-content/uploads/2021/02/BombThreatChart.pdf"}
+caveats:
+  - "An air-raid alert covers the whole city; SafeGround cannot predict where a strike may fall. It only measures how far people are from underground shelter."
+  - "Basements are rarely mapped; 'no shelter found' can mean 'not mapped', not 'none exists'."
+  - "Official guidance text is from a press report of a Delhi Government document; the original notice was not available to us."
+
+zone_model:
+  type: citywide
+  shelter_types: [metro_underground, parking_underground, assembly_point]  # OSM amenity=shelter = bus shelters, excluded
+  walk_minutes_good: 5
+  walk_minutes_poor: 15
+
+params: []
+
+tiers:
+  orange: "City-wide alert — underground shelter within a short walk"
+  red: "City-wide alert — no mapped underground shelter within a 15-minute walk"
+
+moves:
+  red: [GO_DOWN_INSIDE]
+  orange: [GO_DOWN_INSIDE]
+  forbidden: [STAY_OUTDOORS, SHOW_LIGHTS, GATHER_AT_WINDOWS]
+
+advice:
+  - {id: ar.stop_outdoor, source: delhi_cd_2025, text: "immediately stop outdoor activities and proceed to the nearest shelter", tiers: [red, orange], situations: [all]}
+  - {id: ar.shelter_types, source: delhi_cd_2025, text: "identifying nearest shelter locations such as basements, underground car parks or designated safe zones", tiers: [red, orange], situations: [all]}
+  - {id: ar.no_phones, source: delhi_cd_2025, text: "avoid using phones to keep communication lines free for emergencies after the siren is sounded", tiers: [red, orange], situations: [all]}
+  - {id: ar.siren, source: delhi_cd_2025, text: "familiarise themselves with the sounds of the air-raid siren", tiers: [red, orange], situations: [all]}
+  - {id: ar.blackout_curtains, source: delhi_cd_2025, text: "install thick curtains or blinds on all windows as crash blackout measures", tiers: [red, orange], situations: [home_ground, home_upper, institution]}
+  - {id: ar.lights_off, source: delhi_cd_2025, text: "not using any light that could be visible from outside", tiers: [red, orange], situations: [home_ground, home_upper, institution, vehicle]}
+  - {id: ar.restricted, source: delhi_cd_2025, text: "not enter restricted areas", tiers: [red, orange], situations: [outdoors, vehicle]}
+  - {id: ar.no_photos, source: delhi_cd_2025, text: "avoid photographing or sharing online pictures of the drill", tiers: [red, orange], situations: [all]}
+  - {id: ar.report, source: delhi_cd_2025, text: "report any unfamiliar activity", tiers: [red, orange], situations: [all]}
+  - {id: ar.away_from_windows, source: bomb_chart, text: "All personnel in this area should seek shelter immediately inside a building away from windows and exterior walls.", tiers: [red], situations: [all]}

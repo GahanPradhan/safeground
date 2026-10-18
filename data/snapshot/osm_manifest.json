@@ -1,0 +1,36 @@
+{
+  "source": "data/raw/geofabrik/southern-zone-latest.osm.pbf",
+  "built_at": "2026-10-18T00:38:26+0530",
+  "bbox": {
+    "south": 12.9,
+    "west": 80.15,
+    "north": 13.25,
+    "east": 80.33
+  },
+  "graph_nodes": 97971,
+  "graph_edges": 126396,
+  "feature_counts": {
+    "fuel": 193,
+    "hospital": 698,
+    "rail_station": 56,
+    "clinic": 531,
+    "police": 101,
+    "fire_station": 13,
+    "place_of_worship": 837,
+    "school": 723,
+    "vet": 6,
+    "open_ground": 1214,
+    "industrial": 784,
+    "community_centre": 61,
+    "shelter": 88,
+    "metro_station": 83,
+    "subway_entrance": 59,
+    "water_named": 189,
+    "elderly_home": 1,
+    "zoo": 2,
+    "parking_multistorey": 12,
+    "parking_underground": 2
+  },
+  "places": 552,
+  "tagged_buildings": 7954
+}
